@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjj083wyghdma"
-path="res://.godot/imported/BITE.wav-56ea2ac83648e12c12d084c8cf9c711e.sample"
+path="res://.godot/imported/bite.wav-ce873c8579427b3678a669fcc51ab1fe.sample"
 
 [deps]
 
-source_file="res://Assets/Sound/Effects/BITE.wav"
-dest_files=["res://.godot/imported/BITE.wav-56ea2ac83648e12c12d084c8cf9c711e.sample"]
+source_file="res://Assets/Sound/Effects/bite.wav"
+dest_files=["res://.godot/imported/bite.wav-ce873c8579427b3678a669fcc51ab1fe.sample"]
 
 [params]
 
