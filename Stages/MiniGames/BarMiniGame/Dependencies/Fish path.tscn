@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://df1uj4wfq3tue"]
+
+[ext_resource type="Script" path="res://Stages/MiniGames/BarMiniGame/Dependencies/Fish pathing.gd" id="1_fsply"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky8ev"]
+size = Vector2(45, 101)
+
+[node name="Fish" type="PathFollow2D"]
+position = Vector2(256, 256)
+rotation = 1.5708
+rotates = false
+script = ExtResource("1_fsply")
+speed = 5.0
+
+[node name="Disclaimer" type="Label" parent="."]
+offset_left = -7.99997
+offset_top = 8.00003
+offset_right = 143.0
+offset_bottom = 57.0
+rotation = -1.5761
+scale = Vector2(0.145013, 0.136263)
+text = "parent a Path node
+child a sprite image"
+
+[node name="Area2D" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.48363e-06, 9.05991e-06)
+shape = SubResource("RectangleShape2D_ky8ev")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

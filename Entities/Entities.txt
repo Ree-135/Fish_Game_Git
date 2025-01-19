@@ -1,0 +1,9 @@
+Distict Identifiable objects within the game world:
+	
+	Player character
+	
+	NPC's
+	
+	Items
+	
+	Components and Eviornmental Elements
