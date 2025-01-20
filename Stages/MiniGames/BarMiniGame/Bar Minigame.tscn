@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dcewy4ye6gagn" path="res://Stages/MiniGames/BarMiniGame/Dependencies/bobber holder.tscn" id="1_mctcb"]
 [ext_resource type="PackedScene" uid="uid://b8ri2awwfpx8v" path="res://Stages/MiniGames/BarMiniGame/Dependencies/Bobber.tscn" id="2_yhbl8"]
 [ext_resource type="PackedScene" uid="uid://df1uj4wfq3tue" path="res://Stages/MiniGames/BarMiniGame/Dependencies/Fish path.tscn" id="3_tk7bt"]
-[ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Assets/Sprites/fsh.png" id="4_7n7t0"]
+[ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="4_7n7t0"]
 
 [sub_resource type="Curve2D" id="Curve2D_v4yi8"]
 _data = {

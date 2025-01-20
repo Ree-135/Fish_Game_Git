@@ -1,0 +1,7 @@
+Finished reaserch today, now on to developing the prototype
+
+Didn't do much coding today but added world bariers and implemented a little face guy that follows the mouse
+
+Tommorow I will work on intergrating fishing spots, if I have time randomly spawing them
+
+The next step is learing how to make a basic gui, and making the fishing spots start the minigames

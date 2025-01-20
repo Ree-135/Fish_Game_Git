@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnyxmfwsmvm8p"]
+
+[ext_resource type="Texture2D" uid="uid://c643li6j6kc6t" path="res://Stages/Overworld/assets/Protoworld.png" id="1_xlrt1"]
+[ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_wd8cx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
+normal = Vector2(1, 8.74201e-08)
+distance = -0.059835
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ProtoMap" type="Sprite2D" parent="."]
+position = Vector2(3, -1)
+texture = ExtResource("1_xlrt1")
+
+[node name="Boat" parent="." instance=ExtResource("2_wd8cx")]
+position = Vector2(-348, 154)
+
+[node name="NorthBarier" type="StaticBody2D" parent="."]
+position = Vector2(-2, -756)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NorthBarier"]
+position = Vector2(1, -1)
+shape = SubResource("WorldBoundaryShape2D_ox5xy")
+
+[node name="EastBarier" type="StaticBody2D" parent="."]
+position = Vector2(996, 1)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastBarier"]
+shape = SubResource("WorldBoundaryShape2D_ox5xy")
+
+[node name="SouthBarier" type="StaticBody2D" parent="."]
+position = Vector2(0, 748)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SouthBarier"]
+position = Vector2(2.62964e-12, 1.14945e-19)
+shape = SubResource("WorldBoundaryShape2D_ox5xy")
+
+[node name="WestBarier" type="StaticBody2D" parent="."]
+position = Vector2(-1004, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WestBarier"]
+position = Vector2(-5.99919, 0.0988761)
+shape = SubResource("WorldBoundaryShape2D_ox5xy")

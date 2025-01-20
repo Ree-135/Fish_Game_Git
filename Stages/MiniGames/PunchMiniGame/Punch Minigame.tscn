@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://co0ha8sp7qfqg"]
 
 [ext_resource type="Script" path="res://Stages/MiniGames/PunchMiniGame/Punch Fish.gd" id="1_rco4h"]
-[ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Assets/Sprites/fsh.png" id="2_dkria"]
+[ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="2_dkria"]
 
 
 [sub_resource type="Curve2D" id="Curve2D_n1roc"]
