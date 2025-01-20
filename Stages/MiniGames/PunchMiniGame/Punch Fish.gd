@@ -1,6 +1,7 @@
 extends PathFollow2D
 
 @onready var timer: Timer = $Timer
+@onready var progress_bar: ProgressBar = $"../ProgressBar"
 
 # random fish speed
 var ran_speed = RandomNumberGenerator.new()
@@ -29,15 +30,16 @@ func _process(delta: float) -> void:
 		progress_ratio -= speed * delta
 
 
-	if Input.is_action_pressed("ui_accept") and in_fish:
-		score += 1
+	if Input.is_action_just_pressed("ui_accept") and in_fish:
+		progress_bar.value += 30
 		print(score)
 		in_fish = false
 		New_side()
 
 
-	if Input.is_action_pressed("ui_accept") and (in_fish == false):
+	if Input.is_action_just_pressed("ui_accept") and (in_fish == false):
 		New_side()
+		progress_bar.value -= 10
 
 
 func New_side():
@@ -59,7 +61,6 @@ func New_side():
 
 func _on_timer_timeout() -> void:
 	New_side()
-	score -= 1
 
 
 func _on_area_2d_2_area_entered(area: Area2D) -> void:
