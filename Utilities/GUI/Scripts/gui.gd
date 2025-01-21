@@ -11,7 +11,7 @@ func _on_book_icon_pressed() -> void:
 	var new_scene_instance = MyScene.instantiate()
 	
 	# Find the instance of the gui path to 
-	var gui_node = get_tree().root.get_node("Node2D/Gui")
+	var gui_node = get_tree().root.get_node("GamePrototype/Gui")
 	# Add the new scene instance to the CanvasLayer or Control node
 	gui_node.add_child(new_scene_instance)
 	

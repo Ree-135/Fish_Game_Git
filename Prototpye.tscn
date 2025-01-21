@@ -1,59 +1,63 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_88yrs"]
-[ext_resource type="Texture2D" uid="uid://c643li6j6kc6t" path="res://Common/Assets/Sprites/Protoworld.png" id="1_i5pbe"]
 [ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_7oy5s"]
-[ext_resource type="PackedScene" uid="uid://cy7vxkgkegm26" path="res://Entities/FishingSpots/FishinSpot.tscn" id="2_h53q8"]
+[ext_resource type="Texture2D" uid="uid://syd13iep6fot" path="res://Common/Assets/Sprites/Protoworld2.png" id="2_l45p7"]
 [ext_resource type="PackedScene" uid="uid://cyshisjpjhkwf" path="res://Utilities/GUI/Scenes/GUI.tscn" id="3_1fffa"]
+[ext_resource type="PackedScene" uid="uid://crrlysmabfi0b" path="res://Entities/FishingSpots/FishingSpot.tscn" id="4_iscv4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
 distance = -0.059835
 
-[node name="Node2D" type="Node2D"]
+[node name="GamePrototype" type="Node2D"]
 
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource("1_88yrs")
 
-[node name="WestBarier" type="StaticBody2D" parent="."]
-position = Vector2(-1004, -1)
+[node name="ProtoMap" type="Sprite2D" parent="."]
+position = Vector2(3, 1)
+texture = ExtResource("2_l45p7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WestBarier"]
-position = Vector2(-5.99919, 0.0988761)
-shape = SubResource("WorldBoundaryShape2D_ox5xy")
-
-[node name="SouthBarier" type="StaticBody2D" parent="."]
-position = Vector2(0, 748)
-rotation = -1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SouthBarier"]
-position = Vector2(2.62964e-12, 1.14945e-19)
-shape = SubResource("WorldBoundaryShape2D_ox5xy")
-
-[node name="EastBarier" type="StaticBody2D" parent="."]
-position = Vector2(996, 1)
-rotation = -3.14159
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EastBarier"]
-shape = SubResource("WorldBoundaryShape2D_ox5xy")
-
-[node name="NorthBarier" type="StaticBody2D" parent="."]
-position = Vector2(-2, -756)
+[node name="NorthBarier" type="StaticBody2D" parent="ProtoMap"]
+position = Vector2(-5, -1152)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NorthBarier"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/NorthBarier"]
 position = Vector2(1, -1)
 shape = SubResource("WorldBoundaryShape2D_ox5xy")
 
-[node name="ProtoMap" type="Sprite2D" parent="."]
-position = Vector2(3, -1)
-texture = ExtResource("1_i5pbe")
+[node name="EastBarier" type="StaticBody2D" parent="ProtoMap"]
+position = Vector2(1530, -1)
+rotation = -3.14159
 
-[node name="FishinSpot" parent="." instance=ExtResource("2_h53q8")]
-position = Vector2(-213, 281)
-scale = Vector2(0.120737, 0.0864662)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/EastBarier"]
+shape = SubResource("WorldBoundaryShape2D_ox5xy")
+
+[node name="SouthBarier" type="StaticBody2D" parent="ProtoMap"]
+position = Vector2(-6, 1149)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/SouthBarier"]
+position = Vector2(2.62964e-12, 1.14945e-19)
+shape = SubResource("WorldBoundaryShape2D_ox5xy")
+
+[node name="WestBarier" type="StaticBody2D" parent="ProtoMap"]
+position = Vector2(-1524, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/WestBarier"]
+position = Vector2(-5.99919, 0.0988761)
+shape = SubResource("WorldBoundaryShape2D_ox5xy")
+
+[node name="FishingSpot" parent="." instance=ExtResource("4_iscv4")]
+offset_left = -164.0
+offset_top = 130.0
+offset_right = -79.0
+offset_bottom = 152.0
 
 [node name="Boat" parent="." instance=ExtResource("2_7oy5s")]
 position = Vector2(-348, 154)
 
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
+
+[connection signal="pressed" from="FishingSpot" to="GameController" method="_on_fishing_spot_pressed"]

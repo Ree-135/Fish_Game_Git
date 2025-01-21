@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://crrlysmabfi0b"]
+
+[ext_resource type="Texture2D" uid="uid://chbysp17lnns1" path="res://Entities/FishingSpots/FishingSpot.png" id="1_tkkn5"]
+[ext_resource type="Script" path="res://Entities/FishingSpots/fishing_spot.gd" id="2_5ihrr"]
+
+[node name="FishingSpot" type="TextureButton"]
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.009
+anchor_right = 0.001
+anchor_bottom = 0.009
+offset_left = -0.152
+offset_top = -0.832
+offset_right = 84.848
+offset_bottom = 21.168
+texture_normal = ExtResource("1_tkkn5")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_5ihrr")
