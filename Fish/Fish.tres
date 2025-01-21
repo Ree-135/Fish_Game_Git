@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://ctaob0cebgmuu"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_m0jwf"]
+
+[resource]
+script = ExtResource("1_m0jwf")
+Name = "Fish!"
+Max_Weight = 0
+Min_Weight = 0
+Type = 0
+Spawn_Location = 0
+Random_Weight = null
