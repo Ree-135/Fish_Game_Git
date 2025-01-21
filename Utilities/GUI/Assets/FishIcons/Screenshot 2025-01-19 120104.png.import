@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciy40uxasq2kv"
-path="res://.godot/imported/AdobeStock_477169444.jpeg-9fa6786131482f614b849eafdcb20416.ctex"
+uid="uid://b1iehdd27mk7n"
+path="res://.godot/imported/Screenshot 2025-01-19 120104.png-f4d4ed167da69fc328d6f232ea59aaa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Utilities/GUI/Fishipedia/Assets/AdobeStock_477169444.jpeg"
-dest_files=["res://.godot/imported/AdobeStock_477169444.jpeg-9fa6786131482f614b849eafdcb20416.ctex"]
+source_file="res://Utilities/GUI/Assets/FishIcons/Screenshot 2025-01-19 120104.png"
+dest_files=["res://.godot/imported/Screenshot 2025-01-19 120104.png-f4d4ed167da69fc328d6f232ea59aaa0.ctex"]
 
 [params]
 

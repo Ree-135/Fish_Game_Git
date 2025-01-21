@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cryipmxchfafh"]
 
-[ext_resource type="Texture2D" uid="uid://ciy40uxasq2kv" path="res://Utilities/GUI/Fishipedia/Assets/AdobeStock_477169444.jpeg" id="1_1qu8t"]
-[ext_resource type="PackedScene" uid="uid://cv6a6ym3rlmhx" path="res://Entities/Player/Scenes/Player.tscn" id="1_ecm47"]
-[ext_resource type="Texture2D" uid="uid://iu4rbxlhh2eh" path="res://Utilities/GUI/Fishipedia/Assets/Screenshot 2025-01-19 120117.png" id="1_jates"]
+[ext_resource type="Texture2D" uid="uid://ciy40uxasq2kv" path="res://Utilities/GUI/Assets/Book/AdobeStock_477169444.jpeg" id="1_dqvdy"]
+[ext_resource type="Texture2D" uid="uid://iu4rbxlhh2eh" path="res://Utilities/GUI/Assets/FishIcons/Screenshot 2025-01-19 120117.png" id="2_n3jt2"]
+[ext_resource type="PackedScene" uid="uid://cv6a6ym3rlmhx" path="res://Entities/Player/Scenes/Player.tscn" id="3_r6ice"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nd7rm"]
-texture = ExtResource("1_1qu8t")
+texture = ExtResource("1_dqvdy")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6rh0"]
 bg_color = Color(0.73128, 0.711595, 0.66042, 1)
@@ -20,6 +20,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -94,7 +96,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j6rh0")
 [node name="Screenshot2025-01-19120117" type="Sprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos/PanelContainer2"]
 position = Vector2(210, 128.25)
 scale = Vector2(0.886667, 0.991713)
-texture = ExtResource("1_jates")
+texture = ExtResource("2_n3jt2")
 
 [node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos"]
 custom_minimum_size = Vector2(425, 50)
@@ -102,7 +104,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme_override_styles/panel = SubResource("StyleBoxFlat_j6rh0")
 
-[node name="CharacterBody2D" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos/PanelContainer3" instance=ExtResource("1_ecm47")]
+[node name="CharacterBody2D" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos/PanelContainer3" instance=ExtResource("3_r6ice")]
 position = Vector2(220.5, 128)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
