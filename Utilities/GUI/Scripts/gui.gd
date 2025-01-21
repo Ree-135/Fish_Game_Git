@@ -14,7 +14,8 @@ func _on_book_icon_pressed() -> void:
 	var gui_node = get_tree().root.get_node("Node2D/Gui")
 	# Add the new scene instance to the CanvasLayer or Control node
 	gui_node.add_child(new_scene_instance)
-		
-	# Optionally, you can set the position or any properties of the new scene
-	#new_scene_instance.rect_position = Vector2(100, 100)  # Example position
 	
+	
+	# The next step is to add a X button to the book pages to that the book can be closed.
+	
+	# The book will also have many pages wich are really just menu screens that aren't made yet but for now, lets focus on being able to close the book

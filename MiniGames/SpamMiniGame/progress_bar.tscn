@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bddqw08l3ctuu"]
+
+[ext_resource type="Script" path="res://MiniGames/SpamMiniGame/SpamBar.gd" id="1_2bp3e"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_k3yhm"]
+color = Color(0, 0.878431, 0, 1)
+thickness = 27
+
+[node name="ProgressBar" type="ProgressBar"]
+offset_left = 165.0
+offset_top = 218.0
+offset_right = 315.0
+offset_bottom = 245.0
+rotation = 4.71239
+theme_override_styles/fill = SubResource("StyleBoxLine_k3yhm")
+value = 10.0
+show_percentage = false
+script = ExtResource("1_2bp3e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -103.0
+offset_right = 122.0
+offset_bottom = -80.0
+rotation = 1.58287
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

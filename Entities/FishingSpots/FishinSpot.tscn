@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy7vxkgkegm26"]
+
+[ext_resource type="Script" path="res://Entities/FishingSpots/fishin_spot.gd" id="1_dm5cl"]
+[ext_resource type="Texture2D" uid="uid://chbysp17lnns1" path="res://Entities/FishingSpots/FishingSpot.png" id="1_wpmdd"]
+
+[node name="FishinSpot" type="Sprite2D"]
+position = Vector2(331, 91)
+texture = ExtResource("1_wpmdd")
+script = ExtResource("1_dm5cl")

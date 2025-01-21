@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcewy4ye6gagn"]
+
+[ext_resource type="Texture2D" uid="uid://cq415s12d1py1" path="res://MiniGames/BarMiniGame/Assets/Bar holder.png" id="1_h8cb4"]
+
+
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7ymjw"]
+distance = -240.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fc1hu"]
+normal = Vector2(-1.49012e-08, 1)
+
+[node name="Bobber Holder" type="Sprite2D"]
+position = Vector2(2.98023e-08, 0)
+scale = Vector2(0.0458333, 0.0458333)
+texture = ExtResource("1_h8cb4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-6.50233e-07, -240)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 229.975)
+shape = SubResource("WorldBoundaryShape2D_7ymjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 9.64)
+shape = SubResource("WorldBoundaryShape2D_fc1hu")
