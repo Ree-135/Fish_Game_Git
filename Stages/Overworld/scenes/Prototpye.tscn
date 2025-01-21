@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=5 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Texture2D" uid="uid://c643li6j6kc6t" path="res://Stages/Overworld/assets/Protoworld.png" id="1_xlrt1"]
 [ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_wd8cx"]
+[ext_resource type="PackedScene" uid="uid://cyshisjpjhkwf" path="res://Utilities/GUI/Scenes/GUI.tscn" id="3_70uqj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -45,3 +46,5 @@ position = Vector2(-1004, -1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WestBarier"]
 position = Vector2(-5.99919, 0.0988761)
 shape = SubResource("WorldBoundaryShape2D_ox5xy")
+
+[node name="Gui" parent="." instance=ExtResource("3_70uqj")]
