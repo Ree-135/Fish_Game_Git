@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnyxmfwsmvm8p"]
 
-[ext_resource type="Script" path="res://game_controller.gd" id="1_88yrs"]
+[ext_resource type="Script" path="res://GameController.gd" id="1_vbshc"]
 [ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_7oy5s"]
 [ext_resource type="Texture2D" uid="uid://syd13iep6fot" path="res://Common/Assets/Sprites/Protoworld2.png" id="2_l45p7"]
 [ext_resource type="PackedScene" uid="uid://cyshisjpjhkwf" path="res://Utilities/GUI/Scenes/GUI.tscn" id="3_1fffa"]
@@ -11,13 +11,13 @@ normal = Vector2(1, 8.74201e-08)
 distance = -0.059835
 
 [node name="GamePrototype" type="Node2D"]
-
-[node name="GameController" type="Node2D" parent="."]
-script = ExtResource("1_88yrs")
+scale = Vector2(0.944443, 1.01539)
+script = ExtResource("1_vbshc")
 
 [node name="ProtoMap" type="Sprite2D" parent="."]
 position = Vector2(3, 1)
 texture = ExtResource("2_l45p7")
+metadata/_edit_lock_ = true
 
 [node name="NorthBarier" type="StaticBody2D" parent="ProtoMap"]
 position = Vector2(-5, -1152)
@@ -54,10 +54,11 @@ offset_left = -164.0
 offset_top = 130.0
 offset_right = -79.0
 offset_bottom = 152.0
+script = null
 
 [node name="Boat" parent="." instance=ExtResource("2_7oy5s")]
 position = Vector2(-348, 154)
 
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 
-[connection signal="pressed" from="FishingSpot" to="GameController" method="_on_fishing_spot_pressed"]
+[connection signal="pressed" from="FishingSpot" to="." method="_on_fishing_spot_pressed"]

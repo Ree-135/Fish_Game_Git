@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 	if (progress_ratio <= progress_point + detection_range) and (progress_ratio >= progress_point - detection_range):
 		ran.randomize()
 		progress_point = float(ran.randi_range(0, nodes)) / nodes
-		print(progress_point)
+		#print(progress_point)
 	#all this says if the fish gets close enough to the progress point, make a new point to move towards
 	
 	if in_fish == true and score < 1:
