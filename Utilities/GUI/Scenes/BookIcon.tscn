@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqdv15si2fj37"]
+
+[ext_resource type="Texture2D" uid="uid://cwyk4y3pfl4xj" path="res://Utilities/GUI/Assets/Book/pngtree-beautiful-cartoon-vector-symbol-icon-of-a-standing-closed-book-design-vector-png-image_25403796.png" id="1_li06n"]
+
+[node name="BookIcon" type="TextureButton"]
+anchors_preset = -1
+anchor_left = 0.004
+anchor_right = 0.07
+anchor_bottom = 0.114
+offset_left = 980.392
+offset_top = 487.0
+offset_right = 980.36
+offset_bottom = 487.128
+scale = Vector2(1.74194, 1.8)
+texture_normal = ExtResource("1_li06n")
+ignore_texture_size = true
+stretch_mode = 0

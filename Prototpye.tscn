@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=7 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_vbshc"]
 [ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_7oy5s"]
 [ext_resource type="Texture2D" uid="uid://syd13iep6fot" path="res://Common/Assets/Sprites/Protoworld2.png" id="2_l45p7"]
 [ext_resource type="PackedScene" uid="uid://cyshisjpjhkwf" path="res://Utilities/GUI/Scenes/GUI.tscn" id="3_1fffa"]
+[ext_resource type="PackedScene" uid="uid://bqdv15si2fj37" path="res://Utilities/GUI/Scenes/BookIcon.tscn" id="5_jjefk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -50,7 +51,9 @@ shape = SubResource("WorldBoundaryShape2D_ox5xy")
 
 [node name="Boat" parent="." instance=ExtResource("2_7oy5s")]
 position = Vector2(-348, 154)
-max_speed = null
-drag_factor = null
 
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
+
+[node name="BookIcon" parent="Gui" instance=ExtResource("5_jjefk")]
+
+[connection signal="pressed" from="Gui/BookIcon" to="." method="_on_book_icon_pressed"]

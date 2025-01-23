@@ -9,16 +9,22 @@ enum State {
 
 # Current state variable
 var current_state: State = State.OVERWORLD
-
+# Preload the scenes you want to add
+var MyScene2 = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 # Preload all minigames
 var MyScene = preload("res://MiniGames/BarMiniGame/Bar Minigame.tscn")
-@onready var player_node = get_node("Boat")
+var player_scene = preload("res://Entities/Player/Scenes/boat.tscn")
+var can_move = true
 #var player_script = player_node.get_script()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Initialize randomize
 	randomize()
+	
+	var player_node = get_node("Boat")
+	
+	
 	
 	# Spawn fishing spots
 	spawn_fishing_spots(5)  # Spawn 5 fishing spots
@@ -27,6 +33,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#var player_node = get_node("Boat")
 	pass
 
 # Function to change the state
@@ -42,18 +49,19 @@ func change_state(new_state: State):
 
 # Function to handle entering a state
 func enter_state(state: State):
+	
 	match state:
 		State.OVERWORLD:
 			print("Entering OverWorld")
-			player_node.can_move = true
+			can_move = true
 		State.MINIGAME:
 			print("Entering MiniGame")
 			# Initialize MiniGame here
-			player_node.can_move = false
+			can_move = false
 		State.MENU:
 			print("Entering Menu")
 			# Initialize Menu here
-			player_node.can_move = false
+			can_move = false
 
 # Function to handle exiting a state
 func exit_state(state: State):
@@ -80,7 +88,8 @@ func spawn_fishing_spots(count: int) -> void:
 		fishing_spot_instance.position = Vector2(randf_range(-1000, 1200), randf_range(-1000, 1000))  # Adjust the range as needed
 		fishing_spot_instance.connect("pressed",_on_fishing_spot_pressed)
 		# Add the fishing spot to the current scene
-		add_child(fishing_spot_instance)
+		var map_node = get_tree().root.get_node("GamePrototype/ProtoMap")
+		map_node.add_child(fishing_spot_instance)
 
 # Function to handle fishing spot interaction
 func _on_fishing_spot_pressed() -> void:
@@ -106,5 +115,23 @@ func start_fishing() -> void:
 	
 	change_state(GameController.State.MINIGAME)
 	
+
+
+# there are lots more nodes we can use to add extra polish, like a saftey animation that plays when the mouse hovers over the bookicon
+func _on_book_icon_pressed() -> void:
+	# Print("use this item")
+	# We want to use the fishipedia when this is pressed
+	# Create an instance of the scene
+	var new_scene_instance = MyScene2.instantiate()
+	
+	# Find the instance of the gui path to 
+	var gui_node = get_tree().root.get_node("GamePrototype/Gui")
+	# Add the new scene instance to the CanvasLayer or Control node
+	gui_node.add_child(new_scene_instance)
+	
+	change_state(GameController.State.MENU)
 	
 	
+	# The next step is to add a X button to the book pages to that the book can be closed.
+	
+	# The book will also have many pages wich are really just menu screens that aren't made yet but for now, lets focus on being able to close the book

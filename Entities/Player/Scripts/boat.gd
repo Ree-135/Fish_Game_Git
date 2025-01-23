@@ -4,10 +4,10 @@ extends CharacterBody2D
 
 var desired_velocity := Vector2.ZERO
 var steering_velocity := Vector2.ZERO
-var can_move = true
+var can_move := true
 
 func _physics_process(_delta: float) -> void:
-	if can_move:
+	if GameController.can_move:
 		var direction = Input.get_vector('move_left',"move_right","move_up","move_down")
 		desired_velocity = direction * max_speed # set desired velocity to direction * max speed
 		steering_velocity = desired_velocity - velocity #set steering velocity to desired velocity - velocity
