@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://ch2wwpjjsxsin"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_q5ny7"]
+
+[resource]
+script = ExtResource("1_q5ny7")
+Name = "Atlantic Sturgeon"
+Weight = 7000
+Max_Weight = 12800
+Min_Weight = 5000
+Type = 0
+Spawn_Location = 0
+Random_Weight = null
+Has_Been_Caught = false

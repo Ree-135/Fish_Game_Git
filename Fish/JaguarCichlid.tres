@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://ba11o6drbcehw"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_8ksqy"]
+
+[resource]
+script = ExtResource("1_8ksqy")
+Name = "Jaguar Cichlid"
+Weight = 21
+Max_Weight = 21
+Min_Weight = 10
+Type = 1
+Spawn_Location = 0
+Random_Weight = null
+Has_Been_Caught = false

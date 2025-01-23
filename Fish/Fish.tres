@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_m0jwf")
 Name = "Fish!"
+Weight = 0
 Max_Weight = 0
 Min_Weight = 0
 Type = 0

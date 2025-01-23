@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://cl6qvdg1gpw50"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_r57c3"]
+
+[resource]
+script = ExtResource("1_r57c3")
+Name = "Clown Knifefish"
+Weight = 180
+Max_Weight = 240
+Min_Weight = 120
+Type = 1
+Spawn_Location = 0
+Random_Weight = null
+Has_Been_Caught = false

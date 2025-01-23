@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://cptg84xwjiedo"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_hcyf3"]
+
+[resource]
+script = ExtResource("1_hcyf3")
+Name = "Mosquitofish"
+Weight = 1
+Max_Weight = 0
+Min_Weight = 0
+Type = 1
+Spawn_Location = 0
+Random_Weight = null
+Has_Been_Caught = false

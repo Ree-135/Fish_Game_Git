@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://g5h2o3ey3h4k"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_ucs34"]
+
+[resource]
+script = ExtResource("1_ucs34")
+Name = "Bowfin"
+Weight = 288
+Max_Weight = 300
+Min_Weight = 250
+Type = 0
+Spawn_Location = 0
+Random_Weight = null
+Has_Been_Caught = false

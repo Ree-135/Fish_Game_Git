@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://csuce2slgoyp6"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_5obyj"]
+
+[resource]
+script = ExtResource("1_5obyj")
+Name = "Snakehead"
+Weight = 240
+Max_Weight = 250
+Min_Weight = 200
+Type = 1
+Spawn_Location = 0
+Random_Weight = null
+Has_Been_Caught = false

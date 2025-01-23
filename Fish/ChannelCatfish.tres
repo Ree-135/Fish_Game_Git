@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://eg21bhrny6to"]
+
+[ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_f23kx"]
+
+[resource]
+script = ExtResource("1_f23kx")
+Name = "Channel Catfish"
+Weight = 600
+Max_Weight = 800
+Min_Weight = 190
+Type = 0
+Spawn_Location = 0
+Random_Weight = null
+Has_Been_Caught = false
