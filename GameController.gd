@@ -27,7 +27,7 @@ func _ready() -> void:
 	
 	
 	# Spawn fishing spots
-	spawn_fishing_spots(5)  # Spawn 5 fishing spots
+	spawn_fishing_spots(15)  # Spawn 5 fishing spots
 	#here we can set a timer to spawn more fishingspots later
 	# or if fishingspots is < 5 or whatever the max is, create another random one
 	

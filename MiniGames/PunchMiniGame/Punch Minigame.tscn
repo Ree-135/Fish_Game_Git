@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="2_dkria"]
 
 
+
 [sub_resource type="Curve2D" id="Curve2D_n1roc"]
 _data = {
 "points": PackedVector2Array(-2.31175, 64.256, 2.31175, -64.256, 64, 128, 0, 0, 0, 0, 192, 64, -14.0843, -61.1047, 14.0843, 61.1047, 320, 128)
