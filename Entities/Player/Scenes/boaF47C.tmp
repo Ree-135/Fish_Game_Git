@@ -10,8 +10,6 @@ radius = 21.5407
 
 [node name="Boat" type="CharacterBody2D"]
 script = ExtResource("1_hh5y0")
-max_speed = null
-drag_factor = null
 
 [node name="Boat" type="Sprite2D" parent="."]
 position = Vector2(3.60818, -0.297312)

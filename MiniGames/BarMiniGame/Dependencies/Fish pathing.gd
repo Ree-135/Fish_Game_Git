@@ -50,7 +50,9 @@ func _process(delta: float) -> void:
 		score -= Catch_Speed
 	# both cases are just score counters, +up if bar is in the fish, -down if bar not in fish
 	
+	"""
 	if score >= 1:
 		print("you win! :D")
 	if score <= 0:
 		print("you lose :(")
+	"""
