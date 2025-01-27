@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://bguav8tidjyaj"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://bguav8tidjyaj"]
 
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_jpcux"]
+[ext_resource type="Texture2D" uid="uid://c7hurqdnetklo" path="res://Fish/SheepsHead.png" id="1_t72mu"]
 
 [resource]
 script = ExtResource("1_jpcux")
 Name = "Sheepshead"
+FishTexture = ExtResource("1_t72mu")
 Weight = 240
 Max_Weight = 280
 Min_Weight = 200
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

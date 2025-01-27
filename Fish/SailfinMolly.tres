@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://bs6bk4psd5wuh"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://bs6bk4psd5wuh"]
 
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_485hv"]
+[ext_resource type="Texture2D" uid="uid://cvqmk6s7o83fd" path="res://Fish/Sailfin Molly.png" id="1_sc3xq"]
 
 [resource]
 script = ExtResource("1_485hv")
 Name = "Sailfin Molly"
+FishTexture = ExtResource("1_sc3xq")
 Weight = 1
 Max_Weight = 0
 Min_Weight = 0
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

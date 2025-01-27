@@ -10,7 +10,7 @@ class_name Fish
 @export var Type:Typing = 0 ##What typing the fish is
 @export var Spawn_Location:Special = 0 ##Maybe we'll use this?? just allows different locations for fish
 @export var Random_Weight:int = RandomNumberGenerator.new().randi_range(Min_Weight, Max_Weight) ##No clue if this acually works
-
+@export var Caught:bool = false ##A test variable to see if the fish has ever been caught befor
 
 enum Typing {Native, Invasive}
 enum Special {Nothing, Deep, Shallow}

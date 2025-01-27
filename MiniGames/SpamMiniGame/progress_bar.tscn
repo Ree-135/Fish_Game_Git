@@ -1,19 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bddqw08l3ctuu"]
+[gd_scene load_steps=4 format=3 uid="uid://bddqw08l3ctuu"]
 
 [ext_resource type="Script" path="res://MiniGames/SpamMiniGame/SpamBar.gd" id="1_2bp3e"]
+[ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="2_uyjfo"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_k3yhm"]
 color = Color(0, 0.878431, 0, 1)
 thickness = 27
 
 [node name="ProgressBar" type="ProgressBar"]
-offset_left = 165.0
-offset_top = 218.0
-offset_right = 315.0
-offset_bottom = 245.0
+offset_left = 498.0
+offset_top = 562.0
+offset_right = 648.0
+offset_bottom = 589.0
 rotation = 4.71239
+scale = Vector2(3.32734, 3.32734)
 theme_override_styles/fill = SubResource("StyleBoxLine_k3yhm")
-value = 10.0
+value = 15.0
 show_percentage = false
 script = ExtResource("1_2bp3e")
 
@@ -31,5 +33,33 @@ offset_right = 122.0
 offset_bottom = -80.0
 rotation = 1.58287
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 92.5666
+offset_top = 39.3707
+offset_right = 160.567
+offset_bottom = 93.3707
+rotation = 1.57079
+scale = Vector2(0.499838, 0.499838)
+text = "Release
+Fish"
+
+[node name="Fish Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 106.993
+offset_top = 31.8572
+offset_right = 193.993
+offset_bottom = 62.8572
+rotation = 1.57079
+scale = Vector2(0.404853, 0.404853)
+text = "type : bleh"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(131.336, 56.5015)
+rotation = 1.57079
+scale = Vector2(0.0456313, 0.0456313)
+texture = ExtResource("2_uyjfo")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

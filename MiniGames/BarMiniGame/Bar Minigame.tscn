@@ -1,24 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciad5wn6uhmus"]
+[gd_scene load_steps=7 format=3 uid="uid://ciad5wn6uhmus"]
 
 [ext_resource type="PackedScene" uid="uid://dcewy4ye6gagn" path="res://MiniGames/BarMiniGame/Dependencies/bobber holder.tscn" id="1_mctcb"]
 [ext_resource type="PackedScene" uid="uid://b8ri2awwfpx8v" path="res://MiniGames/BarMiniGame/Dependencies/Bobber.tscn" id="2_yhbl8"]
-[ext_resource type="PackedScene" uid="uid://df1uj4wfq3tue" path="res://MiniGames/BarMiniGame/Dependencies/Fish path.tscn" id="3_tk7bt"]
+[ext_resource type="PackedScene" uid="uid://df1uj4wfq3tue" path="res://MiniGames/BarMiniGame/Dependencies/BarMinigame.tscn" id="3_tk7bt"]
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="4_7n7t0"]
 
 [sub_resource type="Curve2D" id="Curve2D_v4yi8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -265.349, 256.151, 0, 0, 0, 0, -246.399, 256.251)
+"points": PackedVector2Array(0, 0, 0, 0, -264.199, 256.051, 0, 0, 0, 0, -247.349, 256.051)
 }
 point_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh13x"]
+bg_color = Color(0.157479, 0.722811, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(551, 297)
 scale = Vector2(20, 20)
 
 [node name="Bobber Holder" parent="." instance=ExtResource("1_mctcb")]
+scale = Vector2(0.0458333, 0.0392857)
 
 [node name="Bobber Bar" parent="." instance=ExtResource("2_yhbl8")]
-scale = Vector2(1, 0.3)
+scale = Vector2(1.016, 0.5)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(256, 256)
@@ -26,9 +30,12 @@ rotation = 1.5708
 curve = SubResource("Curve2D_v4yi8")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("3_tk7bt")]
-position = Vector2(-265.349, 256.151)
+position = Vector2(-264.199, 256.051)
 rotation = 0.0
 scale = Vector2(0.05, 0.05)
+speed = 3.0
+nodes = 20
+Catch_Speed = 0.002
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-1.95, -0.549967)
@@ -36,8 +43,33 @@ rotation = -1.5708
 scale = Vector2(0.100152, 0.100152)
 texture = ExtResource("4_7n7t0")
 
-[node name="Label2" type="Label" parent="Path2D/PathFollow2D"]
-offset_left = -12.999
-offset_top = 265.001
-offset_right = 27.001
-offset_bottom = 288.001
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -7.85
+offset_top = 8.8
+offset_right = 26.15
+offset_bottom = 35.8
+rotation = -1.57079
+scale = Vector2(0.531315, 0.0877074)
+theme_override_styles/fill = SubResource("StyleBoxFlat_qh13x")
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="Button" type="Button" parent="."]
+offset_left = 5.35
+offset_top = -3.95
+offset_right = 73.35
+offset_bottom = 50.05
+scale = Vector2(0.101503, 0.101503)
+text = "Release
+Fish"
+
+[node name="Fish_Label" type="Label" parent="."]
+offset_left = -6.55
+offset_top = -12.75
+offset_right = 124.45
+offset_bottom = 10.25
+scale = Vector2(0.112613, 0.112613)
+text = "Fish Type: Native"
+
+[connection signal="pressed" from="Button" to="Path2D/PathFollow2D" method="_on_button_pressed"]

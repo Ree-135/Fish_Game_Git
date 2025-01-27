@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://eg21bhrny6to"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://eg21bhrny6to"]
 
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_f23kx"]
+[ext_resource type="Texture2D" uid="uid://bistni5b2jj5b" path="res://Fish/Channel Catfish.png" id="1_jk3rq"]
 
 [resource]
 script = ExtResource("1_f23kx")
 Name = "Channel Catfish"
+FishTexture = ExtResource("1_jk3rq")
 Weight = 600
 Max_Weight = 800
 Min_Weight = 190
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

@@ -2,6 +2,12 @@ extends PathFollow2D
 
 @onready var timer: Timer = $Timer
 @onready var progress_bar: ProgressBar = $"../ProgressBar"
+@onready var path_lr: Path2D = $".."
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var fish_label: Label = $"../fish_Label"
+
+
+var the_fish = GameController.fish_selector()
 
 # random fish speed
 var ran_speed = RandomNumberGenerator.new()
@@ -20,6 +26,15 @@ func _ready() -> void:
 	print(side)
 	if side == false:
 		progress = 308
+	
+	sprite_2d.texture = the_fish.FishTexture
+	
+	progress_bar.value = 1
+	
+	if the_fish.Type == 0:
+		fish_label.text = "Fish type: Native"
+	if the_fish.Type == 1:
+		fish_label.text = "Fish type: Invasive"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,7 +47,6 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_accept") and in_fish:
 		progress_bar.value += 30
-		print(score)
 		in_fish = false
 		New_side()
 
@@ -40,6 +54,17 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and (in_fish == false):
 		New_side()
 		progress_bar.value -= 10
+		
+	if progress_bar.value >= 100:
+		GameController.fish_winner(the_fish)
+		GameController.stop_fishing()
+		GameController.change_state(GameController.State.OVERWORLD)
+		path_lr.queue_free()
+		
+	if progress_bar.value <= 0:
+		GameController.stop_fishing()
+		GameController.change_state(GameController.State.OVERWORLD)
+		path_lr.queue_free()
 
 
 func New_side():
@@ -65,7 +90,12 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_2_area_entered(area: Area2D) -> void:
 	in_fish = true
-	print("In area")
 
 func _on_area_2d_2_area_exited(area: Area2D) -> void:
 	in_fish = false
+	
+
+func _on_button_pressed() -> void:
+	GameController.stop_fishing()
+	GameController.change_state(GameController.State.OVERWORLD)
+	path_lr.queue_free()

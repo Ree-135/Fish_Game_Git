@@ -7,14 +7,29 @@ extends ProgressBar
 @onready var PlayTimer: Timer = $Timer
 @onready var ReelTimer: Timer = $Timer2
 @onready var label: Label = $Label
+@onready var progress_bar: ProgressBar = $"."
+
+
+@onready var release_button: Button = $"Release Button"
+@onready var fish_Label: Label = $"Fish Label"
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+
 
 var playing = 1
-
+var the_fish = GameController.fish_selector()
 
 func _ready() -> void:
 	PlayTimer.start()
 	ReelTimer.start()
 	label.text = "REEL!!"
+	
+	sprite_2d.texture = the_fish.FishTexture
+	
+	if the_fish.Type == 0:
+		fish_Label.text = "Fish type: Native"
+	if the_fish.Type == 1:
+		fish_Label.text = "Fish type: Invasive"
 	
 func _process(delta: float) -> void:
 	if playing == -1:
@@ -27,10 +42,17 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and playing == -1:
 		value -= Hurt_percentage
 	
-	if value == 100:
-		print("you win!!!")
-	if value == 0:
-		print("you lose")
+	if value >= 100:
+		GameController.fish_winner(the_fish)
+		GameController.stop_fishing()
+		GameController.change_state(GameController.State.OVERWORLD)
+		progress_bar.queue_free()
+
+	if value <= 0:
+		GameController.stop_fishing()
+		GameController.change_state(GameController.State.OVERWORLD)
+		progress_bar.queue_free()
+
 
 
 func _on_timer_timeout() -> void:
@@ -39,3 +61,13 @@ func _on_timer_timeout() -> void:
 
 func _on_timer_2_timeout() -> void:
 	value -= pull_force
+	
+
+
+	
+
+
+func _on_button_pressed() -> void:
+	GameController.stop_fishing()
+	GameController.change_state(GameController.State.OVERWORLD)
+	progress_bar.queue_free() 

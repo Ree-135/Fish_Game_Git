@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://673stc8n5sed"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://673stc8n5sed"]
 
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_7fjwu"]
+[ext_resource type="Texture2D" uid="uid://ch3vlglpl5of3" path="res://Fish/Rainbow Trout.png" id="1_nwdim"]
 
 [resource]
 script = ExtResource("1_7fjwu")
 Name = "Rainbow Trout"
+FishTexture = ExtResource("1_nwdim")
 Weight = 90
 Max_Weight = 130
 Min_Weight = 60
 Type = 1
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

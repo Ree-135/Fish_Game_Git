@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://q57d80abxuar"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://q57d80abxuar"]
 
+[ext_resource type="Texture2D" uid="uid://h6xve3n3mjtb" path="res://Fish/Swamp Darter.png" id="1_qwos8"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_tbo7r"]
 
 [resource]
 script = ExtResource("1_tbo7r")
 Name = "Swamp Darter"
+FishTexture = ExtResource("1_qwos8")
 Weight = 2
 Max_Weight = 0
 Min_Weight = 0
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

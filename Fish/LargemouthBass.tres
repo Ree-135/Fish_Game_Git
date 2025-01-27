@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://c2ynbl1lmaeo0"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://c2ynbl1lmaeo0"]
 
+[ext_resource type="Texture2D" uid="uid://bhkbcitw4txwh" path="res://Fish/Largemouth Bass.png" id="1_kq5dx"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_ll3qp"]
 
 [resource]
 script = ExtResource("1_ll3qp")
 Name = "Largemouth Bass"
+FishTexture = ExtResource("1_kq5dx")
 Weight = 230
 Max_Weight = 320
 Min_Weight = 128
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

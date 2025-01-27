@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://ch2wwpjjsxsin"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://ch2wwpjjsxsin"]
 
+[ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="1_2qs3h"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_q5ny7"]
 
 [resource]
 script = ExtResource("1_q5ny7")
 Name = "Atlantic Sturgeon"
+FishTexture = ExtResource("1_2qs3h")
 Weight = 7000
 Max_Weight = 12800
 Min_Weight = 5000
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

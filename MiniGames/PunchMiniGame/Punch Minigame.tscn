@@ -3,8 +3,6 @@
 [ext_resource type="Script" path="res://MiniGames/PunchMiniGame/Punch Fish.gd" id="1_rco4h"]
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="2_dkria"]
 
-
-
 [sub_resource type="Curve2D" id="Curve2D_n1roc"]
 _data = {
 "points": PackedVector2Array(-2.31175, 64.256, 2.31175, -64.256, 64, 128, 0, 0, 0, 0, 192, 64, -14.0843, -61.1047, 14.0843, 61.1047, 320, 128)
@@ -72,8 +70,25 @@ offset_bottom = 17.6355
 theme_override_styles/fill = SubResource("StyleBoxFlat_mj7y8")
 rounded = true
 allow_greater = true
+show_percentage = false
+
+[node name="Button" type="Button" parent="."]
+offset_left = 298.997
+offset_top = -20.7358
+offset_right = 356.997
+offset_bottom = 37.2642
+text = "Release
+Fish"
+
+[node name="fish_Label" type="Label" parent="."]
+offset_left = 122.408
+offset_top = -38.1271
+offset_right = 263.408
+offset_bottom = -15.1271
+text = "Fish type: bleh hehe"
 
 [connection signal="timeout" from="PathFollow2D/Timer" to="PathFollow2D" method="_on_timer_timeout"]
 [connection signal="area_entered" from="PathFollow2D/Area2D2" to="PathFollow2D" method="_on_area_2d_2_area_entered"]
 [connection signal="area_exited" from="PathFollow2D/Area2D2" to="PathFollow2D" method="_on_area_2d_2_area_exited"]
 [connection signal="area_entered" from="Area2D" to="PathFollow2D" method="_on_area_2d_area_entered"]
+[connection signal="pressed" from="Button" to="PathFollow2D" method="_on_button_pressed"]

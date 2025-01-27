@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://5ltim0haunax"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://5ltim0haunax"]
 
+[ext_resource type="Texture2D" uid="uid://cc53iuq14hn4o" path="res://Fish/Great Barracuda.png" id="1_rvkaq"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_t4628"]
 
 [resource]
 script = ExtResource("1_t4628")
 Name = "Great Baracuda"
+FishTexture = ExtResource("1_rvkaq")
 Weight = 320
 Max_Weight = 400
 Min_Weight = 260
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

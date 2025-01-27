@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://4wminv7qm04l"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://4wminv7qm04l"]
 
+[ext_resource type="Texture2D" uid="uid://blhux8iwjx5gv" path="res://Fish/Oscar.png" id="1_k6ahu"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_l3vg2"]
 
 [resource]
 script = ExtResource("1_l3vg2")
 Name = "Oscar"
+FishTexture = ExtResource("1_k6ahu")
 Weight = 32
 Max_Weight = 60
 Min_Weight = 20
 Type = 1
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

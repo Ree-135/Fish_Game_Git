@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://b7pwnioyh41qk"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://b7pwnioyh41qk"]
 
+[ext_resource type="Texture2D" uid="uid://dqwwmhvqn7nmk" path="res://Fish/florida Gar.png" id="1_p6elj"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_xrh3k"]
 
 [resource]
 script = ExtResource("1_xrh3k")
 Name = "Florida Gar"
+FishTexture = ExtResource("1_p6elj")
 Weight = 160
 Max_Weight = 200
 Min_Weight = 140
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

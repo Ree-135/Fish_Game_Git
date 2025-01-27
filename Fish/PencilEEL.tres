@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://jlcjoctooghf"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://jlcjoctooghf"]
 
+[ext_resource type="Texture2D" uid="uid://dylfg42cn1su6" path="res://Fish/PencilEel.png" id="1_che0r"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_o3bym"]
 
 [resource]
 script = ExtResource("1_o3bym")
 Name = "Pencil Eel"
+FishTexture = ExtResource("1_che0r")
 Weight = 260
 Max_Weight = 310
 Min_Weight = 210
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false

@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://bsddwhgjeamui"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://bsddwhgjeamui"]
 
+[ext_resource type="Texture2D" uid="uid://d8smnvoy6614" path="res://Fish/Buffalo.png" id="1_d7e4t"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_qs4g6"]
 
 [resource]
 script = ExtResource("1_qs4g6")
 Name = "Bufflo"
+FishTexture = ExtResource("1_d7e4t")
 Weight = 240
 Max_Weight = 290
 Min_Weight = 190
 Type = 0
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false

@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Fish" load_steps=2 format=3 uid="uid://c8uhqex5sj3el"]
+[gd_resource type="Resource" script_class="Fish" load_steps=3 format=3 uid="uid://c8uhqex5sj3el"]
 
+[ext_resource type="Texture2D" uid="uid://xlryt75f2lg7" path="res://Fish/Peacock Fish.png" id="1_t1cyl"]
 [ext_resource type="Script" path="res://Fish/FishBase.gd" id="1_vbh6u"]
 
 [resource]
 script = ExtResource("1_vbh6u")
 Name = "Peacock Bass"
+FishTexture = ExtResource("1_t1cyl")
 Weight = 320
 Max_Weight = 400
 Min_Weight = 270
 Type = 1
 Spawn_Location = 0
 Random_Weight = null
-Has_Been_Caught = false
+Caught = false
