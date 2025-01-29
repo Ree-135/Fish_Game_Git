@@ -77,12 +77,18 @@ func _process(delta: float) -> void:
 	if score >= 1:
 		GameController.fish_winner(the_fish)
 		GameController.stop_fishing()
+		GameController.can_move = true
+		GameController.is_fishing = false
 		node_2d.queue_free()
 
 	if score <= 0:
 		GameController.stop_fishing()
+		GameController.can_move = true
+		GameController.is_fishing = false
 		node_2d.queue_free()
 
 func _on_button_pressed() -> void:
 	GameController.stop_fishing()
+	GameController.can_move = true
+	GameController.is_fishing = false
 	node_2d.queue_free()

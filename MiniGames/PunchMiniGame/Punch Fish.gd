@@ -57,9 +57,11 @@ func _process(delta: float) -> void:
 		
 	if progress_bar.value >= 100:
 		GameController.fish_winner(the_fish)
+		GameController.stop_fishing()
 		path_lr.queue_free()
 		
 	if progress_bar.value <= 0:
+		GameController.stop_fishing()
 		path_lr.queue_free()
 
 
