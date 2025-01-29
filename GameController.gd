@@ -71,12 +71,15 @@ func _process(delta: float) -> void:
 func change_state(new_state: State):
 	# Exit the current state
 	exit_state(current_state)
-	
+	var timer = 100
+	while timer > 0:
+		timer -= 1
+	if timer == 0:
 	# Change to the new state
-	current_state = new_state
+		current_state = new_state
 	
 	# Enter the new state
-	enter_state(current_state)
+		enter_state(current_state)
 
 # Function to handle entering a state
 func enter_state(state: State):
@@ -149,21 +152,19 @@ func spawn_fishing_spots(count: int) -> void:
 
 # Function to handle fishing spot interaction
 func _on_fishing_spot_pressed() -> void:
-	if current_state == State.OVERWORLD:
+	if current_state != State.MINIGAME:
 		print("You are fishing!")
 		
 		# Start fishing logic
 		start_fishing()
 		
-	else:
-		print("You are already fishing")
+	if current_state == State.MINIGAME:
+		#change_state(State.MINIGAME)
+		print("your in a game")
 
 #process to end fishing
 func stop_fishing() -> void:
-	if current_state == State.MINIGAME:
-		exit_state(State.MINIGAME)
-		change_state(State.OVERWORLD)
-		enter_state(State.OVERWORLD)
+	change_state(State.OVERWORLD)
 	
 # process to start fishing
 func start_fishing() -> void:

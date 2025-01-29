@@ -45,25 +45,25 @@ func _process(delta: float) -> void:
 		progress_ratio -= speed * delta
 
 
-	if Input.is_action_just_pressed("ui_accept") and in_fish:
+	if Input.is_action_just_pressed("Action_Button") and in_fish:
 		progress_bar.value += 30
 		in_fish = false
 		New_side()
 
 
-	if Input.is_action_just_pressed("ui_accept") and (in_fish == false):
+	if Input.is_action_just_pressed("Action_Button") and (in_fish == false):
 		New_side()
 		progress_bar.value -= 10
 		
 	if progress_bar.value >= 100:
 		GameController.fish_winner(the_fish)
-		GameController.stop_fishing()
-		GameController.change_state(GameController.State.OVERWORLD)
+		GameController.current_state = GameController.State.OVERWORLD
+		GameController.enter_state( GameController.State.OVERWORLD)
 		path_lr.queue_free()
 		
 	if progress_bar.value <= 0:
-		GameController.stop_fishing()
-		GameController.change_state(GameController.State.OVERWORLD)
+		GameController.current_state = GameController.State.OVERWORLD
+		GameController.enter_state( GameController.State.OVERWORLD)
 		path_lr.queue_free()
 
 
@@ -79,7 +79,7 @@ func New_side():
 	if side:
 		progress = 0
 	if side == false:
-		progress = 308
+		progress = 634
 	
 	timer.start()
 
@@ -97,5 +97,6 @@ func _on_area_2d_2_area_exited(area: Area2D) -> void:
 
 func _on_button_pressed() -> void:
 	GameController.stop_fishing()
-	GameController.change_state(GameController.State.OVERWORLD)
+	GameController.current_state = GameController.State.OVERWORLD
+	GameController.enter_state( GameController.State.OVERWORLD)
 	path_lr.queue_free()

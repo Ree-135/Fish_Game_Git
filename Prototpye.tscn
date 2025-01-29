@@ -56,4 +56,6 @@ position = Vector2(-348, 154)
 
 [node name="BookIcon" parent="Gui" instance=ExtResource("5_jjefk")]
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="Gui/BookIcon" to="." method="_on_book_icon_pressed"]

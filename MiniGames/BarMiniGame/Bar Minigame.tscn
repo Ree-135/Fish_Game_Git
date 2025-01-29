@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_v4yi8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -264.199, 256.051, 0, 0, 0, 0, -247.349, 256.051)
+"points": PackedVector2Array(0, 0, 0, 0, -263.949, 256.051, 0, 0, 0, 0, -248.049, 256.051)
 }
 point_count = 2
 
@@ -30,9 +30,10 @@ rotation = 1.5708
 curve = SubResource("Curve2D_v4yi8")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("3_tk7bt")]
-position = Vector2(-264.199, 256.051)
+position = Vector2(-248.049, 256.051)
 rotation = 0.0
 scale = Vector2(0.05, 0.05)
+progress = 16.6
 speed = 3.0
 nodes = 20
 Catch_Speed = 0.002
@@ -44,10 +45,10 @@ scale = Vector2(0.100152, 0.100152)
 texture = ExtResource("4_7n7t0")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -7.85
-offset_top = 8.8
-offset_right = 26.15
-offset_bottom = 35.8
+offset_left = -9.45
+offset_top = 9.0
+offset_right = 24.55
+offset_bottom = 36.0
 rotation = -1.57079
 scale = Vector2(0.531315, 0.0877074)
 theme_override_styles/fill = SubResource("StyleBoxFlat_qh13x")

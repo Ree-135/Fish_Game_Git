@@ -44,13 +44,12 @@ func _ready() -> void:
 	if the_fish.Type == 1:
 		fish_label.text = "Fish type: Invasive"
 
-	
+	sprite_2d.texture = the_fish.FishTexture
 	
 var the_fish = GameController.fish_selector()
 
 func _process(delta: float) -> void:
 	
-	sprite_2d.texture = the_fish.FishTexture
 	
 	progress_ratio += speed * delta * (progress_point - progress_ratio)
 	# moves the fish to the progress point along the line
@@ -73,19 +72,19 @@ func _process(delta: float) -> void:
 	if score >= 1:
 		
 		GameController.fish_winner(the_fish)
-		GameController.stop_fishing()
-		GameController.change_state(GameController.State.OVERWORLD)
+		GameController.current_state = GameController.State.OVERWORLD
+		GameController.enter_state( GameController.State.OVERWORLD)
 		node_2d.queue_free()
 		
 
 
 	if score <= 0:
-		GameController.stop_fishing()
-		GameController.change_state(GameController.State.OVERWORLD)
+		GameController.current_state = GameController.State.OVERWORLD
+		GameController.enter_state( GameController.State.OVERWORLD)
 		node_2d.queue_free()
 
 
 func _on_button_pressed() -> void:
-	GameController.stop_fishing()
-	GameController.change_state(GameController.State.OVERWORLD)
+	GameController.current_state = GameController.State.OVERWORLD
+	GameController.enter_state( GameController.State.OVERWORLD)
 	node_2d.queue_free()
