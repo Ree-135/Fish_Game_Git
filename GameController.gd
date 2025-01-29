@@ -47,6 +47,7 @@ var Invasive_counter = 0
 func _ready() -> void:
 	# Initialize randomize
 	randomize()
+	print("contoll variables set")
 	can_move = true
 	is_fishing = false
 	# Spawn fishing spots
@@ -62,6 +63,7 @@ func _process(delta: float) -> void:
 
 # will select a fish at random (for minigames)
 func fish_selector():
+	print("fish selected")
 	var fish
 	var random_list = RandomNumberGenerator.new().randi_range(0,1)
 	
@@ -84,11 +86,12 @@ func fish_winner(the_fish):
 	the_fish.Caught = true
 	print(Native_Counter)
 	print(Invasive_counter)
-	print("minigame ended")
+	print("minigame ended, score updated")
 
 
 # Function to spawn fishing spots
 func spawn_fishing_spots(count: int) -> void:
+	print("fishingspots spawned")
 	for i in range(count):
 		var fishing_spot_scene = preload("res://Entities/FishingSpots/FishingSpot.tscn")  # Preload your fishing spot scene
 		var fishing_spot_instance = fishing_spot_scene.instantiate()
@@ -100,27 +103,30 @@ func spawn_fishing_spots(count: int) -> void:
 		# Add the fishing spot to the current scene
 		var map_node = get_tree().root.get_node("GamePrototype/ProtoMap")
 		map_node.add_child(fishing_spot_instance)
+		
 
 # Function to handle fishing spot interaction
 func _on_fishing_spot_pressed() -> void:
+	print("fishingspot pressed")
 	if is_fishing == false:
-		print("You are fishing!")
 		
 		# Start fishing logic
 		start_fishing()
 		
-	if is_fishing == true:
+	else:
 		#change_state(State.MINIGAME)
-		print("your in a game")
-
+		print("you are already fishing")
+		#do nothing?
 #process to end fishing
 func stop_fishing() -> void:
-	print("you stopped fishing")
+	print("you stopped fishing, controll variables reset")
+	#set controll variables
 	is_fishing = false
 	can_move = true
 	
 # process to start fishing
 func start_fishing() -> void:
+	print("you are fishing, controll vars updated")
 	
 	var game_selector = RandomNumberGenerator.new().randi_range(0,2)
 	var new_scene_instance
@@ -139,12 +145,13 @@ func start_fishing() -> void:
 	# Add the new scene instance to the CanvasLayer or Control node
 	gui_node.add_child(new_scene_instance)
 	
+	#set controll variables
 	is_fishing = true
 	can_move = false
 
 # there are lots more nodes we can use to add extra polish, like a saftey animation that plays when the mouse hovers over the bookicon
 func _on_book_icon_pressed() -> void:
-	# Print("use this item")
+	print("book opened")
 	# We want to use the fishipedia when this is pressed
 	# Create an instance of the scene
 	var new_scene_instance = MyScene2.instantiate()
@@ -154,6 +161,7 @@ func _on_book_icon_pressed() -> void:
 	# Add the new scene instance to the CanvasLayer or Control node
 	gui_node.add_child(new_scene_instance)
 	
+	#update controll variables
 	can_move = false
 	
 	

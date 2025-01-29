@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=6 format=3 uid="uid://cnyxmfwsmvm8p"]
 
-[ext_resource type="Script" path="res://GameController.gd" id="1_vbshc"]
 [ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_7oy5s"]
 [ext_resource type="Texture2D" uid="uid://syd13iep6fot" path="res://Common/Assets/Sprites/Protoworld2.png" id="2_l45p7"]
 [ext_resource type="PackedScene" uid="uid://cyshisjpjhkwf" path="res://Utilities/GUI/Scenes/GUI.tscn" id="3_1fffa"]
@@ -12,7 +11,6 @@ distance = -0.059835
 
 [node name="GamePrototype" type="Node2D"]
 scale = Vector2(0.944443, 1.01539)
-script = ExtResource("1_vbshc")
 
 [node name="ProtoMap" type="Sprite2D" parent="."]
 position = Vector2(3, 1)
