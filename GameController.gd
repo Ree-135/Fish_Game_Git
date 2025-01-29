@@ -1,15 +1,5 @@
 extends Node
 
-# Set state variables
-enum State {
-	OVERWORLD, # Player can move freely, click on book to open menu, and interact with fishing spots / other environmental things
-	MINIGAME, # Player cannot move, click on book, or interact with fishing spots / other environmental things
-	MENU # Player cannot move, click on book, or interact with fishing spots / other environmental things this is similar to MINIGAME but will have specific ui things later
-}
-
-
-# Current state variable
-var current_state: State = State.OVERWORLD
 # Preload the scenes you want to add
 var MyScene2 = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 # Preload all minigames
@@ -18,8 +8,8 @@ var PunchMini = preload("res://MiniGames/PunchMiniGame/Punch Minigame.tscn")
 var SpamMini = preload("res://MiniGames/SpamMiniGame/progress_bar.tscn")
 var player_scene = preload("res://Entities/Player/Scenes/boat.tscn")
 
-var can_move = true
-#var player_script = player_node.get_script()
+var can_move 
+var is_fishing 
 
 # array of all the native fish 
 var fish_listNATIVE: Array = [
@@ -54,9 +44,8 @@ var Invasive_counter = 0
 func _ready() -> void:
 	# Initialize randomize
 	randomize()
-	var player_node = get_node("Boat")
-	
-	
+	can_move = true
+	is_fishing = false
 	# Spawn fishing spots
 	spawn_fishing_spots(15)  # Spawn 5 fishing spots
 	#here we can set a timer to spawn more fishingspots later
@@ -66,49 +55,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#var player_node = get_node("Boat")
 	pass
-	
-# Function to change the state
-func change_state(new_state: State):
-	# Exit the current state
-	exit_state(current_state)
-	var timer = 100
-	while timer > 0:
-		timer -= 1
-	if timer == 0:
-	# Change to the new state
-		current_state = new_state
-	
-	# Enter the new state
-		enter_state(current_state)
 
-# Function to handle entering a state
-func enter_state(state: State):
-	
-	match state:
-		State.OVERWORLD:
-			print("Entering OverWorld")
-			can_move = true
-		State.MINIGAME:
-			print("Entering MiniGame")
-			# Initialize MiniGame here
-			can_move = false
-		State.MENU:
-			print("Entering Menu")
-			# Initialize Menu here
-			can_move = false
-
-# Function to handle exiting a state
-func exit_state(state: State):
-	match state:
-		State.OVERWORLD:
-			print("Exiting OverWorld")
-			# Cleanup OverWorld here
-		State.MINIGAME:
-			print("Exiting MiniGame")
-			# Cleanup MiniGame here
-		State.MENU:
-			print("Exiting Menu")
-			# Cleanup Menu here
 
 # will select a fish at random (for minigames)
 func fish_selector():
@@ -152,19 +99,21 @@ func spawn_fishing_spots(count: int) -> void:
 
 # Function to handle fishing spot interaction
 func _on_fishing_spot_pressed() -> void:
-	if current_state != State.MINIGAME:
+	if is_fishing == false:
 		print("You are fishing!")
 		
 		# Start fishing logic
 		start_fishing()
 		
-	if current_state == State.MINIGAME:
+	if is_fishing == true:
 		#change_state(State.MINIGAME)
 		print("your in a game")
 
 #process to end fishing
 func stop_fishing() -> void:
-	change_state(State.OVERWORLD)
+	print("you stopped fishing")
+	is_fishing = false
+	can_move = true
 	
 # process to start fishing
 func start_fishing() -> void:
@@ -186,7 +135,8 @@ func start_fishing() -> void:
 	# Add the new scene instance to the CanvasLayer or Control node
 	gui_node.add_child(new_scene_instance)
 	
-	change_state(GameController.State.MINIGAME)
+	is_fishing = true
+	can_move = false
 
 # there are lots more nodes we can use to add extra polish, like a saftey animation that plays when the mouse hovers over the bookicon
 func _on_book_icon_pressed() -> void:
@@ -200,7 +150,7 @@ func _on_book_icon_pressed() -> void:
 	# Add the new scene instance to the CanvasLayer or Control node
 	gui_node.add_child(new_scene_instance)
 	
-	change_state(GameController.State.MENU)
+	can_move = false
 	
 	
 	# The next step is to add a X button to the book pages to that the book can be closed.

@@ -44,13 +44,9 @@ func _process(delta: float) -> void:
 	
 	if value >= 100:
 		GameController.fish_winner(the_fish)
-		GameController.current_state = GameController.State.OVERWORLD
-		GameController.enter_state( GameController.State.OVERWORLD)
 		progress_bar.queue_free()
 
 	if value <= 0:
-		GameController.current_state = GameController.State.OVERWORLD
-		GameController.enter_state( GameController.State.OVERWORLD)
 		progress_bar.queue_free()
 
 
@@ -69,6 +65,4 @@ func _on_timer_2_timeout() -> void:
 
 func _on_button_pressed() -> void:
 	GameController.stop_fishing()
-	GameController.current_state = GameController.State.OVERWORLD
-	GameController.enter_state( GameController.State.OVERWORLD)
 	progress_bar.queue_free() 
