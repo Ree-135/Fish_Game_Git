@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bklu8oy3yyevo"]
 
 [ext_resource type="Script" path="res://Entities/Player/Scripts/boat.gd" id="1_hh5y0"]
-[ext_resource type="Texture2D" uid="uid://bxoonwbcyld2f" path="res://Entities/Player/Assets/Boats - Copy.png" id="2_s8gsh"]
+[ext_resource type="Texture2D" uid="uid://c3n14q1b0xhqk" path="res://Common/Assets/Sprites/Boat.png" id="2_nwwwu"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/node_2d.gd" id="3_n5huo"]
 [ext_resource type="Texture2D" uid="uid://bldleywhfpfhc" path="res://Common/Assets/Sprites/greg gator.png" id="4_5vwfc"]
 
@@ -12,10 +12,10 @@ radius = 21.5407
 script = ExtResource("1_hh5y0")
 
 [node name="Boat" type="Sprite2D" parent="."]
-position = Vector2(3.60818, -0.297312)
-rotation = 4.71239
-scale = Vector2(4.28831, 2.05854)
-texture = ExtResource("2_s8gsh")
+position = Vector2(-0.473099, -7.40742e-07)
+rotation = 3.14159
+scale = Vector2(0.0395655, 0.0458539)
+texture = ExtResource("2_nwwwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -29,7 +29,7 @@ limit_smoothed = true
 script = ExtResource("3_n5huo")
 
 [node name="Smilyface" type="Sprite2D" parent="Node2D"]
-position = Vector2(-0.999992, -1.52588e-05)
+position = Vector2(-4.76837e-07, 0)
 rotation = -1.5708
-scale = Vector2(0.0550379, 0.0548438)
+scale = Vector2(0.0445955, 0.0444382)
 texture = ExtResource("4_5vwfc")

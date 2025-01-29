@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dcewy4ye6gagn" path="res://MiniGames/BarMiniGame/Dependencies/bobber holder.tscn" id="1_mctcb"]
 [ext_resource type="PackedScene" uid="uid://b8ri2awwfpx8v" path="res://MiniGames/BarMiniGame/Dependencies/Bobber.tscn" id="2_yhbl8"]
-[ext_resource type="PackedScene" uid="uid://df1uj4wfq3tue" path="res://MiniGames/BarMiniGame/Dependencies/BarMinigame.tscn" id="3_tk7bt"]
+[ext_resource type="PackedScene" uid="uid://df1uj4wfq3tue" path="res://MiniGames/BarMiniGame/Dependencies/Fish path.tscn" id="3_tk7bt"]
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="4_7n7t0"]
 
 [sub_resource type="Curve2D" id="Curve2D_v4yi8"]
@@ -20,6 +20,7 @@ scale = Vector2(20, 20)
 
 [node name="Bobber Holder" parent="." instance=ExtResource("1_mctcb")]
 scale = Vector2(0.0458333, 0.0392857)
+texture = null
 
 [node name="Bobber Bar" parent="." instance=ExtResource("2_yhbl8")]
 scale = Vector2(1.016, 0.5)
