@@ -17,6 +17,9 @@ extends PathFollow2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var fish_label: Label = $"../../Fish_Label"
+@onready var node_2d: Node2D = $"../.."
+
+@onready var progress_bar: ProgressBar = $"../../ProgressBar"
 
 
 
@@ -48,12 +51,14 @@ func _ready() -> void:
 		fish_label.text = "Type: Native"
 	if the_fish.Type == 1:
 		fish_label.text = "Type: Invasive"
+		
+	score = .15
 
 # by not dirrectly affecting the score inside the entered and exit body 2D (next line)
 	# it allows us to make the score happen every frame in _process, otherwise it would only happen once
 
 func _process(delta: float) -> void:
-	
+	progress_bar.value = score
 	progress_ratio += speed * delta * (progress_point - progress_ratio)
 	# moves the fish to the progress point along the line
 	
@@ -66,9 +71,18 @@ func _process(delta: float) -> void:
 	if in_fish == true and score < 1:
 		score += Catch_Speed
 	if (in_fish == false) and (score > 0):
-		score -= Catch_Speed
+		score -= Catch_Speed / 2
 	# both cases are just score counters, +up if bar is in the fish, -down if bar not in fish
 	
 	if score >= 1:
 		GameController.fish_winner(the_fish)
-		
+		GameController.stop_fishing()
+		node_2d.queue_free()
+
+	if score <= 0:
+		GameController.stop_fishing()
+		node_2d.queue_free()
+
+func _on_button_pressed() -> void:
+	GameController.stop_fishing()
+	node_2d.queue_free()

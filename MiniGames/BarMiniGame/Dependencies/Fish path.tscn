@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" path="res://MiniGames/BarMiniGame/Dependencies/Fish pathing.gd" id="1_fsply"]
 
-
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ky8ev"]
 size = Vector2(45, 101)
 
@@ -13,16 +11,6 @@ rotation = 1.5708
 rotates = false
 script = ExtResource("1_fsply")
 speed = 5.0
-
-[node name="Disclaimer" type="Label" parent="."]
-offset_left = -7.99997
-offset_top = 8.00003
-offset_right = 143.0
-offset_bottom = 57.0
-rotation = -1.5761
-scale = Vector2(0.145013, 0.136263)
-text = "parent a Path node
-child a sprite image"
 
 [node name="Area2D" type="Area2D" parent="."]
 input_pickable = false
