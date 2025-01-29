@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2jwm7gcfj5ui"]
-
-[ext_resource type="Script" path="res://Fish_Game_Git/scripts/test.gd" id="1_02han"]
-
-[node name="Game" type="Node2D"]
-
-[node name="Test" type="Node" parent="."]
-script = ExtResource("1_02han")
