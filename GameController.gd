@@ -81,6 +81,7 @@ func fish_winner(the_fish):
 	the_fish.Caught = true
 	print(Native_Counter)
 	print(Invasive_counter)
+	print("minigame ended")
 
 
 # Function to spawn fishing spots
