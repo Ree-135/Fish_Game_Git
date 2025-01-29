@@ -20,6 +20,7 @@ scale = Vector2(20, 20)
 
 [node name="Bobber Holder" parent="." instance=ExtResource("1_mctcb")]
 scale = Vector2(0.0458333, 0.0392857)
+texture = null
 
 [node name="Bobber Bar" parent="." instance=ExtResource("2_yhbl8")]
 scale = Vector2(1.016, 0.5)

@@ -15,6 +15,11 @@ extends PathFollow2D
 @export var detection_range: float = .01 ##How close the fish has to get to the node (recommend .01 -> .5) to move to the next node
 @export var Catch_Speed: float = .001 ##How fast the fish is cought while in the bar (VERY low numbers recommended)
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var fish_label: Label = $"../../Fish_Label"
+
+
+
 var score = .10 # how "caught" the fish is in perchantage, this is a starting value
 var in_fish:bool = false # testing value for if the bar is in the fish or not
 
@@ -28,7 +33,21 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	in_fish = false
-# tests if fish left the bar
+# tests if fish left the bar 
+
+
+
+var the_fish = GameController.fish_selector()
+
+
+func _ready() -> void:
+	#fish personalization
+	sprite_2d.texture = the_fish.FishTexture
+	
+	if the_fish.Type == 0:
+		fish_label.text = "Type: Native"
+	if the_fish.Type == 1:
+		fish_label.text = "Type: Invasive"
 
 # by not dirrectly affecting the score inside the entered and exit body 2D (next line)
 	# it allows us to make the score happen every frame in _process, otherwise it would only happen once
@@ -50,9 +69,6 @@ func _process(delta: float) -> void:
 		score -= Catch_Speed
 	# both cases are just score counters, +up if bar is in the fish, -down if bar not in fish
 	
-	"""
 	if score >= 1:
-		print("you win! :D")
-	if score <= 0:
-		print("you lose :(")
-	"""
+		GameController.fish_winner(the_fish)
+		
