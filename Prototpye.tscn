@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=13 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
 [ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_7oy5s"]
 [ext_resource type="Texture2D" uid="uid://dgh2aoequ2rjs" path="res://Utilities/GUI/Assets/DayNight/daynightcycle-gradient-texture.tres" id="2_gcoq1"]
-[ext_resource type="Texture2D" uid="uid://syd13iep6fot" path="res://Common/Assets/Sprites/Protoworld2.png" id="2_l45p7"]
 [ext_resource type="PackedScene" uid="uid://cyshisjpjhkwf" path="res://Utilities/GUI/Scenes/GUI.tscn" id="3_1fffa"]
+[ext_resource type="Texture2D" uid="uid://dm54gn7s0453h" path="res://Common/Assets/Sprites/Overworld/Water.png" id="4_2ao1e"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/gui.gd" id="4_2hsho"]
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="6_oqtiw"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="7_l2hac"]
 [ext_resource type="PackedScene" uid="uid://vp0affi01d3t" path="res://Utilities/GUI/Assets/DayNight/daynightcycle_ui.tscn" id="9_16jiu"]
+[ext_resource type="Texture2D" uid="uid://d076xlcmjrc4d" path="res://Common/Assets/Sprites/Overworld/Ground.png" id="11_kr8ju"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -26,11 +27,11 @@ gradient = ExtResource("2_gcoq1")
 
 [node name="ProtoMap" type="Sprite2D" parent="."]
 position = Vector2(3, 1)
-texture = ExtResource("2_l45p7")
+texture = ExtResource("4_2ao1e")
 metadata/_edit_lock_ = true
 
 [node name="NorthBarier" type="StaticBody2D" parent="ProtoMap"]
-position = Vector2(-5, -1152)
+position = Vector2(-5.11765, -1998.26)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/NorthBarier"]
@@ -38,14 +39,14 @@ position = Vector2(1, -1)
 shape = SubResource("WorldBoundaryShape2D_ox5xy")
 
 [node name="EastBarier" type="StaticBody2D" parent="ProtoMap"]
-position = Vector2(1530, -1)
+position = Vector2(1999.24, 3.92422)
 rotation = -3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/EastBarier"]
 shape = SubResource("WorldBoundaryShape2D_ox5xy")
 
 [node name="SouthBarier" type="StaticBody2D" parent="ProtoMap"]
-position = Vector2(-6, 1149)
+position = Vector2(0.176476, 1995.28)
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/SouthBarier"]
@@ -53,7 +54,7 @@ position = Vector2(2.62964e-12, 1.14945e-19)
 shape = SubResource("WorldBoundaryShape2D_ox5xy")
 
 [node name="WestBarier" type="StaticBody2D" parent="ProtoMap"]
-position = Vector2(-1524, -10)
+position = Vector2(-1993.59, 10.8181)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProtoMap/WestBarier"]
 position = Vector2(-5.99919, 0.0988761)
@@ -86,3 +87,17 @@ offset_bottom = 22.0
 scale = Vector2(0.00595088, 0.00723143)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2.01955e-06, 0)
+scale = Vector2(1, 1)
+
+[node name="Ground" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(30.7059, -5.90906)
+scale = Vector2(1, 1)
+texture = ExtResource("11_kr8ju")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-2.01955e-06, 0)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-1381.77, 19.6969, -1358.47, -259.014, -1505.65, -582.042, -1572.36, -838.102, -1505.65, -1161.13, -1310.83, -1381.74, -868.237, -1621.05, -121.765, -1708.7, -112.235, -1562.95, -55.0589, -1559.01, 115.412, -1567.87, 105.883, -1731.35, 609.883, -1779.61, 999.531, -1740.22, 1199.65, -1554.08, 1308.71, -1284.24, 1251.53, -939.54, 1280.12, -793.784, 1494, -506.209, 1726.94, -37.424, 1898.47, 205.832, 1902.71, 616.512, 1746, 1014.39, 1551.18, 1284.24, 1266.35, 1408.33, 885.178, 1474.31, 462.707, 1456.58, -22.2353, 1479.23, -530.471, 1637.79, -1039.77, 1704.76, -1415.65, 1633.85, -1543.77, 1505.83, -1538.47, 1231.05, -1400.83, 607.648, -1343.65, 94.545, -2004.36, 15.7575, -1985.3, 1996.28, 2031.89, 1987.41, 2031.89, -2001.2, -1990.59, -1992.34, -1994.83, -55.1512, -1348.94, 76.8178)
