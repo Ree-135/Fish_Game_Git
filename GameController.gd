@@ -42,7 +42,7 @@ var fish_listINVASIVE: Array = [
 	preload("res://Fish/ClownKnifefish.tres"),]
 
 #Starting Fish Values
-@export var Fish_Amount := 10 # total number of starting fish
+@export var Fish_Amount := 25 # total number of starting fish
 @export_range(0,1,0.1) var Percent_Native := 0.7 #starting perecnt of native fish
 var Percent_Invasive = 1 - Percent_Native  #starting percent of invasive fish
 var fish_distribution: Array #array to store amount of total fish

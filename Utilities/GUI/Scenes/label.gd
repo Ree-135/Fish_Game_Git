@@ -10,4 +10,4 @@ func _process(delta: float) -> void:
 	native = GameController.Native_Counter
 	invasive = GameController.Invasive_counter
 	Jam = GameController.currency
-	text = "Native fish held: " + str(native) + "\nInvasive fish held: " + str(invasive) + "\nJam: " + str(Jam)
+	text = "Native Fish Caught: " + str(native) + "   Invasive Fish Caught: " + str(invasive)

@@ -4,7 +4,6 @@ extends PathFollow2D
 @onready var progress_bar: ProgressBar = $"../ProgressBar"
 @onready var path_lr: Path2D = $".."
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var fish_label: Label = $"../fish_Label"
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
@@ -32,11 +31,6 @@ func _ready() -> void:
 	sprite_2d.texture = the_fish.FishTexture
 	
 	progress_bar.value = 1
-	
-	if the_fish.Type == 0:
-		fish_label.text = "Fish type: Native"
-	if the_fish.Type == 1:
-		fish_label.text = "Fish type: Invasive"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dm54gn7s0453h" path="res://Common/Assets/Sprites/Overworld/Water.png" id="4_2ao1e"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/gui.gd" id="4_2hsho"]
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="6_oqtiw"]
-[ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="7_l2hac"]
+[ext_resource type="Script" path="res://Native label.gd" id="9_0h1aw"]
 [ext_resource type="PackedScene" uid="uid://vp0affi01d3t" path="res://Utilities/GUI/Assets/DayNight/daynightcycle_ui.tscn" id="9_16jiu"]
 [ext_resource type="Texture2D" uid="uid://dxsn82d4q18yo" path="res://Common/Assets/Sprites/Book.png" id="11_enipg"]
 [ext_resource type="Texture2D" uid="uid://d076xlcmjrc4d" path="res://Common/Assets/Sprites/Overworld/Ground.png" id="11_kr8ju"]
@@ -70,17 +70,16 @@ position = Vector2(2.11768, -1.9697)
 script = ExtResource("4_2hsho")
 
 [node name="NAtive label" type="Label" parent="Gui"]
-offset_left = 852.0
-offset_top = 10.0
-offset_right = 5101.0
-offset_bottom = 1313.0
+offset_left = -18.9999
+offset_top = 121.0
+offset_right = 4230.0
+offset_bottom = 1424.0
 scale = Vector2(0.0685421, 0.0695337)
 theme_override_fonts/font = ExtResource("6_oqtiw")
 theme_override_font_sizes/font_size = 500
-text = "Native fish held: 00
-Invasive fish held: 00"
+text = "Jam: 00"
 horizontal_alignment = 1
-script = ExtResource("7_l2hac")
+script = ExtResource("9_0h1aw")
 
 [node name="DayNightCycleUI" parent="Gui" instance=ExtResource("9_16jiu")]
 offset_left = 18.0

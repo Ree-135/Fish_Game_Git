@@ -74,7 +74,7 @@ func _process(delta: float) -> void:
 		left_sprite.texture = Native[i].FishTexture
 		l_name_label.text = str(Native[i].Name)
 		l_type.text = "Type: Native"
-		l_weight.text = "Weight: " + str(Native[i].Weight)
+		l_weight.text = "Weight: " + str(Native[i].Weight) + " Pancakes"
 
 
 		if Native[i].Caught == true:
@@ -95,7 +95,7 @@ func _process(delta: float) -> void:
 		right_sprite.texture = Invasive[i].FishTexture
 		r_name_label.text = str(Invasive[i].Name)
 		r_type.text = "Type: Invasive"
-		r_weight.text = "Weight: " + str(Invasive[i].Weight)
+		r_weight.text = "Weight: " + str(Invasive[i].Weight) + " Pancakes"
 		
 		if Invasive[i].Caught == true:
 			r_caught.text = "Caught: Ye >:("

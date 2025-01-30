@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cryipmxchfafh"]
+[gd_scene load_steps=5 format=3 uid="uid://cryipmxchfafh"]
 
 [ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="1_706j5"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/fishipedia.gd" id="1_vb0px"]
+[ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="3_j41ii"]
+[ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="4_sowsi"]
 
 [node name="Fishipedia" type="Control"]
 layout_mode = 3
@@ -60,21 +62,21 @@ text = "Type: "
 
 [node name="L_weight" type="Label" parent="Left_Page"]
 layout_mode = 0
-offset_left = 80.2931
-offset_top = 1265.56
+offset_left = 80.293
+offset_top = 1483.29
 offset_right = 1780.29
-offset_bottom = 1915.56
-scale = Vector2(0.205083, 0.26463)
+offset_bottom = 2133.29
+scale = Vector2(0.11487, 0.148224)
 theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Weight: "
 
 [node name="L_caught" type="Label" parent="Left_Page"]
 layout_mode = 0
-offset_left = 78.749
-offset_top = 1456.07
-offset_right = 1778.75
-offset_bottom = 2106.07
+offset_left = 71.0284
+offset_top = 1262.84
+offset_right = 1776.03
+offset_bottom = 1912.84
 scale = Vector2(0.205083, 0.26463)
 theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
@@ -118,21 +120,21 @@ text = "Type: "
 
 [node name="R_weight" type="Label" parent="Right_Page"]
 layout_mode = 0
-offset_left = 80.2931
-offset_top = 1265.56
+offset_left = 80.293
+offset_top = 1483.29
 offset_right = 1780.29
-offset_bottom = 1915.56
-scale = Vector2(0.205083, 0.26463)
+offset_bottom = 2133.29
+scale = Vector2(0.131771, 0.170032)
 theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Weight: "
 
 [node name="R_caught" type="Label" parent="Right_Page"]
 layout_mode = 0
-offset_left = 78.749
-offset_top = 1456.07
-offset_right = 1778.75
-offset_bottom = 2106.07
+offset_left = 71.0284
+offset_top = 1262.84
+offset_right = 1776.03
+offset_bottom = 1912.84
 scale = Vector2(0.205083, 0.26463)
 theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
@@ -152,3 +154,16 @@ scale = Vector2(0.116559, 0.116559)
 theme_override_colors/font_color = Color(0.546945, 0.320809, 0.17936, 1)
 theme_override_font_sizes/font_size = 500
 text = "Press 'E' to Close"
+
+[node name="NAtive label" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 54.0
+offset_right = 8729.0
+offset_bottom = 2010.0
+scale = Vector2(0.0573184, 0.0581476)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_j41ii")
+theme_override_font_sizes/font_size = 500
+text = "Native Fish Caught: 00 Invasive Fish Caught: 00"
+horizontal_alignment = 1
+script = ExtResource("4_sowsi")
