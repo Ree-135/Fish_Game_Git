@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_v4yi8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -263.949, 256.051, 0, 0, 0, 0, -248.049, 256.051)
+"points": PackedVector2Array(0, 0, 0, 0, -263.449, 256.001, 0, 0, 0, 0, -242.299, 256.051)
 }
 point_count = 2
 
@@ -19,10 +19,12 @@ position = Vector2(551, 297)
 scale = Vector2(20, 20)
 
 [node name="Bobber Holder" parent="." instance=ExtResource("1_mctcb")]
-scale = Vector2(0.0458333, 0.0392857)
+position = Vector2(2.98023e-08, 2.7)
+scale = Vector2(0.0393244, 0.0337067)
 
 [node name="Bobber Bar" parent="." instance=ExtResource("2_yhbl8")]
-scale = Vector2(1.016, 0.49742)
+position = Vector2(0.2, 0)
+scale = Vector2(0.925689, 0.627)
 JUMP_VELOCITY = -350.0
 Grav_Multiplier = 0.75
 
@@ -32,7 +34,7 @@ rotation = 1.5708
 curve = SubResource("Curve2D_v4yi8")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("3_tk7bt")]
-position = Vector2(-248.049, 256.051)
+position = Vector2(-246.822, 256.04)
 rotation = 0.0
 scale = Vector2(0.05, 0.05)
 progress = 16.6
@@ -59,20 +61,20 @@ step = 0.001
 show_percentage = false
 
 [node name="Button" type="Button" parent="."]
-offset_left = 5.35
-offset_top = -3.95
-offset_right = 73.35
-offset_bottom = 50.05
+offset_left = 6.65
+offset_top = -0.65
+offset_right = 1531.65
+offset_bottom = 1307.35
 scale = Vector2(0.00509842, 0.00507682)
 theme_override_font_sizes/font_size = 500
 text = "Release
 Fish"
 
 [node name="Fish_Label" type="Label" parent="."]
-offset_left = -7.0
-offset_top = -13.0
-offset_right = 3439.0
-offset_bottom = 637.0
+offset_left = -6.25
+offset_top = -14.2
+offset_right = 3439.75
+offset_bottom = 635.8
 scale = Vector2(0.0039598, 0.0039598)
 theme_override_font_sizes/font_size = 500
 text = "Fish Type: Native"

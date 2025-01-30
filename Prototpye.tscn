@@ -66,11 +66,11 @@ drag_factor = 0.03
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 script = ExtResource("4_2hsho")
 
-[node name="Native label" type="Label" parent="Gui"]
-offset_left = 292.0
-offset_top = 14.0
-offset_right = 4541.0
-offset_bottom = 1970.0
+[node name="held label" type="Label" parent="Gui"]
+offset_left = 860.0
+offset_top = 5.0
+offset_right = 5109.0
+offset_bottom = 1961.0
 scale = Vector2(0.0685421, 0.0695337)
 theme_override_fonts/font = ExtResource("6_oqtiw")
 theme_override_font_sizes/font_size = 500
