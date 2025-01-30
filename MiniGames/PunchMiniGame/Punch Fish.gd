@@ -6,6 +6,8 @@ extends PathFollow2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var fish_label: Label = $"../fish_Label"
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+
 
 var the_fish = GameController.fish_selector()
 
@@ -45,15 +47,17 @@ func _process(delta: float) -> void:
 		progress_ratio -= speed * delta
 
 
-	if Input.is_action_just_pressed("Action_Button") and in_fish:
+	if Input.is_action_just_pressed("Action_both") and in_fish == true:
 		progress_bar.value += 30
+		animated_sprite_2d.play()
 		in_fish = false
 		New_side()
 
 
-	if Input.is_action_just_pressed("Action_Button") and (in_fish == false):
+	if Input.is_action_just_pressed("Action_both") and (in_fish == false):
 		New_side()
 		progress_bar.value -= 10
+		animated_sprite_2d.play()
 		
 	if progress_bar.value >= 100:
 		GameController.fish_winner(the_fish)

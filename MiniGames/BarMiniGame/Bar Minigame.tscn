@@ -61,16 +61,18 @@ offset_left = 5.35
 offset_top = -3.95
 offset_right = 73.35
 offset_bottom = 50.05
-scale = Vector2(0.101503, 0.101503)
+scale = Vector2(0.00509842, 0.00507682)
+theme_override_font_sizes/font_size = 500
 text = "Release
 Fish"
 
 [node name="Fish_Label" type="Label" parent="."]
-offset_left = -6.55
-offset_top = -12.75
-offset_right = 124.45
-offset_bottom = 10.25
-scale = Vector2(0.112613, 0.112613)
+offset_left = -7.0
+offset_top = -13.0
+offset_right = 3439.0
+offset_bottom = 637.0
+scale = Vector2(0.0039598, 0.0039598)
+theme_override_font_sizes/font_size = 500
 text = "Fish Type: Native"
 
 [connection signal="pressed" from="Button" to="Path2D/PathFollow2D" method="_on_button_pressed"]

@@ -1,32 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqdv15si2fj37"]
+[gd_scene load_steps=2 format=3 uid="uid://bqdv15si2fj37"]
 
 [ext_resource type="Texture2D" uid="uid://cwyk4y3pfl4xj" path="res://Utilities/GUI/Assets/Book/pngtree-beautiful-cartoon-vector-symbol-icon-of-a-standing-closed-book-design-vector-png-image_25403796.png" id="1_li06n"]
-[ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="2_6h1u3"]
-[ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="2_j36g2"]
 
 [node name="BookIcon" type="TextureButton"]
 anchors_preset = -1
-anchor_left = 0.004
-anchor_right = 0.07
-anchor_bottom = 0.114
-offset_left = 980.392
-offset_top = 487.0
-offset_right = 980.36
-offset_bottom = 487.128
+anchor_left = -15.667
+anchor_top = -28.84
+anchor_bottom = -0.176
+offset_left = 0.384766
+offset_top = 0.320313
+offset_right = -7637.0
+offset_bottom = -8254.95
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.74194, 1.8)
 texture_normal = ExtResource("1_li06n")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="NAtive label" type="Label" parent="."]
-layout_mode = 0
-offset_left = -39.0369
-offset_top = -28.3333
-offset_right = 1660.96
-offset_bottom = 494.667
-scale = Vector2(0.079728, 0.0670176)
-theme_override_fonts/font = ExtResource("2_j36g2")
-theme_override_font_sizes/font_size = 200
-text = "Native fish held: 00
-Invasive fish held: 00"
-script = ExtResource("2_6h1u3")
