@@ -70,15 +70,11 @@ position = Vector2(2.11768, -1.9697)
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 script = ExtResource("4_2hsho")
 
-[node name="NAtive label" type="Label" parent="Gui"]
-anchors_preset = -1
-anchor_left = 0.74
-anchor_right = 0.993
-anchor_bottom = 0.151
-offset_left = 0.52002
-offset_top = 7.0
-offset_right = 3958.06
-offset_bottom = 1212.15
+[node name="Jam label" type="Label" parent="Gui"]
+offset_left = -18.9999
+offset_top = 121.0
+offset_right = 4230.0
+offset_bottom = 1424.0
 scale = Vector2(0.0685421, 0.0695337)
 theme_override_fonts/font = ExtResource("6_oqtiw")
 theme_override_font_sizes/font_size = 500
@@ -94,15 +90,10 @@ offset_bottom = 22.0
 scale = Vector2(0.00595088, 0.00723143)
 
 [node name="TextureButton" type="TextureButton" parent="Gui"]
-anchors_preset = -1
-anchor_left = 0.886
-anchor_top = 0.796
-anchor_right = 0.999
-anchor_bottom = 1.0
-offset_left = 0.327942
-offset_top = 0.191956
-offset_right = 870.152
-offset_bottom = 868.0
+offset_left = 1021.0
+offset_top = 516.0
+offset_right = 2021.0
+offset_bottom = 1516.0
 scale = Vector2(0.129946, 0.129946)
 texture_normal = ExtResource("11_enipg")
 texture_hover = ExtResource("13_0t5tb")
@@ -111,6 +102,22 @@ texture_hover = ExtResource("13_0t5tb")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(-2.01955e-06, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="Ground"]
+offset_left = -2453.3
+offset_top = -2053.4
+offset_right = -2413.3
+offset_bottom = -2013.4
+scale = Vector2(11.7623, 102.626)
+color = Color(0.380392, 0.835294, 0.552941, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+offset_left = 1994.83
+offset_top = -2018.93
+offset_right = 2034.83
+offset_bottom = -1978.93
+scale = Vector2(11.9532, 101.129)
+color = Color(0.380392, 0.835294, 0.552941, 1)
 
 [node name="Ground" type="Sprite2D" parent="Ground"]
 position = Vector2(30.7059, -5.90906)

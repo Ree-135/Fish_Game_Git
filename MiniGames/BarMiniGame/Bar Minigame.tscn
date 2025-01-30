@@ -15,7 +15,7 @@ point_count = 2
 bg_color = Color(0.158472, 0.158472, 0.158472, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh13x"]
-bg_color = Color(0.157479, 0.722811, 0, 1)
+bg_color = Color(0.937255, 0.396078, 0.380392, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3

@@ -1,35 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://cryipmxchfafh"]
+[gd_scene load_steps=6 format=3 uid="uid://cryipmxchfafh"]
 
 [ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="1_706j5"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/fishipedia.gd" id="1_vb0px"]
+[ext_resource type="Texture2D" uid="uid://cdeagpc5bqqsj" path="res://Common/Assets/Sprites/book open.png" id="2_f0tg7"]
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="3_j41ii"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="4_sowsi"]
 
 [node name="Fishipedia" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -567.0
-offset_top = -330.0
-offset_right = -523.224
-offset_bottom = -239.928
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_vb0px")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 49.0
-offset_right = 83.0
-offset_bottom = 89.0
-scale = Vector2(25.918, 13.8292)
-color = Color(0.805684, 0.743872, 0.55469, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 323.5)
+scale = Vector2(0.602083, 0.60463)
+texture = ExtResource("2_f0tg7")
 
 [node name="Left_Page" type="Control" parent="."]
 anchors_preset = 0
@@ -161,11 +154,11 @@ text = "Press 'E' to Close"
 
 [node name="NAtive label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 54.0
-offset_right = 8729.0
-offset_bottom = 2010.0
-scale = Vector2(0.0573184, 0.0581476)
+offset_left = 589.0
+offset_top = 59.0
+offset_right = 10280.0
+offset_bottom = 1125.0
+scale = Vector2(0.0540035, 0.0547848)
 theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_fonts/font = ExtResource("3_j41ii")
 theme_override_font_sizes/font_size = 500
