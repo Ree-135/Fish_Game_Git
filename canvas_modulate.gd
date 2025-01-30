@@ -7,22 +7,27 @@ const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
 signal time_tick(day:int, hour:int, minute:int)
 
 @export var gradient:GradientTexture1D
-@export var INGAME_SPEED = 8.0 # 8 min per sec
+@export var INGAME_SPEED = 800.0 # 8 min per sec
 @export var INITIAL_HOUR = 6
 
 var time:float = 0.0
 var past_minute:float = -1.0
 
+var end_screen_load = preload("res://Utilities/GUI/End screen.tscn")
+@onready var end_screen: Control = $"../Gui/End screen"
+
 @onready var quota_label: Label = $"../Gui/Quota Label"
 var quota:int = 0
 
 var day:int
-var next_day = 0
-
+var next_day = 1
 
 
 func _ready() -> void:
 	time = INGAME_TO_REAL_MINUTE_DURATION * INITIAL_HOUR * MINUTES_PER_HOUR
+	
+	end_screen_load = preload("res://Utilities/GUI/End screen.tscn")
+	
 	day = 0
 	Quota_system()
 
@@ -34,20 +39,21 @@ func _process(delta: float) -> void:
 	
 	_recalculate_time()
 	
+			
 	if day == next_day:
-		
 		
 		if GameController.currency < quota and day > 0:
 			GameController.can_move = false
 			GameController.is_fishing = true
-			print("you lose")
-			# show end screen
+			end_screen.visible = true
+			
+			
 		
 		if GameController.currency >= quota:
 			GameController.currency -= quota
 		
-		Quota_system()
-		next_day += 1
+			Quota_system()
+			next_day += 1
 
 
 

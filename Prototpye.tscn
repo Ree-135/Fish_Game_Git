@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=23 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dm54gn7s0453h" path="res://Common/Assets/Sprites/Overworld/Water.png" id="4_2ao1e"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/gui.gd" id="4_2hsho"]
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="6_oqtiw"]
+[ext_resource type="PackedScene" uid="uid://cj7g0r3u0hf7r" path="res://Utilities/GUI/End screen.tscn" id="8_fd63j"]
 [ext_resource type="Script" path="res://Native label.gd" id="9_0h1aw"]
 [ext_resource type="PackedScene" uid="uid://vp0affi01d3t" path="res://Utilities/GUI/Assets/DayNight/daynightcycle_ui.tscn" id="9_16jiu"]
 [ext_resource type="Texture2D" uid="uid://dxsn82d4q18yo" path="res://Common/Assets/Sprites/Book.png" id="11_enipg"]
@@ -133,6 +134,9 @@ min_value = -1.0
 max_value = 1.0
 show_percentage = false
 script = ExtResource("13_c7hmq")
+
+[node name="End screen" parent="Gui" instance=ExtResource("8_fd63j")]
+visible = false
 
 [node name="Timer" type="Timer" parent="."]
 
