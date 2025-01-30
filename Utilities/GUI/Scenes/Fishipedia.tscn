@@ -33,6 +33,7 @@ scale = Vector2(0.551694, 0.737544)
 texture = ExtResource("1_706j5")
 
 [node name="L_Name label" type="Label" parent="Left_Page"]
+layout_mode = 0
 offset_left = 284.114
 offset_top = 824.653
 offset_right = 1459.11
@@ -42,6 +43,7 @@ theme_override_font_sizes/font_size = 500
 text = "FIshy"
 
 [node name="L_Type" type="Label" parent="Left_Page"]
+layout_mode = 0
 offset_left = 80.2931
 offset_top = 1055.99
 offset_right = 1780.29
@@ -51,6 +53,7 @@ theme_override_font_sizes/font_size = 500
 text = "Type: "
 
 [node name="L_weight" type="Label" parent="Left_Page"]
+layout_mode = 0
 offset_left = 80.2931
 offset_top = 1265.56
 offset_right = 1780.29
@@ -84,6 +87,7 @@ scale = Vector2(0.551694, 0.737544)
 texture = ExtResource("1_706j5")
 
 [node name="R_Name label" type="Label" parent="Right_Page"]
+layout_mode = 0
 offset_left = 284.114
 offset_top = 824.653
 offset_right = 1459.11
@@ -93,6 +97,7 @@ theme_override_font_sizes/font_size = 500
 text = "FIshy"
 
 [node name="R_Type" type="Label" parent="Right_Page"]
+layout_mode = 0
 offset_left = 67.9403
 offset_top = 1066.88
 offset_right = 1767.94
@@ -102,6 +107,7 @@ theme_override_font_sizes/font_size = 500
 text = "Type: "
 
 [node name="R_weight" type="Label" parent="Right_Page"]
+layout_mode = 0
 offset_left = 80.2931
 offset_top = 1265.56
 offset_right = 1780.29

@@ -52,6 +52,7 @@ shape = SubResource("WorldBoundaryShape2D_ox5xy")
 
 [node name="Boat" parent="." instance=ExtResource("2_7oy5s")]
 position = Vector2(2.11768, -1.9697)
+drag_factor = 0.02
 
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 script = ExtResource("4_2hsho")
@@ -60,15 +61,16 @@ script = ExtResource("4_2hsho")
 scale = Vector2(1.51441, 1.45111)
 
 [node name="NAtive label" type="Label" parent="Gui"]
-offset_left = 4.0
-offset_top = 6.0
-offset_right = 4253.0
-offset_bottom = 1309.0
+offset_left = 8.0
+offset_top = 17.0
+offset_right = 4257.0
+offset_bottom = 1320.0
 scale = Vector2(0.0685421, 0.0695337)
 theme_override_fonts/font = ExtResource("6_oqtiw")
 theme_override_font_sizes/font_size = 500
 text = "Native fish held: 00
-Invasive fish held: 00"
+Invasive fish held: 00
+Jam: 00"
 horizontal_alignment = 1
 script = ExtResource("7_l2hac")
 

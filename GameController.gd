@@ -45,6 +45,8 @@ var fish_listINVASIVE: Array = [
 var Percent_Invasive = 1 - Percent_Native  #starting percent of invasive fish
 var fish_distribution: Array #array to store amount of total fish
 
+var currency = 0 #25 weight = 1 "Jam". Jam is currency
+
 var Native_Counter = 0
 var Invasive_counter = 0
 
@@ -103,33 +105,53 @@ func fish_selector():
 	print("fish selected")
 	
 	var _instAmount = fish_distribution.size()  #gets the number of total available fish
-	var _instRandom = RandomNumberGenerator.new().randi_range(0,_instAmount-1) #chooses fish type randomly from the distribution array
-	var _instFish = fish_distribution[_instRandom] #sets the fish type (native/invasive)
 	
-	if _instAmount > 1:
-		fish_distribution.remove_at(_instRandom) #removes previously selected fish from the distribution
-	elif _instAmount == 1:
-		fish_distribution.resize(0) #removes last element of the fish distribution array
+	if fish_distribution.size() == 1:
+		pass # basically dont allow the player to fish
 	
-	if _instFish == 0:
-		fish = fish_listNATIVE
-	if _instFish == 1:
-		fish = fish_listINVASIVE
+	if fish_distribution.size() > 1:
+		var _instRandom = RandomNumberGenerator.new().randi_range(0,_instAmount-1) #chooses fish type randomly from the distribution array
+		var _instFish = fish_distribution[_instRandom] #sets the fish type (native/invasive)
 	
-	var random_fish = RandomNumberGenerator.new().randi_range(0,(fish.size() - 1))
-	return fish[random_fish]
+		if _instAmount > 1:
+			fish_distribution.remove_at(_instRandom) #removes previously selected fish from the distribution
+		elif _instAmount == 1:
+			fish_distribution.resize(0) #removes last element of the fish distribution array
+	
+		if _instFish == 0:
+			fish = fish_listNATIVE
+		if _instFish == 1:
+			fish = fish_listINVASIVE
+	
+		var random_fish = RandomNumberGenerator.new().randi_range(0,(fish.size() - 1))
+		return fish[random_fish]
 
 func fish_winner(the_fish):
+	
+	# rand weight maker for fish caught
+	var Random_Weight = RandomNumberGenerator.new().randi_range(the_fish.Min_Weight, the_fish.Max_Weight)
 	
 	if the_fish.Type == 0: #caught native
 		Native_Counter += 1
 		adjust_fish_perecent(0, -0.05) #decrease native
 		adjust_fish_perecent(1, 0.07) #increase invasive
+
+		# making value for fish based off weight
+		if Random_Weight <= 25: #if below 25 weight, just make currency +1 (cause it would round down to 0)
+			currency += 2
+		if Random_Weight > 25: #if its a normal case of weight
+			currency += roundi(Random_Weight / 25) * 2 # multiplied by two so they're more valuable
 		
 	if the_fish.Type == 1: #caught invasive
 		Invasive_counter += 1
 		adjust_fish_perecent(1, -0.05) #decrease invasive
 		adjust_fish_perecent(0, 0.07) #increase native
+		
+		#duplicate of previous weight finder
+		if Random_Weight <= 25:
+			currency += 1
+		if Random_Weight > 25:
+			currency += roundi(Random_Weight / 25) # no * 2 multiplier because less valuable invasive fish
 
 	the_fish.Caught = true
 	print(Native_Counter)

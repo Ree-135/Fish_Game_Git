@@ -29,7 +29,8 @@ limit_smoothed = true
 script = ExtResource("3_n5huo")
 
 [node name="Smilyface" type="Sprite2D" parent="Node2D"]
-position = Vector2(4, 4)
+position = Vector2(4.76837e-07, 2.38419e-07)
 rotation = -1.5708
 scale = Vector2(0.067825, 0.0675858)
 texture = ExtResource("4_n7ywc")
+offset = Vector2(-54.565, 0)
