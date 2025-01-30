@@ -48,12 +48,14 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play()
 		in_fish = false
 		New_side()
+		audio_stream_player.play()
 
 
 	if Input.is_action_just_pressed("Action_both") and (in_fish == false):
 		New_side()
 		progress_bar.value -= 10
 		animated_sprite_2d.play()
+		audio_stream_player.play()
 		
 	if progress_bar.value >= 100:
 		GameController.fish_winner(the_fish)
@@ -67,6 +69,7 @@ func _process(delta: float) -> void:
 		GameController.can_move = true
 		GameController.is_fishing = false
 		path_lr.queue_free()
+		
 
 
 func New_side():
@@ -84,6 +87,7 @@ func New_side():
 		progress = 634
 	
 	timer.start()
+	
 
 
 func _on_timer_timeout() -> void:

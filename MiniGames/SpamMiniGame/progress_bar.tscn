@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bddqw08l3ctuu"]
+[gd_scene load_steps=6 format=3 uid="uid://bddqw08l3ctuu"]
 
 [ext_resource type="Script" path="res://MiniGames/SpamMiniGame/SpamBar.gd" id="1_2bp3e"]
 [ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="2_uyjfo"]
+[ext_resource type="AudioStream" uid="uid://th6k88cbv01o" path="res://Common/Assets/Sound/SFX/SpinningReel[NeedsChoping].wav" id="3_xoqnx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2idky"]
 bg_color = Color(0.164706, 0.164706, 0.164706, 0.6)
@@ -61,6 +62,9 @@ position = Vector2(131.336, 56.5015)
 rotation = 1.57079
 scale = Vector2(0.0456313, 0.0456313)
 texture = ExtResource("2_uyjfo")
+
+[node name="Reelingsfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xoqnx")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

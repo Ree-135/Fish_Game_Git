@@ -12,6 +12,7 @@ extends ProgressBar
 
 @onready var release_button: Button = $"Release Button"
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var reelingsfx: AudioStreamPlayer = $Reelingsfx
 
 
 
@@ -21,6 +22,7 @@ var the_fish = GameController.fish_selector()
 func _ready() -> void:
 	PlayTimer.start()
 	ReelTimer.start()
+	reelingsfx.play()
 	label.text = "REEL!! \n(spam Mouse L and R)"
 	
 	sprite_2d.texture = the_fish.FishTexture
@@ -41,18 +43,24 @@ func _process(delta: float) -> void:
 		GameController.stop_fishing()
 		GameController.can_move = true
 		GameController.is_fishing = false
+		reelingsfx.stop()
 		progress_bar.queue_free()
 
 	if value <= 0:
 		GameController.stop_fishing()
 		GameController.can_move = true
 		GameController.is_fishing = false
+		reelingsfx.stop()
 		progress_bar.queue_free()
 
 
 
 func _on_timer_timeout() -> void:
 	playing *= -1
+	if playing == -1:
+		reelingsfx.stop()
+	if playing == 1:
+		reelingsfx.play()
 
 
 func _on_timer_2_timeout() -> void:

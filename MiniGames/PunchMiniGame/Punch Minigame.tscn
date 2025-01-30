@@ -143,6 +143,7 @@ autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_f35um")
+volume_db = -9.369
 
 [connection signal="timeout" from="Path L>R/PathFollow2D/Timer" to="Path L>R/PathFollow2D" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Path L>R/PathFollow2D/Area2D2" to="Path L>R/PathFollow2D" method="_on_area_2d_2_area_entered"]
