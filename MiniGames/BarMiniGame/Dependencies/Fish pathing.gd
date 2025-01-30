@@ -85,4 +85,12 @@ func _on_button_pressed() -> void:
 	GameController.stop_fishing()
 	GameController.can_move = true
 	GameController.is_fishing = false
+	
+	if the_fish.Type == 0:
+		GameController.morality += .1
+		
+	if the_fish.Type == 1:
+		GameController.morality -= .1
+		
+	
 	node_2d.queue_free()

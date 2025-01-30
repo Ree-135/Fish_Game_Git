@@ -39,10 +39,14 @@ func _process(delta: float) -> void:
 	if value >= 100:
 		GameController.fish_winner(the_fish)
 		GameController.stop_fishing()
+		GameController.can_move = true
+		GameController.is_fishing = false
 		progress_bar.queue_free()
 
 	if value <= 0:
 		GameController.stop_fishing()
+		GameController.can_move = true
+		GameController.is_fishing = false
 		progress_bar.queue_free()
 
 
@@ -61,4 +65,13 @@ func _on_timer_2_timeout() -> void:
 
 func _on_button_pressed() -> void:
 	GameController.stop_fishing()
+	GameController.can_move = true
+	GameController.is_fishing = false
+	
+	if the_fish.Type == 0:
+		GameController.morality += .1
+		
+	if the_fish.Type == 1:
+		GameController.morality -= .1
+		
 	progress_bar.queue_free() 

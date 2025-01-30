@@ -69,7 +69,7 @@ position = Vector2(2.11768, -1.9697)
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 script = ExtResource("4_2hsho")
 
-[node name="NAtive label" type="Label" parent="Gui"]
+[node name="Jam label" type="Label" parent="Gui"]
 offset_left = -18.9999
 offset_top = 121.0
 offset_right = 4230.0
@@ -101,6 +101,22 @@ texture_hover = ExtResource("13_0t5tb")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(-2.01955e-06, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="Ground"]
+offset_left = -2453.3
+offset_top = -2053.4
+offset_right = -2413.3
+offset_bottom = -2013.4
+scale = Vector2(11.7623, 102.626)
+color = Color(0.380392, 0.835294, 0.552941, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+offset_left = 1994.83
+offset_top = -2018.93
+offset_right = 2034.83
+offset_bottom = -1978.93
+scale = Vector2(11.9532, 101.129)
+color = Color(0.380392, 0.835294, 0.552941, 1)
 
 [node name="Ground" type="Sprite2D" parent="Ground"]
 position = Vector2(30.7059, -5.90906)

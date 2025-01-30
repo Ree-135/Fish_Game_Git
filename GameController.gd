@@ -52,6 +52,8 @@ var currency = 0 #25 weight = 1 "Jam". Jam is currency
 var Native_Counter = 0
 var Invasive_counter = 0
 
+var morality = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Initialize randomize
@@ -73,7 +75,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#var player_node = get_node("Boat")
 	pass
-
+		
+	
 #set initial and sequential fish distributions
 func set_fish_distribution():
 	#set/reset temp arrays
@@ -148,6 +151,13 @@ func fish_winner(the_fish):
 		Invasive_counter += 1
 		adjust_fish_perecent(1, -0.05) #decrease invasive
 		adjust_fish_perecent(0, 0.07) #increase native
+
+
+	if the_fish.Type == 0:
+		morality -= .1
+		
+	if the_fish.Type == 1:
+		morality += .1
 		
 		#duplicate of previous weight finder
 		if Random_Weight <= 25:
