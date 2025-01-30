@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=19 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -14,10 +14,17 @@
 [ext_resource type="Texture2D" uid="uid://d076xlcmjrc4d" path="res://Common/Assets/Sprites/Overworld/Ground.png" id="11_kr8ju"]
 [ext_resource type="Texture2D" uid="uid://ui82prka3hv0" path="res://Common/Assets/Sprites/Overworld/Trees.png" id="12_qsqiq"]
 [ext_resource type="Texture2D" uid="uid://dw0hs03qc7olf" path="res://Common/Assets/Sprites/hover book.png" id="13_0t5tb"]
+[ext_resource type="Script" path="res://Morality Bar.gd" id="13_c7hmq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
 distance = -0.059835
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43dk8"]
+bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrayf"]
+bg_color = Color(0.912174, 0.434751, 0.380575, 1)
 
 [node name="GamePrototype" type="Node2D"]
 scale = Vector2(0.944443, 1.01539)
@@ -96,6 +103,19 @@ offset_bottom = 1516.0
 scale = Vector2(0.129946, 0.129946)
 texture_normal = ExtResource("11_enipg")
 texture_hover = ExtResource("13_0t5tb")
+
+[node name="ProgressBar" type="ProgressBar" parent="Gui"]
+offset_left = 297.0
+offset_top = 7.0
+offset_right = 514.0
+offset_bottom = 32.0
+scale = Vector2(2.036, 2.036)
+theme_override_styles/background = SubResource("StyleBoxFlat_43dk8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jrayf")
+min_value = -1.0
+max_value = 1.0
+show_percentage = false
+script = ExtResource("13_c7hmq")
 
 [node name="Timer" type="Timer" parent="."]
 

@@ -30,7 +30,7 @@ func _ready() -> void:
 	
 	sprite_2d.texture = the_fish.FishTexture
 	
-	progress_bar.value = 1
+	progress_bar.value += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -96,7 +96,6 @@ func _on_area_2d_2_area_exited(area: Area2D) -> void:
 	
 
 func _on_button_pressed() -> void:
-	GameController.stop_fishing()
 	GameController.can_move = true
 	GameController.is_fishing = false
 	
@@ -105,4 +104,6 @@ func _on_button_pressed() -> void:
 		
 	if the_fish.Type == 1:
 		GameController.morality -= .1
+	
+	GameController.stop_fishing()
 	path_lr.queue_free()

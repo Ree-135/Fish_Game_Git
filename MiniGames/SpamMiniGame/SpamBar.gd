@@ -64,7 +64,6 @@ func _on_timer_2_timeout() -> void:
 
 
 func _on_button_pressed() -> void:
-	GameController.stop_fishing()
 	GameController.can_move = true
 	GameController.is_fishing = false
 	
@@ -73,5 +72,5 @@ func _on_button_pressed() -> void:
 		
 	if the_fish.Type == 1:
 		GameController.morality -= .1
-		
+	GameController.stop_fishing()
 	progress_bar.queue_free() 
