@@ -1,6 +1,6 @@
 extends CharacterBody2D
 @export var max_speed := 300 #how fast we are moving
-@export_range(0,10,0.1) var drag_factor := 0.1 #
+@export_range(0,10,0.001) var drag_factor := 0.1 #
 
 var desired_velocity := Vector2.ZERO
 var steering_velocity := Vector2.ZERO
@@ -15,5 +15,3 @@ func _physics_process(_delta: float) -> void:
 		rotation = velocity.angle()
 		move_and_slide()
 		
-	else:
-		pass

@@ -22,7 +22,9 @@ scale = Vector2(20, 20)
 scale = Vector2(0.0458333, 0.0392857)
 
 [node name="Bobber Bar" parent="." instance=ExtResource("2_yhbl8")]
-scale = Vector2(1.016, 0.5)
+scale = Vector2(1.016, 0.49742)
+JUMP_VELOCITY = -350.0
+Grav_Multiplier = 0.75
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(256, 256)
