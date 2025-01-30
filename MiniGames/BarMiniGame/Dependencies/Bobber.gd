@@ -12,9 +12,9 @@ func _physics_process(delta: float) -> void:
 		velocity += Grav_Multiplier * get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("Action_left"):
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_pressed("ui_down") and Down_toggle:
+	if Input.is_action_pressed("Action_right") and Down_toggle:
 		velocity.y = -1 * JUMP_VELOCITY
 
 	move_and_slide()
