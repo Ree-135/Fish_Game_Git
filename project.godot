@@ -13,10 +13,15 @@ config_version=5
 config/name="Fishign game"
 run/main_scene="res://Prototpye.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
 
 [autoload]
 
 GameController="*res://GameController.gd"
+
+[display]
+
+mouse_cursor/custom_image="res://Common/Assets/Sprites/Untitled13_20250129225555.png"
 
 [gui]
 
