@@ -55,12 +55,22 @@ animations = [{
 "speed": 60.0
 }]
 
-[node name="Path L>R" type="Path2D"]
-position = Vector2(318, 182.465)
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Path L>R" type="Path2D" parent="."]
+position = Vector2(-313, -254)
 scale = Vector2(1.495, 1.59711)
 curve = SubResource("Curve2D_n1roc")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="Path L>R"]
 position = Vector2(229.424, 73.5401)
 rotation = 0.486265
 progress = 360.401
@@ -68,39 +78,39 @@ cubic_interp = false
 loop = false
 script = ExtResource("1_rco4h")
 
-[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Path L>R/PathFollow2D"]
 position = Vector2(0.0245523, 0.0305395)
 rotation = 1.56099
 scale = Vector2(0.0768756, 0.0768756)
 texture = ExtResource("2_dkria")
 
-[node name="Timer" type="Timer" parent="PathFollow2D"]
+[node name="Timer" type="Timer" parent="Path L>R/PathFollow2D"]
 wait_time = 2.0
 autostart = true
 
-[node name="Area2D2" type="Area2D" parent="PathFollow2D"]
+[node name="Area2D2" type="Area2D" parent="Path L>R/PathFollow2D"]
 position = Vector2(0.248314, 0.205246)
 rotation = 1.53483
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path L>R/PathFollow2D/Area2D2"]
 position = Vector2(0.339554, 2.62003)
 rotation = -1.53483
 shape = SubResource("RectangleShape2D_ep623")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Path L>R"]
 position = Vector2(192, 64)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path L>R/Area2D"]
 scale = Vector2(2.1505, 2.1505)
 shape = SubResource("CircleShape2D_sy8ki")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Path L>R/Area2D"]
 position = Vector2(-0.695677, 0.21405)
 scale = Vector2(0.123718, 0.123718)
 texture = ExtResource("3_sldd7")
 offset = Vector2(-30, 35)
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="Path L>R"]
 offset_left = 114.381
 offset_top = -9.36455
 offset_right = 268.381
@@ -110,7 +120,7 @@ rounded = true
 allow_greater = true
 show_percentage = false
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Path L>R"]
 offset_left = 298.997
 offset_top = -20.7358
 offset_right = 356.997
@@ -120,7 +130,7 @@ theme_override_font_sizes/font_size = 500
 text = "Release
 Fish"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path L>R"]
 position = Vector2(191.304, 148.102)
 scale = Vector2(0.141806, 0.17556)
 sprite_frames = SubResource("SpriteFrames_g5aft")
@@ -128,8 +138,8 @@ autoplay = "default"
 frame = 3
 frame_progress = 0.348228
 
-[connection signal="timeout" from="PathFollow2D/Timer" to="PathFollow2D" method="_on_timer_timeout"]
-[connection signal="area_entered" from="PathFollow2D/Area2D2" to="PathFollow2D" method="_on_area_2d_2_area_entered"]
-[connection signal="area_exited" from="PathFollow2D/Area2D2" to="PathFollow2D" method="_on_area_2d_2_area_exited"]
-[connection signal="area_entered" from="Area2D" to="PathFollow2D" method="_on_area_2d_area_entered"]
-[connection signal="pressed" from="Button" to="PathFollow2D" method="_on_button_pressed"]
+[connection signal="timeout" from="Path L>R/PathFollow2D/Timer" to="Path L>R/PathFollow2D" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Path L>R/PathFollow2D/Area2D2" to="Path L>R/PathFollow2D" method="_on_area_2d_2_area_entered"]
+[connection signal="area_exited" from="Path L>R/PathFollow2D/Area2D2" to="Path L>R/PathFollow2D" method="_on_area_2d_2_area_exited"]
+[connection signal="area_entered" from="Path L>R/Area2D" to="Path L>R/PathFollow2D" method="_on_area_2d_area_entered"]
+[connection signal="pressed" from="Path L>R/Button" to="Path L>R/PathFollow2D" method="_on_button_pressed"]
