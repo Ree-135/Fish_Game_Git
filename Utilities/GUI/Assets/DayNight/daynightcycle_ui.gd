@@ -3,13 +3,17 @@ extends Control
 
 @onready var day_label: Label = $VBoxContainer/day_label
 @onready var time_label: Label = $VBoxContainer/time_label
+@onready var quota_label: Label = $"../Quota label"
 
+
+
+
+func _ready() -> void:
+	pass
 
 func set_daytime(day: int, hour: int, minute: int) -> void:
 	day_label.text = "Day " + str(day + 1)
 	time_label.text = _amfm_hour(hour) + ":" + _minute(minute) + " " + _am_pm(hour)
-
-
 
 func _amfm_hour(hour:int) -> String:
 	if hour == 0:

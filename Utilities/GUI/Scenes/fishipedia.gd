@@ -32,6 +32,8 @@ var Invasive: Array =[
 @onready var r_caught: Label = $Right_Page/R_caught
 
 @onready var timer: Timer = $Timer
+@onready var sad: Sprite2D = $Sad
+
 
 
 var i: int = 0
@@ -66,6 +68,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	load_list()
 	
+	if GameController.morality <= -.5:
+		sad.visible = true
+	if GameController.morality > -.5:
+		sad.visible = false
 	
 	for i in 12:
 		

@@ -68,9 +68,9 @@ func _on_button_pressed() -> void:
 	GameController.is_fishing = false
 	
 	if the_fish.Type == 0:
-		GameController.morality += .1
+		GameController.morality += .05
 		
 	if the_fish.Type == 1:
-		GameController.morality -= .1
+		GameController.morality -= .05
 	GameController.stop_fishing()
 	progress_bar.queue_free() 
