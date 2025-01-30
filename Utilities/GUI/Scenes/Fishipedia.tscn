@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cryipmxchfafh"]
+[gd_scene load_steps=7 format=3 uid="uid://cryipmxchfafh"]
 
 [ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="1_706j5"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/fishipedia.gd" id="1_vb0px"]
 [ext_resource type="Texture2D" uid="uid://cdeagpc5bqqsj" path="res://Common/Assets/Sprites/book open.png" id="2_f0tg7"]
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="3_j41ii"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="4_sowsi"]
+[ext_resource type="Texture2D" uid="uid://o455ujq242r4" path="res://MiniGames/BarMiniGame/Assets/endangered.png" id="6_woaqv"]
 
 [node name="Fishipedia" type="Control"]
 layout_mode = 3
@@ -165,3 +166,9 @@ theme_override_font_sizes/font_size = 500
 text = "Native Fish Caught: 00 Invasive Fish Caught: 00"
 horizontal_alignment = 1
 script = ExtResource("4_sowsi")
+
+[node name="Sad" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(285, 382)
+scale = Vector2(0.348109, 0.349582)
+texture = ExtResource("6_woaqv")

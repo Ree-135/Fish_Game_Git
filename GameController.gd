@@ -154,10 +154,10 @@ func fish_winner(the_fish):
 
 
 	if the_fish.Type == 0:
-		morality -= .1
+		morality -= .05
 		
 	if the_fish.Type == 1:
-		morality += .1
+		morality += .05
 		
 		#duplicate of previous weight finder
 		if Random_Weight <= 25:
