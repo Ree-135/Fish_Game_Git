@@ -1,6 +1,7 @@
 extends ProgressBar
 
-@onready var world_environment: WorldEnvironment = $WorldEnvironment
+@onready var world_environment: WorldEnvironment = $"../../WorldEnvironment"
+
 
 
 func _ready() -> void:

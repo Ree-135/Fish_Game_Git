@@ -13,8 +13,13 @@ signal time_tick(day:int, hour:int, minute:int)
 var time:float = 0.0
 var past_minute:float = -1.0
 
+@onready var quota_label: Label = $"../Gui/Quota Label"
+var quota:int = 0
+
 var day:int
 var next_day = 0
+
+
 
 func _ready() -> void:
 	time = INGAME_TO_REAL_MINUTE_DURATION * INITIAL_HOUR * MINUTES_PER_HOUR
@@ -30,6 +35,17 @@ func _process(delta: float) -> void:
 	_recalculate_time()
 	
 	if day == next_day:
+		
+		
+		if GameController.currency < quota and day > 0:
+			GameController.can_move = false
+			GameController.is_fishing = true
+			print("you lose")
+			# show end screen
+		
+		if GameController.currency >= quota:
+			GameController.currency -= quota
+		
 		Quota_system()
 		next_day += 1
 
@@ -53,7 +69,7 @@ func _recalculate_time() -> void:
 func Quota_system() -> void:
 	
 	
-	var quota:int = 0
+	quota
 	var random_quota_value = RandomNumberGenerator.new().randi_range(25,50)
 	randomize()
 	
@@ -64,5 +80,3 @@ func Quota_system() -> void:
 	
 	quota_label.text = "Day quota: " + str(quota) + " Jams"
 	randomize()
-	
-@onready var quota_label: Label = $"../Gui/Quota label"

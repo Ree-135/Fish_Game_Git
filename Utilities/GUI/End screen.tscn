@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cj7g0r3u0hf7r"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 287.0
+offset_top = 45.0
+offset_right = 1463.0
+offset_bottom = 1348.0
+scale = Vector2(0.425236, 0.425236)
+theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.164706, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 500
+text = "YOU
+LOSE"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 422.0
+offset_top = 497.0
+offset_right = 2294.0
+offset_bottom = 1800.0
+scale = Vector2(0.119843, 0.119843)
+theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
+theme_override_font_sizes/font_size = 500
+text = "Leave to
+Try again"
+horizontal_alignment = 1
