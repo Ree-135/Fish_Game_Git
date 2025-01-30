@@ -12,5 +12,5 @@ Max_Weight = 12800
 Min_Weight = 5000
 Type = 0
 Spawn_Location = 0
-Random_Weight = null
+Random_Weight = 0
 Caught = false

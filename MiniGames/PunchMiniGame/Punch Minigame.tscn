@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://co0ha8sp7qfqg"]
+[gd_scene load_steps=18 format=3 uid="uid://co0ha8sp7qfqg"]
 
 [ext_resource type="Script" path="res://MiniGames/PunchMiniGame/Punch Fish.gd" id="1_rco4h"]
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="2_dkria"]
 [ext_resource type="Texture2D" uid="uid://10rtktso6xep" path="res://Common/Assets/Sprites/smack.png" id="3_kdwyl"]
+[ext_resource type="Texture2D" uid="uid://ic0vcmomk036" path="res://Common/Assets/Sprites/target.png" id="3_sldd7"]
 
 [sub_resource type="Curve2D" id="Curve2D_n1roc"]
 _data = {
@@ -84,7 +85,7 @@ animations = [{
 }]
 
 [node name="Path L>R" type="Path2D"]
-position = Vector2(319, 189)
+position = Vector2(318, 189)
 scale = Vector2(1.495, 1.495)
 curve = SubResource("Curve2D_n1roc")
 
@@ -118,15 +119,14 @@ shape = SubResource("RectangleShape2D_ep623")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(192, 64)
 
-[node name="ColorRect" type="ColorRect" parent="Area2D"]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-color = Color(0.0300404, 0.695579, 5.77569e-06, 1)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_sy8ki")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-0.695677, 0.21405)
+scale = Vector2(0.123718, 0.123718)
+texture = ExtResource("3_sldd7")
+offset = Vector2(-30, 35)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 114.381
