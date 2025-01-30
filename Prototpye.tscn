@@ -20,7 +20,6 @@ scale = Vector2(0.944443, 1.01539)
 script = ExtResource("1_k3w0p")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-scale = Vector2(1, 1)
 color = Color(0.00328794, 0.17329, 0.338982, 1)
 script = ExtResource("1_7um78")
 gradient = ExtResource("2_gcoq1")
@@ -62,20 +61,22 @@ shape = SubResource("WorldBoundaryShape2D_ox5xy")
 
 [node name="Boat" parent="." instance=ExtResource("2_7oy5s")]
 position = Vector2(2.11768, -1.9697)
+drag_factor = 0.03
 
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 script = ExtResource("4_2hsho")
 
-[node name="NAtive label" type="Label" parent="Gui"]
-offset_left = 4.0
-offset_top = 545.0
-offset_right = 4253.0
-offset_bottom = 1848.0
+[node name="Native label" type="Label" parent="Gui"]
+offset_left = 292.0
+offset_top = 14.0
+offset_right = 4541.0
+offset_bottom = 1970.0
 scale = Vector2(0.0685421, 0.0695337)
 theme_override_fonts/font = ExtResource("6_oqtiw")
 theme_override_font_sizes/font_size = 500
 text = "Native fish held: 00
-Invasive fish held: 00"
+Invasive fish held: 00
+Jam: 00"
 horizontal_alignment = 1
 script = ExtResource("7_l2hac")
 
