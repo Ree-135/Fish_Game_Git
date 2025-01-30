@@ -23,11 +23,12 @@ offset_right = 69.8047
 offset_bottom = 56.803
 scale = Vector2(17.6804, 11.4478)
 
+[node name="day_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 500
+text = "Day 13"
+
 [node name="time_label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 500
 text = "11:54 am"
-
-[node name="day_label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Day 13"

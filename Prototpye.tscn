@@ -20,7 +20,6 @@ scale = Vector2(0.944443, 1.01539)
 script = ExtResource("1_k3w0p")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-scale = Vector2(1, 1)
 color = Color(0.00328794, 0.17329, 0.338982, 1)
 script = ExtResource("1_7um78")
 gradient = ExtResource("2_gcoq1")
