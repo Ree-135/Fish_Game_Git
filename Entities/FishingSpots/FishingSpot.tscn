@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://crrlysmabfi0b"]
+[gd_scene load_steps=3 format=3 uid="uid://crrlysmabfi0b"]
 
 [ext_resource type="Texture2D" uid="uid://chbysp17lnns1" path="res://Entities/FishingSpots/FishingSpot.png" id="1_tkkn5"]
-[ext_resource type="Texture2D" uid="uid://7ek3mu1uh846" path="res://Entities/FishingSpots/FishingSpotClicked.png" id="2_riuka"]
 
 [sub_resource type="GDScript" id="GDScript_4vma8"]
 script/source = "extends TextureButton
@@ -52,9 +51,7 @@ offset_left = -0.152
 offset_top = -0.832
 offset_right = 84.848
 offset_bottom = 21.168
-toggle_mode = true
 texture_normal = ExtResource("1_tkkn5")
-texture_pressed = ExtResource("2_riuka")
 ignore_texture_size = true
 stretch_mode = 0
 script = SubResource("GDScript_4vma8")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqdv15si2fj37"]
 
-[ext_resource type="Texture2D" uid="uid://cwyk4y3pfl4xj" path="res://Utilities/GUI/Assets/Book/pngtree-beautiful-cartoon-vector-symbol-icon-of-a-standing-closed-book-design-vector-png-image_25403796.png" id="1_li06n"]
+[ext_resource type="Texture2D" uid="uid://cwyk4y3pfl4xj" path="res://Utilities/GUI/Assets/Book/pngtree-beautiful-cartoon-vector-symbol-icon-of-a-standing-closed-book-design-vector-png-image_25403796.png" id="1_8fe1m"]
 
 [node name="BookIcon" type="TextureButton"]
 anchors_preset = -1
@@ -14,6 +14,6 @@ offset_bottom = -8254.95
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.74194, 1.8)
-texture_normal = ExtResource("1_li06n")
+texture_normal = ExtResource("1_8fe1m")
 ignore_texture_size = true
 stretch_mode = 0

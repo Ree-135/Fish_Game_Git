@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=12 format=3 uid="uid://cnyxmfwsmvm8p"]
 
+[ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
+[ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
 [ext_resource type="PackedScene" uid="uid://bklu8oy3yyevo" path="res://Entities/Player/Scenes/boat.tscn" id="2_7oy5s"]
+[ext_resource type="Texture2D" uid="uid://dgh2aoequ2rjs" path="res://Utilities/GUI/Assets/DayNight/daynightcycle-gradient-texture.tres" id="2_gcoq1"]
 [ext_resource type="Texture2D" uid="uid://syd13iep6fot" path="res://Common/Assets/Sprites/Protoworld2.png" id="2_l45p7"]
 [ext_resource type="PackedScene" uid="uid://cyshisjpjhkwf" path="res://Utilities/GUI/Scenes/GUI.tscn" id="3_1fffa"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/gui.gd" id="4_2hsho"]
-[ext_resource type="PackedScene" uid="uid://bqdv15si2fj37" path="res://Utilities/GUI/Scenes/BookIcon.tscn" id="5_jjefk"]
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="6_oqtiw"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="7_l2hac"]
+[ext_resource type="PackedScene" uid="uid://vp0affi01d3t" path="res://Utilities/GUI/Assets/DayNight/daynightcycle_ui.tscn" id="9_16jiu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -14,6 +17,13 @@ distance = -0.059835
 
 [node name="GamePrototype" type="Node2D"]
 scale = Vector2(0.944443, 1.01539)
+script = ExtResource("1_k3w0p")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+scale = Vector2(1, 1)
+color = Color(0.00328794, 0.17329, 0.338982, 1)
+script = ExtResource("1_7um78")
+gradient = ExtResource("2_gcoq1")
 
 [node name="ProtoMap" type="Sprite2D" parent="."]
 position = Vector2(3, 1)
@@ -56,14 +66,11 @@ position = Vector2(2.11768, -1.9697)
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 script = ExtResource("4_2hsho")
 
-[node name="BookIcon" parent="Gui" instance=ExtResource("5_jjefk")]
-scale = Vector2(1.51441, 1.45111)
-
 [node name="NAtive label" type="Label" parent="Gui"]
 offset_left = 4.0
-offset_top = 6.0
+offset_top = 545.0
 offset_right = 4253.0
-offset_bottom = 1309.0
+offset_bottom = 1848.0
 scale = Vector2(0.0685421, 0.0695337)
 theme_override_fonts/font = ExtResource("6_oqtiw")
 theme_override_font_sizes/font_size = 500
@@ -71,5 +78,12 @@ text = "Native fish held: 00
 Invasive fish held: 00"
 horizontal_alignment = 1
 script = ExtResource("7_l2hac")
+
+[node name="DayNightCycleUI" parent="Gui" instance=ExtResource("9_16jiu")]
+offset_left = 18.0
+offset_top = 22.0
+offset_right = 18.0
+offset_bottom = 22.0
+scale = Vector2(0.00595088, 0.00723143)
 
 [node name="Timer" type="Timer" parent="."]

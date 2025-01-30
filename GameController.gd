@@ -7,8 +7,8 @@ var PunchMini = preload("res://MiniGames/PunchMiniGame/Punch Minigame.tscn")
 var SpamMini = preload("res://MiniGames/SpamMiniGame/progress_bar.tscn")
 var player_scene = preload("res://Entities/Player/Scenes/boat.tscn")
 
-@onready var label: Label = $Gui/Label
 
+@onready var label: Label = $Gui/Label
 
 var can_move 
 var is_fishing 
@@ -50,15 +50,9 @@ func _ready() -> void:
 	can_move = true
 	is_fishing = false
 	# Spawn fishing spots
-	spawn_fishing_spots(15)  # Spawn 5 fishing spots
+	spawn_fishing_spots(15)  # Spawn 15 fishing spots
 	#here we can set a timer to spawn more fishingspots later
 	# or if fishingspots is < 5 or whatever the max is, create another random one
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#var player_node = get_node("Boat")
-	pass
-
 
 # will select a fish at random (for minigames)
 func fish_selector():
