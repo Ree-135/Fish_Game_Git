@@ -16,7 +16,7 @@ extends PathFollow2D
 @export var Catch_Speed: float = .001 ##How fast the fish is cought while in the bar (VERY low numbers recommended)
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var node_2d: Node2D = $"../.."
+@onready var node_2d: Control = $"../.."
 
 @onready var progress_bar: ProgressBar = $"../../ProgressBar"
 
