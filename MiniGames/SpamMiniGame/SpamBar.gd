@@ -11,7 +11,6 @@ extends ProgressBar
 
 
 @onready var release_button: Button = $"Release Button"
-@onready var fish_Label: Label = $"Fish Label"
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 
@@ -25,11 +24,6 @@ func _ready() -> void:
 	label.text = "REEL!! \n(spam Mouse L and R)"
 	
 	sprite_2d.texture = the_fish.FishTexture
-	
-	if the_fish.Type == 0:
-		fish_Label.text = "Fish type: Native"
-	if the_fish.Type == 1:
-		fish_Label.text = "Fish type: Invasive"
 	
 func _process(delta: float) -> void:
 	if playing == -1:

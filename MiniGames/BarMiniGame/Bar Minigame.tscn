@@ -74,13 +74,4 @@ theme_override_font_sizes/font_size = 500
 text = "Release
 Fish"
 
-[node name="Fish_Label" type="Label" parent="."]
-offset_left = -6.25
-offset_top = -14.2
-offset_right = 3439.75
-offset_bottom = 635.8
-scale = Vector2(0.0039598, 0.0039598)
-theme_override_font_sizes/font_size = 500
-text = "Fish Type: Native"
-
 [connection signal="pressed" from="Button" to="Path2D/PathFollow2D" method="_on_button_pressed"]

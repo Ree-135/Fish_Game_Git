@@ -16,7 +16,6 @@ extends PathFollow2D
 @export var Catch_Speed: float = .001 ##How fast the fish is cought while in the bar (VERY low numbers recommended)
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var fish_label: Label = $"../../Fish_Label"
 @onready var node_2d: Node2D = $"../.."
 
 @onready var progress_bar: ProgressBar = $"../../ProgressBar"
@@ -46,11 +45,6 @@ var the_fish = GameController.fish_selector()
 func _ready() -> void:
 	#fish personalization
 	sprite_2d.texture = the_fish.FishTexture
-	
-	if the_fish.Type == 0:
-		fish_label.text = "Type: Native"
-	if the_fish.Type == 1:
-		fish_label.text = "Type: Invasive"
 		
 	score = .15
 

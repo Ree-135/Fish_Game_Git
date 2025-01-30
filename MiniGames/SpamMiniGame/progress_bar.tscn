@@ -52,18 +52,6 @@ theme_override_font_sizes/font_size = 500
 text = "Release
 Fish"
 
-[node name="Fish Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 106.993
-offset_top = 31.8572
-offset_right = 193.993
-offset_bottom = 62.8572
-rotation = 1.57079
-scale = Vector2(0.0216036, 0.0216036)
-theme_override_font_sizes/font_size = 500
-text = "type : bleh"
-horizontal_alignment = 1
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(131.336, 56.5015)
 rotation = 1.57079
