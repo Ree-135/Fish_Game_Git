@@ -12,7 +12,7 @@ _data = {
 point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep623"]
-size = Vector2(25.0086, 47.9976)
+size = Vector2(36.4789, 76.05)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sy8ki"]
 radius = 10.5634
@@ -85,8 +85,8 @@ animations = [{
 }]
 
 [node name="Path L>R" type="Path2D"]
-position = Vector2(318, 189)
-scale = Vector2(1.495, 1.495)
+position = Vector2(318, 182.465)
+scale = Vector2(1.495, 1.59711)
 curve = SubResource("Curve2D_n1roc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
@@ -98,9 +98,9 @@ loop = false
 script = ExtResource("1_rco4h")
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D"]
-position = Vector2(2.28882e-05, -1.52588e-05)
+position = Vector2(0.0245523, 0.0305395)
 rotation = 1.56099
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.0768756, 0.0768756)
 texture = ExtResource("2_dkria")
 
 [node name="Timer" type="Timer" parent="PathFollow2D"]
@@ -112,8 +112,9 @@ position = Vector2(0.248314, 0.205246)
 rotation = 1.53483
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D2"]
-position = Vector2(1.90735e-05, -1.90735e-05)
+position = Vector2(0.339554, 2.62003)
 rotation = -1.53483
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ep623")
 
 [node name="Area2D" type="Area2D" parent="."]

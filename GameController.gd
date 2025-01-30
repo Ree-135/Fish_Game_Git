@@ -7,6 +7,8 @@ var PunchMini = preload("res://MiniGames/PunchMiniGame/Punch Minigame.tscn")
 var SpamMini = preload("res://MiniGames/SpamMiniGame/progress_bar.tscn")
 var player_scene = preload("res://Entities/Player/Scenes/boat.tscn")
 
+var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
+
 @onready var label: Label = $Gui/Label
 
 
@@ -218,3 +220,4 @@ func start_fishing() -> void:
 	#set controll variables
 	is_fishing = true
 	can_move = false
+	

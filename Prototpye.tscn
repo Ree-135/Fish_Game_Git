@@ -87,4 +87,13 @@ offset_right = 18.0
 offset_bottom = 22.0
 scale = Vector2(0.00595088, 0.00723143)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Button" type="Button" parent="Gui"]
+offset_left = 969.0
+offset_top = 535.0
+offset_right = 2018.0
+offset_bottom = 1193.0
+scale = Vector2(0.161528, 0.161528)
+theme_override_font_sizes/font_size = 500
+text = "Book"
+
+[connection signal="pressed" from="Gui/Button" to="." method="_on_button_pressed"]

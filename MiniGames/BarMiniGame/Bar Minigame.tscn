@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciad5wn6uhmus"]
+[gd_scene load_steps=8 format=3 uid="uid://ciad5wn6uhmus"]
 
 [ext_resource type="PackedScene" uid="uid://dcewy4ye6gagn" path="res://MiniGames/BarMiniGame/Dependencies/bobber holder.tscn" id="1_mctcb"]
 [ext_resource type="PackedScene" uid="uid://b8ri2awwfpx8v" path="res://MiniGames/BarMiniGame/Dependencies/Bobber.tscn" id="2_yhbl8"]
@@ -10,6 +10,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -263.449, 256.001, 0, 0, 0, 0, -242.299, 256.051)
 }
 point_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5tdv"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh13x"]
 bg_color = Color(0.157479, 0.722811, 0, 1)
@@ -49,12 +52,13 @@ scale = Vector2(0.100152, 0.100152)
 texture = ExtResource("4_7n7t0")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -9.45
-offset_top = 9.0
-offset_right = 24.55
-offset_bottom = 36.0
+offset_left = -9.0
+offset_top = 14.0
+offset_right = 32.0
+offset_bottom = 41.0
 rotation = -1.57079
 scale = Vector2(0.531315, 0.0877074)
+theme_override_styles/background = SubResource("StyleBoxFlat_o5tdv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qh13x")
 max_value = 1.0
 step = 0.001
