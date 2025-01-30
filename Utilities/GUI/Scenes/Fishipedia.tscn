@@ -43,6 +43,7 @@ offset_top = 849.148
 offset_right = 3646.16
 offset_bottom = 1499.15
 scale = Vector2(0.161348, 0.161348)
+theme_override_colors/font_color = Color(0.344348, 0.198313, 0.139999, 1)
 theme_override_font_sizes/font_size = 500
 text = "Atlantic sturgeon"
 
@@ -53,6 +54,7 @@ offset_top = 1055.99
 offset_right = 1780.29
 offset_bottom = 1705.99
 scale = Vector2(0.205083, 0.26463)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Type: "
 
@@ -63,6 +65,7 @@ offset_top = 1265.56
 offset_right = 1780.29
 offset_bottom = 1915.56
 scale = Vector2(0.205083, 0.26463)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Weight: "
 
@@ -73,6 +76,7 @@ offset_top = 1456.07
 offset_right = 1778.75
 offset_bottom = 2106.07
 scale = Vector2(0.205083, 0.26463)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Caught: "
 
@@ -97,6 +101,7 @@ offset_top = 860.035
 offset_right = 3635.35
 offset_bottom = 1510.04
 scale = Vector2(0.162084, 0.162084)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Atlantic sturgeon"
 
@@ -107,6 +112,7 @@ offset_top = 1066.88
 offset_right = 1767.94
 offset_bottom = 1716.88
 scale = Vector2(0.205083, 0.26463)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Type: "
 
@@ -117,6 +123,7 @@ offset_top = 1265.56
 offset_right = 1780.29
 offset_bottom = 1915.56
 scale = Vector2(0.205083, 0.26463)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Weight: "
 
@@ -127,6 +134,7 @@ offset_top = 1456.07
 offset_right = 1778.75
 offset_bottom = 2106.07
 scale = Vector2(0.205083, 0.26463)
+theme_override_colors/font_color = Color(0.345098, 0.2, 0.141176, 1)
 theme_override_font_sizes/font_size = 500
 text = "Caught: "
 

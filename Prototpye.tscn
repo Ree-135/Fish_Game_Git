@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=16 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -10,8 +10,10 @@
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="6_oqtiw"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="7_l2hac"]
 [ext_resource type="PackedScene" uid="uid://vp0affi01d3t" path="res://Utilities/GUI/Assets/DayNight/daynightcycle_ui.tscn" id="9_16jiu"]
+[ext_resource type="Texture2D" uid="uid://dxsn82d4q18yo" path="res://Common/Assets/Sprites/Book.png" id="11_enipg"]
 [ext_resource type="Texture2D" uid="uid://d076xlcmjrc4d" path="res://Common/Assets/Sprites/Overworld/Ground.png" id="11_kr8ju"]
 [ext_resource type="Texture2D" uid="uid://ui82prka3hv0" path="res://Common/Assets/Sprites/Overworld/Trees.png" id="12_qsqiq"]
+[ext_resource type="Texture2D" uid="uid://dw0hs03qc7olf" path="res://Common/Assets/Sprites/hover book.png" id="13_0t5tb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -87,6 +89,15 @@ offset_right = 18.0
 offset_bottom = 22.0
 scale = Vector2(0.00595088, 0.00723143)
 
+[node name="TextureButton" type="TextureButton" parent="Gui"]
+offset_left = 1021.0
+offset_top = 516.0
+offset_right = 2021.0
+offset_bottom = 1516.0
+scale = Vector2(0.129946, 0.129946)
+texture_normal = ExtResource("11_enipg")
+texture_hover = ExtResource("13_0t5tb")
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Ground" type="StaticBody2D" parent="."]
@@ -131,3 +142,5 @@ polygon = PackedVector2Array(-903.178, 1117.8, -814.237, 1102.04, -761.295, 1117
 [node name="Trees" type="Sprite2D" parent="."]
 position = Vector2(6.35295, -8.86359)
 texture = ExtResource("12_qsqiq")
+
+[connection signal="pressed" from="Gui/TextureButton" to="." method="_on_texture_button_pressed"]
