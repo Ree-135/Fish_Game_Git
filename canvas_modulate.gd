@@ -13,8 +13,13 @@ signal time_tick(day:int, hour:int, minute:int)
 var time:float = 0.0
 var past_minute:float = -1.0
 
+var day:int
+var next_day = 0
+
 func _ready() -> void:
 	time = INGAME_TO_REAL_MINUTE_DURATION * INITIAL_HOUR * MINUTES_PER_HOUR
+	day = 0
+	Quota_system()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,11 +28,17 @@ func _process(delta: float) -> void:
 	self.color = gradient.gradient.sample(value)
 	
 	_recalculate_time()
+	
+	if day == next_day:
+		Quota_system()
+		next_day += 1
+
+
 
 func _recalculate_time() -> void:
 	var total_minutes = int(time / INGAME_TO_REAL_MINUTE_DURATION)
 	
-	var day = int(total_minutes / MINUTES_PER_DAY)
+	day = int(total_minutes / MINUTES_PER_DAY)
 	
 	var current_day_minutes = total_minutes % MINUTES_PER_DAY
 	
@@ -37,3 +48,21 @@ func _recalculate_time() -> void:
 	if past_minute != minute:
 		past_minute = minute
 		time_tick.emit(day, hour, minute)
+
+
+func Quota_system() -> void:
+	
+	
+	var quota:int = 0
+	var random_quota_value = RandomNumberGenerator.new().randi_range(25,50)
+	randomize()
+	
+	quota += day * random_quota_value
+	
+	if day == 0:
+		quota += random_quota_value
+	
+	quota_label.text = "Day quota: " + str(quota) + " Jams"
+	randomize()
+	
+@onready var quota_label: Label = $"../Gui/Quota label"
