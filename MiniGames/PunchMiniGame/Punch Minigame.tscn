@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://co0ha8sp7qfqg"]
+[gd_scene load_steps=14 format=3 uid="uid://co0ha8sp7qfqg"]
 
 [ext_resource type="Script" path="res://MiniGames/PunchMiniGame/Punch Fish.gd" id="1_rco4h"]
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="2_dkria"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bc06i5bkg1cgp" path="res://Common/Assets/Sprites/Hand2.png" id="5_3a0vu"]
 [ext_resource type="Texture2D" uid="uid://c58euwg8n2f8k" path="res://Common/Assets/Sprites/Hand3.png" id="6_kifxp"]
 [ext_resource type="Texture2D" uid="uid://dmtu0it26r5iv" path="res://Common/Assets/Sprites/Hand4.png" id="7_vlf4p"]
+[ext_resource type="AudioStream" uid="uid://0pxnpqwqiyhe" path="res://Common/Assets/Sound/SFX/Splash.wav" id="8_f35um"]
 
 [sub_resource type="Curve2D" id="Curve2D_n1roc"]
 _data = {
@@ -137,6 +138,9 @@ sprite_frames = SubResource("SpriteFrames_g5aft")
 autoplay = "default"
 frame = 3
 frame_progress = 0.348228
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_f35um")
 
 [connection signal="timeout" from="Path L>R/PathFollow2D/Timer" to="Path L>R/PathFollow2D" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Path L>R/PathFollow2D/Area2D2" to="Path L>R/PathFollow2D" method="_on_area_2d_2_area_entered"]

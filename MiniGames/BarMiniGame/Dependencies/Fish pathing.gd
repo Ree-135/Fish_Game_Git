@@ -15,10 +15,13 @@ extends PathFollow2D
 @export var detection_range: float = .01 ##How close the fish has to get to the node (recommend .01 -> .5) to move to the next node
 @export var Catch_Speed: float = .001 ##How fast the fish is cought while in the bar (VERY low numbers recommended)
 
+@onready var sfxreel: AudioStreamPlayer = $"../../SFXREEL"
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var node_2d: Control = $"../.."
+@onready var fish_win: AudioStreamPlayer = $"../../Fish_win"
 
 @onready var progress_bar: ProgressBar = $"../../ProgressBar"
+@onready var bobber_bar: CharacterBody2D = $"../../Bobber Bar"
 
 
 
@@ -32,10 +35,11 @@ var progress_point: float = float(ran.randi_range(0, nodes)) / nodes
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	in_fish = true
 # tests if fish entered the bar (really the other way around but idc)
-
+	sfxreel.play()
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	in_fish = false
 # tests if fish left the bar 
+	sfxreel.stop()
 
 
 

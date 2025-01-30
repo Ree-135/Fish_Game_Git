@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=21 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://ui82prka3hv0" path="res://Common/Assets/Sprites/Overworld/Trees.png" id="12_qsqiq"]
 [ext_resource type="Texture2D" uid="uid://dw0hs03qc7olf" path="res://Common/Assets/Sprites/hover book.png" id="13_0t5tb"]
 [ext_resource type="Script" path="res://Morality Bar.gd" id="13_c7hmq"]
+[ext_resource type="AudioStream" uid="uid://ipkna4rno5mv" path="res://Common/Assets/Sound/SFX/StreamBG.wav" id="16_d5puk"]
+[ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="17_3w5rj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -177,5 +179,13 @@ polygon = PackedVector2Array(-903.178, 1117.8, -814.237, 1102.04, -761.295, 1117
 [node name="Trees" type="Sprite2D" parent="."]
 position = Vector2(6.35295, -8.86359)
 texture = ExtResource("12_qsqiq")
+
+[node name="AmbientNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_d5puk")
+autoplay = true
+
+[node name="FishWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_3w5rj")
+volume_db = -3.748
 
 [connection signal="pressed" from="Gui/TextureButton" to="." method="_on_texture_button_pressed"]

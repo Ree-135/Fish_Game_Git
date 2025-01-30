@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciad5wn6uhmus"]
+[gd_scene load_steps=10 format=3 uid="uid://ciad5wn6uhmus"]
 
 [ext_resource type="PackedScene" uid="uid://dcewy4ye6gagn" path="res://MiniGames/BarMiniGame/Dependencies/bobber holder.tscn" id="1_mctcb"]
 [ext_resource type="PackedScene" uid="uid://b8ri2awwfpx8v" path="res://MiniGames/BarMiniGame/Dependencies/Bobber.tscn" id="2_yhbl8"]
 [ext_resource type="PackedScene" uid="uid://df1uj4wfq3tue" path="res://MiniGames/BarMiniGame/Dependencies/Fish path.tscn" id="3_tk7bt"]
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="4_7n7t0"]
+[ext_resource type="AudioStream" uid="uid://th6k88cbv01o" path="res://Common/Assets/Sound/SFX/SpinningReel[NeedsChoping].wav" id="5_55jlf"]
+[ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="6_7rqxp"]
 
 [sub_resource type="Curve2D" id="Curve2D_v4yi8"]
 _data = {
@@ -98,4 +100,13 @@ theme_override_font_sizes/font_size = 500
 text = "Release
 Fish"
 
+[node name="SFXREEL" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_55jlf")
+volume_db = -3.748
+
+[node name="Fish_win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7rqxp")
+volume_db = -4.685
+
 [connection signal="pressed" from="Button" to="Path2D/PathFollow2D" method="_on_button_pressed"]
+[connection signal="finished" from="Fish_win" to="Path2D/PathFollow2D" method="_on_fish_win_finished"]

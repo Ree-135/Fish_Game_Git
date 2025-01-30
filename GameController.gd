@@ -6,10 +6,13 @@ var BarMini = preload("res://MiniGames/BarMiniGame/Bar Minigame.tscn")
 var PunchMini = preload("res://MiniGames/PunchMiniGame/Punch Minigame.tscn")
 var SpamMini = preload("res://MiniGames/SpamMiniGame/progress_bar.tscn")
 var player_scene = preload("res://Entities/Player/Scenes/boat.tscn")
-
+var sound_controller = preload("res://Common/Assets/Sound/SFX/Process/soundcontroller.tscn")
 var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
+ 
 
 @onready var label: Label = $Gui/Label
+@onready var sound_controller_instance = sound_controller.instantiate()
+
 
 
 var can_move 
@@ -62,12 +65,14 @@ func _ready() -> void:
 	can_move = true
 	is_fishing = false
 	
+	
 	# Set the fish Distribution
 	set_fish_distribution()
 	
 	# Spawn fishing spots
 	spawn_fishing_spots(Fish_Amount)  # Spawn fishing spots equal to the total fish amount
 	
+	add_child(sound_controller_instance)
 	#here we can set a timer to spawn more fishingspots later
 	# or if fishingspots is < 5 or whatever the max is, create another random one
 	
@@ -78,6 +83,9 @@ func _process(delta: float) -> void:
 		
 	
 #set initial and sequential fish distributions
+
+
+
 func set_fish_distribution():
 	#set/reset temp arrays
 	fish_distribution = [] #array to store amount of total fish
@@ -132,7 +140,7 @@ func fish_selector():
 		return fish[random_fish]
 
 func fish_winner(the_fish):
-	
+	sound_controller_instance._fish_caught()
 	# rand weight maker for fish caught
 	var Random_Weight = RandomNumberGenerator.new().randi_range(the_fish.Min_Weight, the_fish.Max_Weight)
 	
@@ -173,6 +181,8 @@ func fish_winner(the_fish):
 
 # Function to spawn fishing spots
 func spawn_fishing_spots(count: int) -> void:
+	var map_node = get_tree().root.get_node("GamePrototype/ProtoMap")
+	#map_node.add_child(sound_controller)
 	print("fishingspots spawned")
 	for i in range(count):
 		var fishing_spot_scene = preload("res://Entities/FishingSpots/FishingSpot.tscn")  # Preload your fishing spot scene
@@ -183,7 +193,6 @@ func spawn_fishing_spots(count: int) -> void:
 		fishing_spot_instance.position = Vector2(randf_range(-1000, 1200), randf_range(-1000, 1000))  # Adjust the range as needed
 		fishing_spot_instance.connect("pressed",_on_fishing_spot_pressed)
 		# Add the fishing spot to the current scene
-		var map_node = get_tree().root.get_node("GamePrototype/ProtoMap")
 		map_node.add_child(fishing_spot_instance)
 		
 
@@ -203,6 +212,7 @@ func _on_fishing_spot_pressed() -> void:
 #process to end fishing
 func stop_fishing() -> void:
 	print("you stopped fishing, controll variables reset")
+	
 	#set controll variables
 	is_fishing = false
 	can_move = true

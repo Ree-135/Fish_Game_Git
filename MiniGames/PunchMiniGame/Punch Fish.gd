@@ -6,6 +6,7 @@ extends PathFollow2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var audio_stream_player: AudioStreamPlayer = $"../../AudioStreamPlayer"
 
 
 var the_fish = GameController.fish_selector()

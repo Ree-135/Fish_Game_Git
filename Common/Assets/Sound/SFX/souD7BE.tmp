@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvbn1ws8jue4"]
+
+[ext_resource type="Script" path="res://Common/Assets/Sound/SFX/soundcontroller.gd" id="1_31i35"]
+[ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="2_1xhf7"]
+
+[node name="Soundcontroller" type="Node"]
+script = ExtResource("1_31i35")
+
+[node name="FishCaught" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1xhf7")

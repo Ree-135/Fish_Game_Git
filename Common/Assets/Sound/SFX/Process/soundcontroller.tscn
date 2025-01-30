@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvbn1ws8jue4"]
+
+[ext_resource type="Script" path="res://Common/Assets/Sound/SFX/Process/soundcontroller.gd" id="1_iyeng"]
+[ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="2_8344e"]
+[ext_resource type="AudioStream" uid="uid://x6twkrjm6gn2" path="res://Common/Assets/Sound/SFX/SwimAway.wav" id="2_b4cfr"]
+
+[node name="Soundcontroller" type="Node"]
+script = ExtResource("1_iyeng")
+
+[node name="FishEscape" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b4cfr")
+volume_db = -2.811
+
+[node name="FishCaught" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8344e")
