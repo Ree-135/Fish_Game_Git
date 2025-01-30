@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cryipmxchfafh"]
+[gd_scene load_steps=3 format=3 uid="uid://cryipmxchfafh"]
 
 [ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="1_706j5"]
+[ext_resource type="Script" path="res://Utilities/GUI/Scenes/fishipedia.gd" id="1_vb0px"]
 
 [node name="Fishipedia" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vb0px")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
