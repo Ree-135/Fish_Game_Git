@@ -47,14 +47,14 @@ func _process(delta: float) -> void:
 		progress_ratio -= speed * delta
 
 
-	if Input.is_action_just_pressed("Action_Button") and in_fish == true:
+	if Input.is_action_just_pressed("Action_both") and in_fish == true:
 		progress_bar.value += 30
 		animated_sprite_2d.play()
 		in_fish = false
 		New_side()
 
 
-	if Input.is_action_just_pressed("Action_Button") and (in_fish == false):
+	if Input.is_action_just_pressed("Action_both") and (in_fish == false):
 		New_side()
 		progress_bar.value -= 10
 		animated_sprite_2d.play()

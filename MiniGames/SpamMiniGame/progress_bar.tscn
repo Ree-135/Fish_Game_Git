@@ -27,20 +27,28 @@ wait_time = 0.1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 82.0
-offset_top = -103.0
-offset_right = 122.0
-offset_bottom = -80.0
+offset_left = 88.9598
+offset_top = -125.025
+offset_right = 4432.96
+offset_bottom = 1177.98
 rotation = 1.58287
+scale = Vector2(0.0281164, 0.0281164)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 500
+text = "REEL
+(spam Mouse L and R)"
+horizontal_alignment = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 92.5666
-offset_top = 39.3707
-offset_right = 160.567
-offset_bottom = 93.3707
+offset_left = 93.1676
+offset_top = 33.961
+offset_right = 1618.17
+offset_bottom = 1341.96
 rotation = 1.57079
-scale = Vector2(0.499838, 0.499838)
+scale = Vector2(0.0263025, 0.0263025)
+theme_override_font_sizes/font_size = 500
 text = "Release
 Fish"
 
@@ -51,8 +59,10 @@ offset_top = 31.8572
 offset_right = 193.993
 offset_bottom = 62.8572
 rotation = 1.57079
-scale = Vector2(0.404853, 0.404853)
+scale = Vector2(0.0216036, 0.0216036)
+theme_override_font_sizes/font_size = 500
 text = "type : bleh"
+horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(131.336, 56.5015)
