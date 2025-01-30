@@ -1,19 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cryipmxchfafh"]
+[gd_scene load_steps=2 format=3 uid="uid://cryipmxchfafh"]
 
-[ext_resource type="Texture2D" uid="uid://ciy40uxasq2kv" path="res://Utilities/GUI/Assets/Book/AdobeStock_477169444.jpeg" id="1_dqvdy"]
-[ext_resource type="Texture2D" uid="uid://iu4rbxlhh2eh" path="res://Utilities/GUI/Assets/FishIcons/Screenshot 2025-01-19 120117.png" id="2_n3jt2"]
-[ext_resource type="PackedScene" uid="uid://cv6a6ym3rlmhx" path="res://Entities/Player/Scenes/Player.tscn" id="3_r6ice"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nd7rm"]
-texture = ExtResource("1_dqvdy")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6rh0"]
-bg_color = Color(0.73128, 0.711595, 0.66042, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-shadow_size = 2
+[ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="1_706j5"]
 
 [node name="Fishipedia" type="Control"]
 layout_mode = 3
@@ -26,108 +13,109 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -524.5
-offset_top = -299.0
-offset_right = 524.5
-offset_bottom = 299.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.599057, 1.43189e-06, 4.33177e-07, 1)
+layout_mode = 0
+offset_left = 43.0
+offset_top = 49.0
+offset_right = 83.0
+offset_bottom = 89.0
+scale = Vector2(25.918, 13.8292)
+color = Color(0.805684, 0.743872, 0.55469, 1)
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -506.5
-offset_top = -287.5
-offset_right = 506.5
-offset_bottom = 287.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_nd7rm")
+[node name="Left_Page" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.647628, 0.367427)
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 15
+[node name="Left_sprite" type="Sprite2D" parent="Left_Page"]
+position = Vector2(392.201, 544.325)
+scale = Vector2(0.551694, 0.737544)
+texture = ExtResource("1_706j5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
+[node name="L_Name label" type="Label" parent="Left_Page"]
+offset_left = 284.114
+offset_top = 824.653
+offset_right = 1459.11
+offset_bottom = 1474.65
+scale = Vector2(0.382554, 0.382554)
+theme_override_font_sizes/font_size = 500
+text = "FIshy"
 
-[node name="FishHeaders" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="L_Type" type="Label" parent="Left_Page"]
+offset_left = 80.2931
+offset_top = 1055.99
+offset_right = 1780.29
+offset_bottom = 1705.99
+scale = Vector2(0.205083, 0.26463)
+theme_override_font_sizes/font_size = 500
+text = "Type: "
 
-[node name="Buffalo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/FishHeaders"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
-text = "Buffalo
-"
+[node name="L_weight" type="Label" parent="Left_Page"]
+offset_left = 80.2931
+offset_top = 1265.56
+offset_right = 1780.29
+offset_bottom = 1915.56
+scale = Vector2(0.205083, 0.26463)
+theme_override_font_sizes/font_size = 500
+text = "Weight: "
 
-[node name="Common Carp" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/FishHeaders"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
-text = "Common Carp
-"
+[node name="L_caught" type="Label" parent="Left_Page"]
+layout_mode = 0
+offset_left = 78.749
+offset_top = 1456.07
+offset_right = 1778.75
+offset_bottom = 2106.07
+scale = Vector2(0.205083, 0.26463)
+theme_override_font_sizes/font_size = 500
+text = "Caught: "
 
-[node name="FishPhotos" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
+[node name="Right_Page" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 565.0
+offset_top = -4.0
+offset_right = 605.0
+offset_bottom = 36.0
+scale = Vector2(0.647628, 0.367427)
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos"]
-custom_minimum_size = Vector2(425, 250)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_j6rh0")
+[node name="Right_sprite" type="Sprite2D" parent="Right_Page"]
+position = Vector2(392.201, 544.325)
+scale = Vector2(0.551694, 0.737544)
+texture = ExtResource("1_706j5")
 
-[node name="Screenshot2025-01-19120117" type="Sprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos/PanelContainer2"]
-position = Vector2(210, 128.25)
-scale = Vector2(0.886667, 0.991713)
-texture = ExtResource("2_n3jt2")
+[node name="R_Name label" type="Label" parent="Right_Page"]
+offset_left = 284.114
+offset_top = 824.653
+offset_right = 1459.11
+offset_bottom = 1474.65
+scale = Vector2(0.382554, 0.382554)
+theme_override_font_sizes/font_size = 500
+text = "FIshy"
 
-[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos"]
-custom_minimum_size = Vector2(425, 50)
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_styles/panel = SubResource("StyleBoxFlat_j6rh0")
+[node name="R_Type" type="Label" parent="Right_Page"]
+offset_left = 67.9403
+offset_top = 1066.88
+offset_right = 1767.94
+offset_bottom = 1716.88
+scale = Vector2(0.205083, 0.26463)
+theme_override_font_sizes/font_size = 500
+text = "Type: "
 
-[node name="CharacterBody2D" parent="PanelContainer/MarginContainer/VBoxContainer/FishPhotos/PanelContainer3" instance=ExtResource("3_r6ice")]
-position = Vector2(220.5, 128)
+[node name="R_weight" type="Label" parent="Right_Page"]
+offset_left = 80.2931
+offset_top = 1265.56
+offset_right = 1780.29
+offset_bottom = 1915.56
+scale = Vector2(0.205083, 0.26463)
+theme_override_font_sizes/font_size = 500
+text = "Weight: "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Often Confused for the common carp, 
-this fish can live for over 100 years!
-
-"
-
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Large, heavy bodied minnow with
-arched back and a small triangular head. 
-Prefers Heavily vegetated areas that
-are nice a toasty
-
-"
+[node name="R_caught" type="Label" parent="Right_Page"]
+layout_mode = 0
+offset_left = 78.749
+offset_top = 1456.07
+offset_right = 1778.75
+offset_bottom = 2106.07
+scale = Vector2(0.205083, 0.26463)
+theme_override_font_sizes/font_size = 500
+text = "Caught: "

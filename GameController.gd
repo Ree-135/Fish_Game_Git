@@ -7,8 +7,8 @@ var PunchMini = preload("res://MiniGames/PunchMiniGame/Punch Minigame.tscn")
 var SpamMini = preload("res://MiniGames/SpamMiniGame/progress_bar.tscn")
 var player_scene = preload("res://Entities/Player/Scenes/boat.tscn")
 
-
 @onready var label: Label = $Gui/Label
+
 
 var can_move 
 var is_fishing 
@@ -39,6 +39,12 @@ var fish_listINVASIVE: Array = [
 	preload("res://Fish/RainbowTrout.tres"),
 	preload("res://Fish/ClownKnifefish.tres"),]
 
+#Starting Fish Values
+@export var Fish_Amount := 10 # total number of starting fish
+@export_range(0,1,0.1) var Percent_Native := 0.7 #starting perecnt of native fish
+var Percent_Invasive = 1 - Percent_Native  #starting percent of invasive fish
+var fish_distribution: Array #array to store amount of total fish
+
 var Native_Counter = 0
 var Invasive_counter = 0
 
@@ -49,20 +55,65 @@ func _ready() -> void:
 	print("contoll variables set")
 	can_move = true
 	is_fishing = false
+	
+	# Set the fish Distribution
+	set_fish_distribution()
+	
 	# Spawn fishing spots
-	spawn_fishing_spots(15)  # Spawn 15 fishing spots
+	spawn_fishing_spots(Fish_Amount)  # Spawn fishing spots equal to the total fish amount
+	
 	#here we can set a timer to spawn more fishingspots later
 	# or if fishingspots is < 5 or whatever the max is, create another random one
-
-# will select a fish at random (for minigames)
-func fish_selector():
-	print("fish selected")
-	var fish
-	var random_list = RandomNumberGenerator.new().randi_range(0,1)
 	
-	if random_list == 0:
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	#var player_node = get_node("Boat")
+	pass
+
+#set initial and sequential fish distributions
+func set_fish_distribution():
+	#set/reset temp arrays
+	fish_distribution = [] #array to store amount of total fish
+	var amount_Native_Fish = [] #array to store amount of Native fish
+	var amount_Invasive_Fish = [] #array to store amount of Invasive fish
+	
+	var native_fish = roundf(Fish_Amount * Percent_Native) #amount of native fish based off a percent of the total fish rounded to the nearest int
+	amount_Native_Fish.resize(native_fish) #sizes and fills a temp array of native fish
+	amount_Native_Fish.fill(0)
+	
+	var invasive_fish = roundf(Fish_Amount * Percent_Invasive) #amount of Invasive fish based off a percent of the total fish rounded to the nearest int
+	amount_Invasive_Fish.resize(invasive_fish) #sizes and fills a temp array of invasive fish
+	amount_Invasive_Fish.fill(1)
+	
+	fish_distribution.append_array(amount_Native_Fish)
+	fish_distribution.append_array(amount_Invasive_Fish)
+	
+	Fish_Amount = fish_distribution.size() #sets fish amount to match number of elements to account for rounding errors
+
+#adjusts fish population percentage values due to player actions
+func adjust_fish_perecent(fish_type: int, percent_change: float):
+	if fish_type == 0:
+		Percent_Native += percent_change
+	if fish_type == 1:
+		Percent_Invasive += percent_change
+	
+# will select a fish at random (for minigames) from a set distribution of fish
+func fish_selector():
+	var fish
+	print("fish selected")
+	
+	var _instAmount = fish_distribution.size()  #gets the number of total available fish
+	var _instRandom = RandomNumberGenerator.new().randi_range(0,_instAmount-1) #chooses fish type randomly from the distribution array
+	var _instFish = fish_distribution[_instRandom] #sets the fish type (native/invasive)
+	
+	if _instAmount > 1:
+		fish_distribution.remove_at(_instRandom) #removes previously selected fish from the distribution
+	elif _instAmount == 1:
+		fish_distribution.resize(0) #removes last element of the fish distribution array
+	
+	if _instFish == 0:
 		fish = fish_listNATIVE
-	if random_list == 1:
+	if _instFish == 1:
 		fish = fish_listINVASIVE
 	
 	var random_fish = RandomNumberGenerator.new().randi_range(0,(fish.size() - 1))
@@ -70,12 +121,16 @@ func fish_selector():
 
 func fish_winner(the_fish):
 	
-	if the_fish.Type == 0:
+	if the_fish.Type == 0: #caught native
 		Native_Counter += 1
+		adjust_fish_perecent(0, -0.05) #decrease native
+		adjust_fish_perecent(1, 0.07) #increase invasive
 		
-	if the_fish.Type == 1:
+	if the_fish.Type == 1: #caught invasive
 		Invasive_counter += 1
-		
+		adjust_fish_perecent(1, -0.05) #decrease invasive
+		adjust_fish_perecent(0, 0.07) #increase native
+
 	the_fish.Caught = true
 	print(Native_Counter)
 	print(Invasive_counter)
