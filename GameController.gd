@@ -184,6 +184,7 @@ func _on_fishing_spot_pressed() -> void:
 		
 		# Start fishing logic
 		start_fishing()
+		#queue_free()
 		
 	else:
 		#change_state(State.MINIGAME)

@@ -1,43 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://crrlysmabfi0b"]
+[gd_scene load_steps=7 format=3 uid="uid://crrlysmabfi0b"]
 
-[ext_resource type="Texture2D" uid="uid://chbysp17lnns1" path="res://Entities/FishingSpots/FishingSpot.png" id="1_tkkn5"]
+[ext_resource type="Texture2D" uid="uid://b6htjj7yijtp" path="res://Entities/FishingSpots/bubbles.png" id="1_ttb3v"]
+[ext_resource type="Texture2D" uid="uid://hier35iodpwc" path="res://Entities/FishingSpots/bubbles2.png" id="2_jyw3g"]
+[ext_resource type="Texture2D" uid="uid://bpyw85fly7qg" path="res://Entities/FishingSpots/bubbles3.png" id="3_b1fox"]
+[ext_resource type="Texture2D" uid="uid://cuaes6ut2a0f7" path="res://Entities/FishingSpots/bubbles4.png" id="4_qcqol"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_v1gli"]
+frames = 4
+frame_0/texture = ExtResource("1_ttb3v")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_jyw3g")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_b1fox")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_qcqol")
+frame_3/duration = 0.1
 
 [sub_resource type="GDScript" id="GDScript_4vma8"]
 script/source = "extends TextureButton
 
-# Preload the scene you want to add
-
-# NOTE this is just the first minigame, we can make diffrent spots diffrent games, with diffrent fish even, or we can load all games into this
-# then randomly deciide as the scene instantaites witch one to load.
-# The game controller already calls random to handle this.
-
-var MyScene = preload(\"res://MiniGames/BarMiniGame/Bar Minigame.tscn\")
-
-
-
 
 func _on_pressed() -> void:
-	# The first thing we want to do is cast out our bobber, so we change the texture to pressed
-	
-	# Then we need to write the logic to set a timer that will go for a ranom duration between 0 - 3 Seconds, at the end of this timer we decide if there is a bite or not
-	
-	# if there is a Bite then we do the logic below
-	 
-	# Create an instance of the scene
-	var new_scene_instance = MyScene.instantiate()
-	
-	# Find the instance of the gui path to 
-	var gui_node = get_tree().root.get_node(\"GamePrototype/Gui\")
-	# Add the new scene instance to the CanvasLayer or Control node
-	gui_node.add_child(new_scene_instance)
-	
-	# We probably need to make a game - state machine that handles this code instead, because having a bunch of fishing spots on the screen means each one has all of the minigames preloaded wich
-	# could be a huge problem especially if they are dynamic.
-	# We probably want to make a game state that prevents the player from moving/ clicking on more fishing spots / opening the UI.
-	
-	# So like MENU state
-	# Overworld State
-	# Minigame State
+	GameController.spawn_fishing_spots(1)
+	queue_free()
 	
 "
 
@@ -45,13 +30,16 @@ func _on_pressed() -> void:
 anchors_preset = -1
 anchor_left = 0.001
 anchor_top = 0.009
-anchor_right = 0.001
-anchor_bottom = 0.009
+anchor_right = 0.11
+anchor_bottom = 0.157
 offset_left = -0.152
 offset_top = -0.832
-offset_right = 84.848
-offset_bottom = 21.168
-texture_normal = ExtResource("1_tkkn5")
+offset_right = 0.279991
+offset_bottom = 0.264
+scale = Vector2(0.346278, 0.408759)
+texture_normal = SubResource("AnimatedTexture_v1gli")
 ignore_texture_size = true
 stretch_mode = 0
 script = SubResource("GDScript_4vma8")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
