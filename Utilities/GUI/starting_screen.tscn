@@ -1,21 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj6srql0yjc8j"]
+[gd_scene load_steps=7 format=3 uid="uid://bj6srql0yjc8j"]
 
 [ext_resource type="Script" path="res://Utilities/GUI/starting_screen.gd" id="1_hopll"]
 [ext_resource type="Texture2D" uid="uid://cdeagpc5bqqsj" path="res://Common/Assets/Sprites/book open.png" id="2_xr3rm"]
+[ext_resource type="Texture2D" uid="uid://b8ito0gclqn0d" path="res://Common/Assets/Sprites/Left Fishy.png" id="3_eqrdg"]
+[ext_resource type="Texture2D" uid="uid://bl6s3w5dljrs2" path="res://Common/Assets/Sprites/Mouse1.png" id="4_8s6o4"]
+[ext_resource type="Texture2D" uid="uid://dpmywi34pevs2" path="res://Common/Assets/Sprites/WASD fishy.png" id="5_blysw"]
+[ext_resource type="Texture2D" uid="uid://bldleywhfpfhc" path="res://Common/Assets/Sprites/greg gator.png" id="6_7orpv"]
 
 [node name="Startying screen" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.0
+offset_top = -324.0
+offset_right = -578.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_hopll")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131031.0
+offset_top = -58729.0
+offset_right = -128553.0
+offset_bottom = -58006.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(185.239, 185.239)
+color = Color(0.87451, 0.776471, 0.541176, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1191, 324)
 scale = Vector2(-1.26148, 0.606097)
 texture = ExtResource("2_xr3rm")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(308.5, 526)
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("3_eqrdg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(412, 526.269)
+scale = Vector2(0.172538, 0.172538)
+texture = ExtResource("4_8s6o4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(141, 520)
+scale = Vector2(0.302544, 0.302544)
+texture = ExtResource("5_blysw")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -24,11 +68,10 @@ offset_top = 62.0
 offset_right = 23667.0
 offset_bottom = 97356.0
 scale = Vector2(0.0473471, 0.0473471)
-theme_override_colors/font_color = Color(0.773537, 0.484766, 0.30622, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 35
+theme_override_colors/font_color = Color(0.454745, 0.263343, 0.142083, 1)
 theme_override_font_sizes/font_size = 500
 text = "Dear Greg,
+
 Welcome to the pond! 
 you've got a big life ahead of you, but we have bills to pay. 
 So make sure you stay on top of that quota by catching enough fish every day!
@@ -45,6 +88,7 @@ Fishy Business INC"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 715.0
 offset_top = 552.0
 offset_right = 4230.0
@@ -55,3 +99,43 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 50
 theme_override_font_sizes/font_size = 500
 text = "Press 'E' to Close"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 430.0
+offset_right = 3779.0
+offset_bottom = 1733.0
+scale = Vector2(0.0543285, 0.0543285)
+theme_override_colors/font_color = Color(0.546945, 0.320809, 0.17936, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -300
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 500
+text = "Game
+Buttons"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.047
+anchor_bottom = 0.047
+offset_left = 54.0
+offset_top = 401.0
+offset_right = 3514.86
+offset_bottom = 1673.54
+scale = Vector2(0.0553616, 0.0553616)
+theme_override_colors/font_color = Color(0.546945, 0.320809, 0.17936, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -300
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 500
+text = "Movement
+Keys"
+horizontal_alignment = 1
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(879, 459)
+rotation = 0.182883
+scale = Vector2(0.27795, 0.27795)
+texture = ExtResource("6_7orpv")

@@ -1,20 +1,36 @@
-[gd_scene format=3 uid="uid://cj7g0r3u0hf7r"]
+[gd_scene load_steps=2 format=3 uid="uid://cj7g0r3u0hf7r"]
+
+[ext_resource type="Texture2D" uid="uid://wce41d7jrqit" path="res://Common/Assets/Sprites/loser screen.png" id="1_i0nm6"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -87145.0
+offset_top = -60660.0
+offset_right = -87105.0
+offset_bottom = -60620.0
+scale = Vector2(341868, 344574)
+color = Color(0.572549, 0.596078, 0.596078, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(589, 324)
+scale = Vector2(0.65898, 0.65898)
+texture = ExtResource("1_i0nm6")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 422.0
-offset_top = 497.0
-offset_right = 2294.0
-offset_bottom = 1800.0
+offset_left = 525.0
+offset_top = 459.0
+offset_right = 2397.0
+offset_bottom = 1762.0
 scale = Vector2(0.119843, 0.119843)
 theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
 theme_override_font_sizes/font_size = 500
@@ -24,10 +40,10 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 287.0
-offset_top = 45.0
-offset_right = 1463.0
-offset_bottom = 1348.0
+offset_left = 376.0
+offset_top = -14.0
+offset_right = 1552.0
+offset_bottom = 1289.0
 scale = Vector2(0.425236, 0.425236)
 theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.164706, 0, 0, 1)
