@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://ipkna4rno5mv" path="res://Common/Assets/Sound/SFX/StreamBG.wav" id="16_d5puk"]
 [ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="17_3w5rj"]
 [ext_resource type="Script" path="res://audio_stream_player.gd" id="19_6g7hu"]
-[ext_resource type="PackedScene" path="res://Utilities/GUI/starting_screen.tscn" id="21_he5dt"]
+[ext_resource type="PackedScene" uid="uid://bj6srql0yjc8j" path="res://Utilities/GUI/starting_screen.tscn" id="21_he5dt"]
 
 [sub_resource type="Environment" id="Environment_23cnu"]
 background_mode = 3

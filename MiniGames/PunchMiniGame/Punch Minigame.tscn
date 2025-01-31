@@ -60,13 +60,17 @@ animations = [{
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -372.0
+offset_right = 7.0
+offset_bottom = -372.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="Path L>R" type="Path2D" parent="."]
 position = Vector2(-309, -156)

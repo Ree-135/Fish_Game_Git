@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj7g0r3u0hf7r"]
+[gd_scene load_steps=3 format=3 uid="uid://cj7g0r3u0hf7r"]
 
 [ext_resource type="Texture2D" uid="uid://wce41d7jrqit" path="res://Common/Assets/Sprites/loser screen.png" id="1_i0nm6"]
+[ext_resource type="Script" path="res://Utilities/GUI/button.gd" id="2_hsc5a"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,19 +26,6 @@ position = Vector2(589, 324)
 scale = Vector2(0.65898, 0.65898)
 texture = ExtResource("1_i0nm6")
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 459.0
-offset_right = 2397.0
-offset_bottom = 1762.0
-scale = Vector2(0.119843, 0.119843)
-theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
-theme_override_font_sizes/font_size = 500
-text = "Leave to
-Try again"
-horizontal_alignment = 1
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 376.0
@@ -52,3 +40,28 @@ theme_override_font_sizes/font_size = 500
 text = "YOU
 LOSE"
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 459.0
+offset_right = 762.0
+offset_bottom = 521.0
+script = ExtResource("2_hsc5a")
+
+[node name="Label2" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.111
+offset_left = -1.0
+offset_top = -9.0
+offset_right = 1908.0
+offset_bottom = 572.118
+scale = Vector2(0.119843, 0.119843)
+theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
+theme_override_font_sizes/font_size = 500
+text = "Try again"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

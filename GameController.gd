@@ -15,10 +15,16 @@ var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 
 
 
-var can_move 
-var is_fishing 
-var fish_caught
-var in_menu
+var can_move: bool
+var is_fishing: bool
+var fish_caught: bool
+var in_menu: bool
+
+func initilize():
+	can_move = false
+	is_fishing = false
+	fish_caught = false
+	in_menu = true
 # array of all the native fish 
 var fish_listNATIVE: Array = [
 	preload("res://Fish/AtlanticSturgeon.tres"),
@@ -65,7 +71,7 @@ func _ready() -> void:
 	print("contoll variables set")
 	can_move = true
 	is_fishing = false
-	
+	initilize()
 	
 	# Set the fish Distribution
 	set_fish_distribution()
@@ -249,4 +255,6 @@ func start_fishing() -> void:
 	#set controll variables
 	is_fishing = true
 	can_move = false
-	
+func _restart() -> void:
+	print("reset game")
+	get_tree().reload_current_scene()
