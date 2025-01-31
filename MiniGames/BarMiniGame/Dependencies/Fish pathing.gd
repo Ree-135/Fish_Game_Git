@@ -49,8 +49,12 @@ var the_fish = GameController.fish_selector()
 
 func _ready() -> void:
 	#fish personalization
-	sprite_2d.texture = the_fish.FishTexture
+	
 		
+	randomize()
+	the_fish = GameController.fish_selector()
+	
+	sprite_2d.texture = the_fish.FishTexture
 	score = .15
 
 # by not dirrectly affecting the score inside the entered and exit body 2D (next line)

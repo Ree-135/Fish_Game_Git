@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 			
 	if day == next_day:
 		
-		GameController.Fish_Amount *= 1.5 
+		GameController.Fish_Amount = roundi(GameController.Fish_Amount * 1.5)
 		
 		if GameController.currency < quota and day > 0:
 			GameController.can_move = false

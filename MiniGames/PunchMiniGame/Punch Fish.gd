@@ -31,6 +31,8 @@ func _ready() -> void:
 		progress = 308
 	
 	in_fish = true
+	randomize()
+	the_fish = GameController.fish_selector()
 	
 	sprite_2d.texture = the_fish.FishTexture
 	

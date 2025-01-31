@@ -26,6 +26,9 @@ func _ready() -> void:
 	reelingsfx.play()
 	label.text = "REEL!! \n(spam Mouse L and R)"
 	
+	randomize()
+	the_fish = GameController.fish_selector()
+	
 	sprite_2d.texture = the_fish.FishTexture
 	
 func _process(delta: float) -> void:
