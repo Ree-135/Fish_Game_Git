@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doorf8dyke08f"
+path="res://.godot/imported/HoliznaCC0 - 4 (jazz).mp3-8489655a3b43b99f49c1c5ac3769501b.mp3str"
+
+[deps]
+
+source_file="res://Common/Assets/Sound/Music/HoliznaCC0 - 4 (jazz).mp3"
+dest_files=["res://.godot/imported/HoliznaCC0 - 4 (jazz).mp3-8489655a3b43b99f49c1c5ac3769501b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

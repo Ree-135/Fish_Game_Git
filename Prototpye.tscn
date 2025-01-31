@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=24 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Morality Bar.gd" id="13_c7hmq"]
 [ext_resource type="AudioStream" uid="uid://ipkna4rno5mv" path="res://Common/Assets/Sound/SFX/StreamBG.wav" id="16_d5puk"]
 [ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="17_3w5rj"]
+[ext_resource type="Script" path="res://audio_stream_player.gd" id="19_6g7hu"]
 
 [sub_resource type="Environment" id="Environment_23cnu"]
 background_mode = 3
@@ -114,10 +115,17 @@ offset_bottom = 22.0
 scale = Vector2(0.00595088, 0.00723143)
 
 [node name="TextureButton" type="TextureButton" parent="Gui"]
-offset_left = 1021.0
-offset_top = 516.0
-offset_right = 2021.0
-offset_bottom = 1516.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -139.0
+offset_right = 858.0
+offset_bottom = 861.0
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(0.129946, 0.129946)
 texture_normal = ExtResource("11_enipg")
 texture_hover = ExtResource("13_0t5tb")
@@ -206,5 +214,9 @@ autoplay = true
 [node name="FishWin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_3w5rj")
 volume_db = -3.748
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -14.991
+script = ExtResource("19_6g7hu")
 
 [connection signal="pressed" from="Gui/TextureButton" to="." method="_on_texture_button_pressed"]

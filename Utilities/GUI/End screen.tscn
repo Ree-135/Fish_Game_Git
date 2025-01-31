@@ -9,12 +9,18 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = -5.0
-offset_top = -8.0
-offset_right = 1158.0
-offset_bottom = 655.0
+offset_left = 422.0
+offset_top = 497.0
+offset_right = 2294.0
+offset_bottom = 1800.0
+scale = Vector2(0.119843, 0.119843)
+theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
+theme_override_font_sizes/font_size = 500
+text = "Leave to
+Try again"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -29,17 +35,4 @@ theme_override_constants/outline_size = 30
 theme_override_font_sizes/font_size = 500
 text = "YOU
 LOSE"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 422.0
-offset_top = 497.0
-offset_right = 2294.0
-offset_bottom = 1800.0
-scale = Vector2(0.119843, 0.119843)
-theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
-theme_override_font_sizes/font_size = 500
-text = "Leave to
-Try again"
 horizontal_alignment = 1
