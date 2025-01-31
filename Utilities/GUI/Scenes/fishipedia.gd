@@ -60,7 +60,7 @@ func load_list():
 func _ready() -> void:
 	i = 0
 	page = 0
-	
+	GameController.in_menu = true
 	GameController.can_move = false
 	
 	
@@ -118,5 +118,7 @@ func _process(delta: float) -> void:
 			timer.start()
 			
 		if Input.is_action_pressed("Close_book"):
-			queue_free()
+			GameController.in_menu = false
 			GameController.can_move = true
+			queue_free()
+			

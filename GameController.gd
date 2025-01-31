@@ -18,6 +18,7 @@ var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 var can_move 
 var is_fishing 
 var fish_caught
+var in_menu
 # array of all the native fish 
 var fish_listNATIVE: Array = [
 	preload("res://Fish/AtlanticSturgeon.tres"),
