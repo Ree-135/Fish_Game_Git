@@ -12,7 +12,7 @@ var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 
 @onready var label: Label = $Gui/Label
 @onready var sound_controller_instance = sound_controller.instantiate()
-@onready var end_screen: Control = $"Gui/End screen"
+@onready var end_screen = preload("res://Utilities/GUI/End screen.tscn")
 
 
 
@@ -53,7 +53,7 @@ var fish_listINVASIVE: Array = [
 	preload("res://Fish/ClownKnifefish.tres"),]
 
 #Starting Fish Values
-@export var Fish_Amount := 20 # total number of starting fish
+@export var Fish_Amount := 2 # total number of starting fish
 @export_range(0,1,0.1) var Percent_Native := 0.7 #starting perecnt of native fish
 var Percent_Invasive = 1 - Percent_Native  #starting percent of invasive fish
 var fish_distribution: Array #array to store amount of total fish
@@ -72,6 +72,8 @@ func _ready() -> void:
 	print("contoll variables set")
 	can_move = true
 	is_fishing = false
+	
+	Fish_Amount = Fish_Amount
 	initilize()
 	
 	# Set the fish Distribution
@@ -87,16 +89,16 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#var player_node = get_node("Boat")
-	if Fish_Amount == 1:
+	if Fish_Amount == Native_Counter + Invasive_counter + 1:
 		can_move = false
 		is_fishing = true
-		end_screen.visible = true
+
+		var gui_node = get_tree().root.get_node("GamePrototype/Gui")
+		gui_node.add_child(end_screen.instantiate())
 		
-	
+		
+
 #set initial and sequential fish distributions
-
-
-
 func set_fish_distribution():
 	#set/reset temp arrays
 	fish_distribution = [] #array to store amount of total fish
@@ -259,6 +261,7 @@ func start_fishing() -> void:
 	#set controll variables
 	is_fishing = true
 	can_move = false
+	
 func _restart() -> void:
 	print("reset game")
 	get_tree().reload_current_scene()
