@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=27 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -22,6 +22,10 @@
 [ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="17_3w5rj"]
 [ext_resource type="Script" path="res://audio_stream_player.gd" id="19_6g7hu"]
 [ext_resource type="PackedScene" uid="uid://bj6srql0yjc8j" path="res://Utilities/GUI/starting_screen.tscn" id="21_he5dt"]
+
+[sub_resource type="Environment" id="Environment_ggtx2"]
+background_mode = 3
+adjustment_enabled = true
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -47,6 +51,9 @@ script = ExtResource("1_k3w0p")
 color = Color(0.00328794, 0.17329, 0.338982, 1)
 script = ExtResource("1_7um78")
 gradient = ExtResource("2_gcoq1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ggtx2")
 
 [node name="ProtoMap" type="Sprite2D" parent="."]
 position = Vector2(3, 1)
@@ -157,7 +164,7 @@ scale = Vector2(0.129946, 0.129946)
 texture_normal = ExtResource("11_enipg")
 texture_hover = ExtResource("13_0t5tb")
 
-[node name="ProgressBar" type="ProgressBar" parent="Gui"]
+[node name="Morality Bar" type="ProgressBar" parent="Gui"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

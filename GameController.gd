@@ -16,6 +16,7 @@ var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 
 
 
+
 var can_move: bool
 var is_fishing: bool
 var fish_caught: bool
@@ -96,6 +97,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
 	# var player_node = get_node("Boat")
 	if Fish_Amount == Native_Counter + Invasive_counter + 1 and not end_screen_added:
 		can_move = false
