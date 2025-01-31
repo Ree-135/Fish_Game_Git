@@ -23,16 +23,15 @@ bg_color = Color(0.937255, 0.396078, 0.380392, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchor_left = 0.642
+anchor_top = 0.123
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -489.0
-offset_top = -607.0
-offset_right = -449.0
-offset_bottom = -567.0
-grow_horizontal = 2
+offset_left = -403.584
+offset_top = -54.704
+offset_right = -776.0
+offset_bottom = -583.0
+grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.927892, 0.927892)
 
@@ -41,7 +40,7 @@ position = Vector2(551, 351)
 scale = Vector2(0.786488, 0.674134)
 
 [node name="Bobber Bar" parent="." instance=ExtResource("2_yhbl8")]
-position = Vector2(555, 297)
+position = Vector2(553.944, 296.371)
 scale = Vector2(18.5138, 12.54)
 JUMP_VELOCITY = -350.0
 Grav_Multiplier = 0.75
