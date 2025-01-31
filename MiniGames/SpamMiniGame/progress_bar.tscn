@@ -14,15 +14,15 @@ color = Color(0.937255, 0.384314, 0.364706, 1)
 thickness = 27
 
 [node name="ProgressBar" type="ProgressBar"]
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -75.0
+offset_left = -293.0
 offset_top = -27.0
-offset_right = 75.0
-grow_horizontal = 2
+offset_right = -143.0
+grow_horizontal = 0
 grow_vertical = 0
 rotation = 4.71239
 scale = Vector2(3.32734, 3.32734)
