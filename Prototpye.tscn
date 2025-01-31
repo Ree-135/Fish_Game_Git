@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=25 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ui82prka3hv0" path="res://Common/Assets/Sprites/Overworld/Trees.png" id="12_qsqiq"]
 [ext_resource type="Texture2D" uid="uid://dw0hs03qc7olf" path="res://Common/Assets/Sprites/hover book.png" id="13_0t5tb"]
 [ext_resource type="Script" path="res://Morality Bar.gd" id="13_c7hmq"]
+[ext_resource type="Texture2D" uid="uid://5bwmf8e554si" path="res://Common/Assets/Sprites/MOrality bar.png" id="13_x0b8l"]
 [ext_resource type="AudioStream" uid="uid://ipkna4rno5mv" path="res://Common/Assets/Sound/SFX/StreamBG.wav" id="16_d5puk"]
 [ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="17_3w5rj"]
 [ext_resource type="Script" path="res://audio_stream_player.gd" id="19_6g7hu"]
@@ -27,11 +28,17 @@ background_mode = 3
 normal = Vector2(1, 8.74201e-08)
 distance = -0.059835
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43dk8"]
-bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lp437"]
+texture = ExtResource("13_x0b8l")
+expand_margin_left = 45.0
+expand_margin_top = 102.0
+expand_margin_right = 46.0
+expand_margin_bottom = 90.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrayf"]
-bg_color = Color(0.912174, 0.434751, 0.380575, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fov58"]
+bg_color = Color(0.900444, 0.45083, 0.335392, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
 
 [node name="GamePrototype" type="Node2D"]
 scale = Vector2(0.944443, 1.01539)
@@ -131,13 +138,13 @@ texture_normal = ExtResource("11_enipg")
 texture_hover = ExtResource("13_0t5tb")
 
 [node name="ProgressBar" type="ProgressBar" parent="Gui"]
-offset_left = 297.0
-offset_top = 7.0
-offset_right = 514.0
-offset_bottom = 32.0
-scale = Vector2(2.036, 2.036)
-theme_override_styles/background = SubResource("StyleBoxFlat_43dk8")
-theme_override_styles/fill = SubResource("StyleBoxFlat_jrayf")
+offset_left = 402.0
+offset_top = 39.0
+offset_right = 619.0
+offset_bottom = 97.0
+scale = Vector2(1.33392, 0.818722)
+theme_override_styles/background = SubResource("StyleBoxTexture_lp437")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fov58")
 min_value = -1.0
 max_value = 1.0
 show_percentage = false
