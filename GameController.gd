@@ -55,7 +55,7 @@ var fish_listINVASIVE: Array = [
 	preload("res://Fish/ClownKnifefish.tres"),]
 
 #Starting Fish Values
-@export var Fish_Amount := 50 # total number of starting fish
+@export var Fish_Amount := 30 # total number of starting fish
 @export_range(0,1,0.1) var Percent_Native := 0.7 #starting perecnt of native fish
 var Percent_Invasive = 1 - Percent_Native  #starting percent of invasive fish
 var fish_distribution: Array #array to store amount of total fish
@@ -71,11 +71,14 @@ var morality = 0
 func _ready() -> void:
 	# Initialize randomize
 	randomize()
-	print("contoll variables set")
 	can_move = true
 	is_fishing = false
 	
-	Fish_Amount = Fish_Amount
+	currency = 0
+	Native_Counter = 0
+	Invasive_counter = 0
+	morality = 0
+	Fish_Amount = 30
 	initilize()
 	
 	# Set the fish Distribution
@@ -133,7 +136,6 @@ func adjust_fish_perecent(fish_type: int, percent_change: float):
 # will select a fish at random (for minigames) from a set distribution of fish
 func fish_selector():
 	var fish
-	print("fish selected")
 	
 	var _instAmount = fish_distribution.size()  #gets the number of total available fish
 	
@@ -192,16 +194,12 @@ func fish_winner(the_fish):
 			currency += roundi(Random_Weight / 25) # no * 2 multiplier because less valuable invasive fish
 
 	the_fish.Caught = true
-	print(Native_Counter)
-	print(Invasive_counter)
-	print("minigame ended, score updated")
 
 
 # Function to spawn fishing spots
 func spawn_fishing_spots(count: int) -> void:
 	var map_node = get_tree().root.get_node("GamePrototype/ProtoMap")
 	#map_node.add_child(sound_controller)
-	print("fishingspots spawned")
 	for i in range(count):
 		var fishing_spot_scene = preload("res://Entities/FishingSpots/FishingSpot.tscn")  # Preload your fishing spot scene
 		var fishing_spot_instance = fishing_spot_scene.instantiate()
@@ -216,17 +214,12 @@ func spawn_fishing_spots(count: int) -> void:
 
 # Function to handle fishing spot interaction
 func _on_fishing_spot_pressed() -> void:
-	print("fishingspot pressed")
 	if is_fishing == false:
 		
 		# Start fishing logic
 		start_fishing()
 		#queue_free()
 		
-	else:
-		#change_state(State.MINIGAME)
-		print("you are already fishing")
-		#do nothing?
 #process to end fishing
 func stop_fishing() -> void:
 	
@@ -236,7 +229,6 @@ func stop_fishing() -> void:
 		fish_caught = false
 	else:
 		sound_controller_instance._fish_escape()
-	print("you stopped fishing, controll variables reset")
 	
 	#set controll variables
 	is_fishing = false
@@ -244,7 +236,6 @@ func stop_fishing() -> void:
 	
 # process to start fishing
 func start_fishing() -> void:
-	print("you are fishing, controll vars updated")
 	
 	var game_selector = RandomNumberGenerator.new().randi_range(0,2)
 	var new_scene_instance
@@ -268,5 +259,12 @@ func start_fishing() -> void:
 	can_move = false
 	
 func _restart() -> void:
-	print("reset game")
+	can_move = true
+	is_fishing = false
+	
+	currency = 0
+	Native_Counter = 0
+	Invasive_counter = 0
+	morality = 0
+	Fish_Amount = 30
 	get_tree().reload_current_scene()
