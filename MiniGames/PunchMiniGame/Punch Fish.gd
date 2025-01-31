@@ -8,6 +8,8 @@ extends PathFollow2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var audio_stream_player: AudioStreamPlayer = $"../../AudioStreamPlayer"
 
+@onready var label: Label = $"../../Label"
+
 
 var the_fish = GameController.fish_selector()
 
@@ -56,6 +58,11 @@ func _process(delta: float) -> void:
 		progress_bar.value -= 10
 		animated_sprite_2d.play()
 		audio_stream_player.play()
+		
+	if the_fish.Type == 0:
+		label.text = "Type: Native"
+	if the_fish.Type == 1:
+		label.text = "Type: Invasive"
 		
 	if progress_bar.value >= 100:
 		GameController.fish_winner(the_fish)

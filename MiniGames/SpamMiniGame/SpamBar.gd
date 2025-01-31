@@ -14,6 +14,7 @@ extends ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var reelingsfx: AudioStreamPlayer = $Reelingsfx
 
+@onready var label_2: Label = $Label2
 
 
 var playing = 1
@@ -52,6 +53,12 @@ func _process(delta: float) -> void:
 		GameController.is_fishing = false
 		reelingsfx.stop()
 		progress_bar.queue_free()
+	
+	if the_fish.Type == 0:
+		label_2.text = "Type: Native"
+	if the_fish.Type == 1:
+		label_2.text = "Type: Invasive"
+
 
 
 
