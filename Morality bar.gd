@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 
 @onready var world_environment: WorldEnvironment = $"../../WorldEnvironment"
 
