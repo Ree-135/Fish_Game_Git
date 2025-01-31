@@ -2,8 +2,9 @@ extends PathFollow2D
 
 @onready var timer: Timer = $Timer
 @onready var progress_bar: ProgressBar = $"../ProgressBar"
-@onready var path_lr: Path2D = $".."
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var control: Control = $"../.."
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var audio_stream_player: AudioStreamPlayer = $"../../AudioStreamPlayer"
@@ -69,13 +70,13 @@ func _process(delta: float) -> void:
 		GameController.stop_fishing()
 		GameController.can_move = true
 		GameController.is_fishing = false
-		path_lr.queue_free()
+		control.queue_free()
 		
 	if progress_bar.value <= 0:
 		GameController.stop_fishing()
 		GameController.can_move = true
 		GameController.is_fishing = false
-		path_lr.queue_free()
+		control.queue_free()
 		
 
 
@@ -120,4 +121,4 @@ func _on_button_pressed() -> void:
 	GameController.can_move = true
 	GameController.is_fishing = false
 	GameController.stop_fishing()
-	path_lr.queue_free()
+	control.queue_free()
