@@ -1,33 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj7g0r3u0hf7r"]
-
-[ext_resource type="Texture2D" uid="uid://dtihkmgrfpw5p" path="res://Common/Assets/Sprites/loser screen.png" id="1_2h8mn"]
+[gd_scene format=3 uid="uid://cj7g0r3u0hf7r"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 5.0
-offset_top = 3.0
-offset_right = 45.0
-offset_bottom = 43.0
+offset_right = 40.0
+offset_bottom = 40.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="Sprite2D" parent="."]
-position = Vector2(576.111, 324)
-scale = Vector2(0.607407, 0.607407)
-texture = ExtResource("1_2h8mn")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 1158.0
+offset_bottom = 655.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 341.0
-offset_top = 19.0
-offset_right = 1517.0
-offset_bottom = 1322.0
+offset_left = 287.0
+offset_top = 45.0
+offset_right = 1463.0
+offset_bottom = 1348.0
 scale = Vector2(0.425236, 0.425236)
 theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.164706, 0, 0, 1)
-theme_override_constants/line_spacing = -200
 theme_override_constants/outline_size = 30
 theme_override_font_sizes/font_size = 500
 text = "YOU
@@ -36,16 +33,12 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 444.0
-offset_top = 416.0
-offset_right = 2316.0
-offset_bottom = 1719.0
-scale = Vector2(0.166524, 0.166524)
+offset_left = 422.0
+offset_top = 497.0
+offset_right = 2294.0
+offset_bottom = 1800.0
+scale = Vector2(0.119843, 0.119843)
 theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
-theme_override_colors/font_shadow_color = Color(0.164706, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 13
-theme_override_constants/shadow_offset_y = 14
-theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 500
 text = "Leave to
 Try again"
