@@ -267,4 +267,5 @@ func _restart() -> void:
 	Invasive_counter = 0
 	morality = 0
 	Fish_Amount = 30
+	spawn_fishing_spots(30)
 	get_tree().reload_current_scene()
