@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=26 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://ipkna4rno5mv" path="res://Common/Assets/Sound/SFX/StreamBG.wav" id="16_d5puk"]
 [ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="17_3w5rj"]
 [ext_resource type="Script" path="res://audio_stream_player.gd" id="19_6g7hu"]
+[ext_resource type="PackedScene" uid="uid://bj6srql0yjc8j" path="res://Utilities/GUI/starting_screen.tscn" id="21_he5dt"]
 
 [sub_resource type="Environment" id="Environment_23cnu"]
 background_mode = 3
@@ -152,6 +153,8 @@ script = ExtResource("13_c7hmq")
 
 [node name="End screen" parent="Gui" instance=ExtResource("8_fd63j")]
 visible = false
+
+[node name="Startying screen" parent="Gui" instance=ExtResource("21_he5dt")]
 
 [node name="Timer" type="Timer" parent="."]
 

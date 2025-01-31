@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj6srql0yjc8j"]
+
+[ext_resource type="Script" path="res://Utilities/GUI/starting_screen.gd" id="1_hopll"]
+[ext_resource type="Texture2D" uid="uid://cdeagpc5bqqsj" path="res://Common/Assets/Sprites/book open.png" id="2_xr3rm"]
+
+[node name="Startying screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hopll")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1191, 324)
+scale = Vector2(-1.26148, 0.606097)
+texture = ExtResource("2_xr3rm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 62.0
+offset_right = 23667.0
+offset_bottom = 97356.0
+scale = Vector2(0.0473471, 0.0473471)
+theme_override_colors/font_color = Color(0.773537, 0.484766, 0.30622, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 35
+theme_override_font_sizes/font_size = 500
+text = "Dear Greg,
+Welcome to the pond! 
+you've got a big life ahead of you, but we have bills to pay. 
+So make sure you stay on top of that quota by catching enough fish every day!
+It says in the boat manuel that you can steer your boat using \"WASD\", maybe you know what that is?
+also, the old racoon down the street says that you can use the \"Mouse buttons\" to fish, but he's just some old wack job
+I gave you an old fishing guide, it says you can open it \"by clicking it in the bottom right of your screen\", 
+this thing was made back in the day though so I don't know what it's saying
+Finally, the fish population has been really wierd recently, so don't disrupt it too much by over fishing now!
+and remember, reach that Quota!
+
+Sincerely,
+
+Fishy Business INC"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 715.0
+offset_top = 552.0
+offset_right = 4230.0
+offset_bottom = 1202.0
+scale = Vector2(0.116559, 0.116559)
+theme_override_colors/font_color = Color(0.546945, 0.320809, 0.17936, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 500
+text = "Press 'E' to Close"
