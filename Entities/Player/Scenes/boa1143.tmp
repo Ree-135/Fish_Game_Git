@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bklu8oy3yyevo"]
+
+[ext_resource type="Script" path="res://Entities/Player/Scripts/boat.gd" id="1_hh5y0"]
+[ext_resource type="Texture2D" uid="uid://c3n14q1b0xhqk" path="res://Common/Assets/Sprites/Boat.png" id="2_26plr"]
+[ext_resource type="Script" path="res://Entities/Player/Scripts/node_2d.gd" id="3_n5huo"]
+[ext_resource type="Texture2D" uid="uid://bldleywhfpfhc" path="res://Common/Assets/Sprites/greg gator.png" id="4_n7ywc"]
+[ext_resource type="AudioStream" uid="uid://mi7cg05mo0n7" path="res://Common/Assets/Sound/SFX/BoatMovement.wav" id="5_h6rrs"]
+[ext_resource type="Script" path="res://Entities/Player/Scenes/motor.gd" id="6_2x7sa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3148y"]
+radius = 20.0
+height = 96.0
+
+[node name="Boat" type="CharacterBody2D"]
+script = ExtResource("1_hh5y0")
+drag_factor = 0.03
+
+[node name="Boat" type="Sprite2D" parent="."]
+position = Vector2(26, 2)
+rotation = 3.14159
+scale = Vector2(0.0525837, 0.0666958)
+texture = ExtResource("2_26plr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3148y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_smoothed = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1, 0)
+script = ExtResource("3_n5huo")
+
+[node name="Smilyface" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1, 0)
+rotation = -1.5708
+scale = Vector2(0.0655325, 0.0657402)
+texture = ExtResource("4_n7ywc")
+offset = Vector2(-54.565, 0)
+
+[node name="Motor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h6rrs")
+volume_db = -9.369
+script = ExtResource("6_2x7sa")

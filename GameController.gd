@@ -17,7 +17,7 @@ var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 
 var can_move 
 var is_fishing 
-
+var fish_caught
 # array of all the native fish 
 var fish_listNATIVE: Array = [
 	preload("res://Fish/AtlanticSturgeon.tres"),
@@ -140,7 +140,7 @@ func fish_selector():
 		return fish[random_fish]
 
 func fish_winner(the_fish):
-	sound_controller_instance._fish_caught()
+	fish_caught = true
 	# rand weight maker for fish caught
 	var Random_Weight = RandomNumberGenerator.new().randi_range(the_fish.Min_Weight, the_fish.Max_Weight)
 	
@@ -211,6 +211,13 @@ func _on_fishing_spot_pressed() -> void:
 		#do nothing?
 #process to end fishing
 func stop_fishing() -> void:
+	
+	if fish_caught == true:
+		
+		sound_controller_instance._fish_caught()
+		fish_caught = false
+	else:
+		sound_controller_instance._fish_escape()
 	print("you stopped fishing, controll variables reset")
 	
 	#set controll variables

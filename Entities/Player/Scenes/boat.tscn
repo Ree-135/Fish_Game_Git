@@ -1,13 +1,53 @@
-[gd_scene load_steps=6 format=3 uid="uid://bklu8oy3yyevo"]
+[gd_scene load_steps=12 format=3 uid="uid://bklu8oy3yyevo"]
 
 [ext_resource type="Script" path="res://Entities/Player/Scripts/boat.gd" id="1_hh5y0"]
 [ext_resource type="Texture2D" uid="uid://c3n14q1b0xhqk" path="res://Common/Assets/Sprites/Boat.png" id="2_26plr"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/node_2d.gd" id="3_n5huo"]
 [ext_resource type="Texture2D" uid="uid://bldleywhfpfhc" path="res://Common/Assets/Sprites/greg gator.png" id="4_n7ywc"]
+[ext_resource type="AudioStream" uid="uid://mi7cg05mo0n7" path="res://Common/Assets/Sound/SFX/BoatMovement.wav" id="5_h6rrs"]
+[ext_resource type="Script" path="res://Entities/Player/Scenes/animation_player.gd" id="6_e4oo0"]
+[ext_resource type="AudioStream" uid="uid://5nhumsv5jdhv" path="res://Common/Assets/Sound/SFX/638865__felixblume__water-pump-motor-starting-in-a-mine-with-voices-at-the-beginning-recorded-in-a-mining-open-pit-in-the-forest.wav" id="7_h0ygd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3148y"]
 radius = 20.0
 height = 96.0
+
+[sub_resource type="Animation" id="Animation_73oso"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-10.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_w3b1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ujha"]
+_data = {
+"RESET": SubResource("Animation_w3b1l"),
+"fade_out": SubResource("Animation_73oso")
+}
 
 [node name="Boat" type="CharacterBody2D"]
 script = ExtResource("1_hh5y0")
@@ -38,3 +78,21 @@ rotation = -1.5708
 scale = Vector2(0.0655325, 0.0657402)
 texture = ExtResource("4_n7ywc")
 offset = Vector2(-54.565, 0)
+
+[node name="Motor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h6rrs")
+volume_db = -10.0
+max_polyphony = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Motor"]
+libraries = {
+"": SubResource("AnimationLibrary_8ujha")
+}
+movie_quit_on_finish = true
+script = ExtResource("6_e4oo0")
+
+[node name="MotorStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_h0ygd")
+volume_db = -2.811
+
+[connection signal="animation_finished" from="Motor/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
