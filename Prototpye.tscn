@@ -25,6 +25,7 @@
 
 [sub_resource type="Environment" id="Environment_23cnu"]
 background_mode = 3
+adjustment_enabled = true
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)
@@ -112,10 +113,10 @@ scale = Vector2(0.00756604, 0.0106789)
 
 [node name="Quota Label" type="Label" parent="Gui"]
 offset_left = 41.0
-offset_top = 205.0
-offset_right = 4427.0
-offset_bottom = 855.0
-scale = Vector2(0.0539738, 0.104669)
+offset_top = 210.0
+offset_right = 4506.0
+offset_bottom = 860.0
+scale = Vector2(0.0582636, 0.0896539)
 theme_override_font_sizes/font_size = 500
 text = "Day Quota: 999 Jams"
 
