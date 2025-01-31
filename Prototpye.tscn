@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://ipkna4rno5mv" path="res://Common/Assets/Sound/SFX/StreamBG.wav" id="16_d5puk"]
 [ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="17_3w5rj"]
 [ext_resource type="Script" path="res://audio_stream_player.gd" id="19_6g7hu"]
-[ext_resource type="PackedScene" path="res://Utilities/GUI/starting_screen.tscn" id="21_he5dt"]
+[ext_resource type="PackedScene" uid="uid://bj6srql0yjc8j" path="res://Utilities/GUI/starting_screen.tscn" id="21_he5dt"]
 
 [sub_resource type="Environment" id="Environment_23cnu"]
 background_mode = 3
@@ -113,10 +113,10 @@ scale = Vector2(0.00756604, 0.0106789)
 
 [node name="Quota Label" type="Label" parent="Gui"]
 offset_left = 41.0
-offset_top = 205.0
-offset_right = 4427.0
-offset_bottom = 855.0
-scale = Vector2(0.0539738, 0.104669)
+offset_top = 210.0
+offset_right = 4506.0
+offset_bottom = 860.0
+scale = Vector2(0.0582636, 0.0896539)
 theme_override_font_sizes/font_size = 500
 text = "Day Quota: 999 Jams"
 

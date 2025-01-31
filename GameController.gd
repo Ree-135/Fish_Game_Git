@@ -12,6 +12,7 @@ var fishepedia = preload("res://Utilities/GUI/Scenes/Fishipedia.tscn")
 
 @onready var label: Label = $Gui/Label
 @onready var sound_controller_instance = sound_controller.instantiate()
+@onready var end_screen: Control = $"Gui/End screen"
 
 
 
@@ -80,7 +81,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#var player_node = get_node("Boat")
-	pass
+	if Fish_Amount == 1:
+		can_move = false
+		is_fishing = true
+		end_screen.visible = true
 		
 	
 #set initial and sequential fish distributions

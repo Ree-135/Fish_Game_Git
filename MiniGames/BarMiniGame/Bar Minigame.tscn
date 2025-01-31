@@ -53,13 +53,13 @@ scale = Vector2(20, 20)
 curve = SubResource("Curve2D_v4yi8")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("3_tk7bt")]
-position = Vector2(-246.822, 256.04)
+position = Vector2(-258.276, 256.013)
 rotation = 0.0
 scale = Vector2(0.05, 0.05)
-progress = 16.6
+progress = 5.21138
 speed = 3.0
 nodes = 20
-Catch_Speed = 0.002
+Catch_Speed = 0.005
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-1.95, -0.549967)
