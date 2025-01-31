@@ -24,6 +24,7 @@
 
 [sub_resource type="Environment" id="Environment_23cnu"]
 background_mode = 3
+adjustment_enabled = true
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ox5xy"]
 normal = Vector2(1, 8.74201e-08)

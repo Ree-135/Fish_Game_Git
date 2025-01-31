@@ -101,6 +101,7 @@ theme_override_font_sizes/font_size = 500
 text = "Press 'E' to Close"
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 430.0
 offset_right = 3779.0
