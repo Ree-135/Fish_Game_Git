@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 # Array to hold the audio streams
 var background_songs = []
 var current_song_index = 0
-var song_change_time = 10.0  # Time in seconds to wait before changing the song
+var song_change_time = 20.0  # Time in seconds to wait before changing the song
 var timer = 0.0
 
 func _ready():

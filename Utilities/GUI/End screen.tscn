@@ -1,23 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj7g0r3u0hf7r"]
+[gd_scene load_steps=2 format=3 uid="uid://cj7g0r3u0hf7r"]
 
 [ext_resource type="Texture2D" uid="uid://wce41d7jrqit" path="res://Common/Assets/Sprites/loser screen.png" id="1_i0nm6"]
-[ext_resource type="Script" path="res://Utilities/GUI/button.gd" id="2_hsc5a"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -317.0
+offset_right = -555.0
+offset_bottom = -317.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+scale = Vector2(0.932587, 0.95791)
+size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -87145.0
-offset_top = -60660.0
-offset_right = -87105.0
-offset_bottom = -60620.0
+offset_left = -87161.8
+offset_top = -60732.2
+offset_right = -87121.8
+offset_bottom = -60692.2
 scale = Vector2(341868, 344574)
 color = Color(0.572549, 0.596078, 0.596078, 1)
 
@@ -28,40 +34,33 @@ texture = ExtResource("1_i0nm6")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 376.0
-offset_top = -14.0
-offset_right = 1552.0
-offset_bottom = 1289.0
+offset_left = 373.0
+offset_top = -41.0
+offset_right = 1549.0
+offset_bottom = 1262.0
 scale = Vector2(0.425236, 0.425236)
 theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.164706, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_font_sizes/font_size = 500
 text = "YOU
-LOSE"
+LOSE
+"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 459.0
-offset_right = 762.0
-offset_bottom = 521.0
-script = ExtResource("2_hsc5a")
-
-[node name="Label2" type="Label" parent="Button"]
+[node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.111
-offset_left = -1.0
-offset_top = -9.0
-offset_right = 1908.0
-offset_bottom = 572.118
+offset_left = 415.0
+offset_top = 420.0
+offset_right = 2733.0
+offset_bottom = 1656.07
 scale = Vector2(0.119843, 0.119843)
 theme_override_colors/font_color = Color(0.912174, 0.434751, 0.380575, 1)
 theme_override_font_sizes/font_size = 500
-text = "Try again"
+text = " Refresh the page
+to
+Try again"
 horizontal_alignment = 1
-
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

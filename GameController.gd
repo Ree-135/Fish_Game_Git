@@ -21,6 +21,7 @@ var is_fishing: bool
 var fish_caught: bool
 var in_menu: bool
 var end_screen_added: bool
+var Fish_Amount: int# total number of starting fish
 
 func initilize():
 	can_move = false
@@ -28,6 +29,7 @@ func initilize():
 	fish_caught = false
 	in_menu = true
 	end_screen_added = false
+	Fish_Amount = 30 # total number of starting fish
 # array of all the native fish 
 var fish_listNATIVE: Array = [
 	preload("res://Fish/AtlanticSturgeon.tres"),
@@ -55,7 +57,7 @@ var fish_listINVASIVE: Array = [
 	preload("res://Fish/ClownKnifefish.tres"),]
 
 #Starting Fish Values
-@export var Fish_Amount := 30 # total number of starting fish
+
 @export_range(0,1,0.1) var Percent_Native := 0.7 #starting perecnt of native fish
 var Percent_Invasive = 1 - Percent_Native  #starting percent of invasive fish
 var fish_distribution: Array #array to store amount of total fish
@@ -78,7 +80,6 @@ func _ready() -> void:
 	Native_Counter = 0
 	Invasive_counter = 0
 	morality = 0
-	Fish_Amount = 30
 	initilize()
 	
 	# Set the fish Distribution
@@ -198,9 +199,10 @@ func fish_winner(the_fish):
 
 # Function to spawn fishing spots
 func spawn_fishing_spots(count: int) -> void:
-	var map_node = get_tree().root.get_node("GamePrototype/ProtoMap")
+	
 	#map_node.add_child(sound_controller)
 	for i in range(count):
+		var map_node = get_tree().root.get_node("GamePrototype/ProtoMap")
 		var fishing_spot_scene = preload("res://Entities/FishingSpots/FishingSpot.tscn")  # Preload your fishing spot scene
 		var fishing_spot_instance = fishing_spot_scene.instantiate()
 		
@@ -266,6 +268,5 @@ func _restart() -> void:
 	Native_Counter = 0
 	Invasive_counter = 0
 	morality = 0
-	Fish_Amount = 30
-	spawn_fishing_spots(30)
+	
 	get_tree().reload_current_scene()
