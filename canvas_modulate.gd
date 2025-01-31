@@ -40,13 +40,15 @@ func _process(delta: float) -> void:
 	_recalculate_time()
 	
 			
-	if day == next_day:
+	if day == next_day: # at the end of each day
+		
+		GameController.Fish_Amount = roundf(GameController.Fish_Amount * 1.5)
+		GameController.set_fish_distribution()
 		
 		if GameController.currency < quota and day > 0:
 			GameController.can_move = false
 			GameController.is_fishing = true
 			end_screen.visible = true
-			
 			
 		
 		if GameController.currency >= quota:
