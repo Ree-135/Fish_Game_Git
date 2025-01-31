@@ -65,9 +65,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 24.0
+offset_left = 199.0
 offset_top = -248.0
-offset_right = 24.0
+offset_right = 199.0
 offset_bottom = -248.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -119,10 +119,11 @@ texture = ExtResource("3_sldd7")
 offset = Vector2(-30, 35)
 
 [node name="ProgressBar" type="ProgressBar" parent="Path L>R"]
-offset_left = 114.381
-offset_top = -9.36455
-offset_right = 268.381
-offset_bottom = 17.6355
+offset_left = 344.788
+offset_top = 233.121
+offset_right = 498.788
+offset_bottom = 260.121
+rotation = -1.56898
 theme_override_styles/fill = SubResource("StyleBoxFlat_mj7y8")
 rounded = true
 allow_greater = true
