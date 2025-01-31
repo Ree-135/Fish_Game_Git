@@ -120,5 +120,15 @@ position = Vector2(733.922, 397.676)
 scale = Vector2(0.0918604, 0.0905132)
 texture = ExtResource("8_7wxpv")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 684.347
+offset_top = 127.17
+offset_right = 3610.35
+offset_bottom = 777.17
+scale = Vector2(0.0515216, 0.0515216)
+theme_override_font_sizes/font_size = 500
+text = "Type: Invasive"
+
 [connection signal="pressed" from="Button" to="Path2D/PathFollow2D" method="_on_button_pressed"]
 [connection signal="finished" from="Fish_win" to="Path2D/PathFollow2D" method="_on_fish_win_finished"]

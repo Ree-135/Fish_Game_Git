@@ -23,6 +23,7 @@ extends PathFollow2D
 @onready var progress_bar: ProgressBar = $"../../ProgressBar"
 @onready var bobber_bar: CharacterBody2D = $"../../Bobber Bar"
 
+@onready var label: Label = $"../../Label"
 
 
 var score = .10 # how "caught" the fish is in perchantage, this is a starting value
@@ -65,6 +66,11 @@ func _process(delta: float) -> void:
 		progress_point = float(ran.randi_range(0, nodes)) / nodes
 		#print(progress_point)
 	#all this says if the fish gets close enough to the progress point, make a new point to move towards
+	
+	if the_fish.Type == 0:
+		label.text = "Type: Native"
+	if the_fish.Type == 1:
+		label.text = "Type: Invasive"
 	
 	if in_fish == true and score < 1:
 		score += Catch_Speed

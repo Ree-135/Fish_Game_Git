@@ -13,7 +13,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_n1roc"]
 _data = {
-"points": PackedVector2Array(-2.31175, 64.256, 2.31175, -64.256, 64.8829, 328.428, -112.622, -3.00324, 112.622, 3.00324, 192, 64, -14.0843, -61.1047, 14.0843, 61.1047, 321.739, 323.077)
+"points": PackedVector2Array(-2.31175, 64.256, 2.31175, -64.256, 60.736, 374.057, -112.622, -3.00324, 112.622, 3.00324, 192, 64, -14.0843, -61.1047, 14.0843, 61.1047, 324.498, 373.141)
 }
 point_count = 3
 
@@ -79,8 +79,8 @@ scale = Vector2(1.495, 1.59711)
 curve = SubResource("Curve2D_n1roc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path L>R"]
-position = Vector2(188.044, 63.9888)
-rotation = -0.0166819
+position = Vector2(148.749, 77.3433)
+rotation = -0.614502
 progress = 317.478
 cubic_interp = false
 loop = false
@@ -143,9 +143,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path L>R"]
 position = Vector2(191.304, 148.102)
-scale = Vector2(0.141806, 0.17556)
+scale = Vector2(0.142917, 0.182897)
 sprite_frames = SubResource("SpriteFrames_g5aft")
 autoplay = "default"
+frame = 7
+frame_progress = 1.0
 
 [node name="Mouse1" type="Sprite2D" parent="Path L>R"]
 position = Vector2(359.866, 273.619)
@@ -160,6 +162,16 @@ texture = ExtResource("10_245kn")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_f35um")
 volume_db = -9.369
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -114.481
+offset_top = -179.779
+offset_right = 3523.52
+offset_bottom = 470.221
+scale = Vector2(0.0551903, 0.0551903)
+theme_override_font_sizes/font_size = 500
+text = "Type: blahblahblah"
 
 [connection signal="timeout" from="Path L>R/PathFollow2D/Timer" to="Path L>R/PathFollow2D" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Path L>R/PathFollow2D/Area2D2" to="Path L>R/PathFollow2D" method="_on_area_2d_2_area_entered"]

@@ -86,6 +86,17 @@ rotation = 1.57671
 scale = Vector2(0.0322175, 0.0308649)
 texture = ExtResource("5_i0vdj")
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 108.195
+offset_top = 30.9556
+offset_right = 3929.19
+offset_bottom = 680.956
+rotation = 1.57079
+scale = Vector2(0.0131569, 0.0131569)
+theme_override_font_sizes/font_size = 500
+text = "Type: BLAH BLAH"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
