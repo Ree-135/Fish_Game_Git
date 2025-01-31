@@ -20,12 +20,14 @@ var can_move: bool
 var is_fishing: bool
 var fish_caught: bool
 var in_menu: bool
+var end_screen_added: bool
 
 func initilize():
 	can_move = false
 	is_fishing = false
 	fish_caught = false
 	in_menu = true
+	end_screen_added = false
 # array of all the native fish 
 var fish_listNATIVE: Array = [
 	preload("res://Fish/AtlanticSturgeon.tres"),
@@ -87,15 +89,18 @@ func _ready() -> void:
 	# or if fishingspots is < 5 or whatever the max is, create another random one
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(delta: float) -> void:
-	#var player_node = get_node("Boat")
-	if Fish_Amount == Native_Counter + Invasive_counter + 1:
+	# var player_node = get_node("Boat")
+	if Fish_Amount == Native_Counter + Invasive_counter + 1 and not end_screen_added:
 		can_move = false
 		is_fishing = true
 
 		var gui_node = get_tree().root.get_node("GamePrototype/Gui")
 		gui_node.add_child(end_screen.instantiate())
 		
+		end_screen_added = true  # Set the flag to true after adding the end_screen
 		
 
 #set initial and sequential fish distributions
