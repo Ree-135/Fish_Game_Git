@@ -63,11 +63,11 @@ texture = ExtResource("5_blysw")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 62.0
-offset_right = 23667.0
-offset_bottom = 97356.0
-scale = Vector2(0.0473471, 0.0473471)
+offset_left = 50.0
+offset_top = 58.0
+offset_right = 23675.0
+offset_bottom = 97352.0
+scale = Vector2(0.0463664, 0.0463664)
 theme_override_colors/font_color = Color(0.454745, 0.263343, 0.142083, 1)
 theme_override_font_sizes/font_size = 500
 text = "Dear Greg,
