@@ -33,7 +33,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	time += delta * INGAME_TO_REAL_MINUTE_DURATION * INGAME_SPEED
+	if GameController.in_menu == false:
+		time += delta * INGAME_TO_REAL_MINUTE_DURATION * INGAME_SPEED
 	var value = (sin(time -PI / 2) + 1.0) / 2.0
 	self.color = gradient.gradient.sample(value)
 	
