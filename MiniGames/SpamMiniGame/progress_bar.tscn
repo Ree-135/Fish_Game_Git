@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bddqw08l3ctuu"]
+[gd_scene load_steps=8 format=3 uid="uid://bddqw08l3ctuu"]
 
 [ext_resource type="Script" path="res://MiniGames/SpamMiniGame/SpamBar.gd" id="1_2bp3e"]
 [ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="2_uyjfo"]
 [ext_resource type="AudioStream" uid="uid://th6k88cbv01o" path="res://Common/Assets/Sound/SFX/SpinningReel[NeedsChoping].wav" id="3_xoqnx"]
+[ext_resource type="Texture2D" uid="uid://bl6s3w5dljrs2" path="res://Common/Assets/Sprites/Mouse1.png" id="4_wolga"]
+[ext_resource type="Texture2D" uid="uid://c8f5hh4kq0n5v" path="res://Common/Assets/Sprites/Mouse2.png" id="5_i0vdj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2idky"]
 bg_color = Color(0.164706, 0.164706, 0.164706, 0.6)
@@ -72,6 +74,18 @@ texture = ExtResource("2_uyjfo")
 
 [node name="Reelingsfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xoqnx")
+
+[node name="Mouse1" type="Sprite2D" parent="."]
+position = Vector2(41.4746, -11.12)
+rotation = 1.57463
+scale = Vector2(0.0335092, 0.0317251)
+texture = ExtResource("4_wolga")
+
+[node name="Mouse2" type="Sprite2D" parent="."]
+position = Vector2(41.4745, -40.573)
+rotation = 1.57671
+scale = Vector2(0.0322175, 0.0308649)
+texture = ExtResource("5_i0vdj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

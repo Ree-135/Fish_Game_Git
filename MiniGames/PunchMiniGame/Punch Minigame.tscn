@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://co0ha8sp7qfqg"]
+[gd_scene load_steps=16 format=3 uid="uid://co0ha8sp7qfqg"]
 
 [ext_resource type="Script" path="res://MiniGames/PunchMiniGame/Punch Fish.gd" id="1_rco4h"]
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="2_dkria"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c58euwg8n2f8k" path="res://Common/Assets/Sprites/Hand3.png" id="6_kifxp"]
 [ext_resource type="Texture2D" uid="uid://dmtu0it26r5iv" path="res://Common/Assets/Sprites/Hand4.png" id="7_vlf4p"]
 [ext_resource type="AudioStream" uid="uid://0pxnpqwqiyhe" path="res://Common/Assets/Sound/SFX/Splash.wav" id="8_f35um"]
+[ext_resource type="Texture2D" uid="uid://bl6s3w5dljrs2" path="res://Common/Assets/Sprites/Mouse1.png" id="9_ijw6o"]
+[ext_resource type="Texture2D" uid="uid://c8f5hh4kq0n5v" path="res://Common/Assets/Sprites/Mouse2.png" id="10_245kn"]
 
 [sub_resource type="Curve2D" id="Curve2D_n1roc"]
 _data = {
@@ -138,6 +140,16 @@ position = Vector2(191.304, 148.102)
 scale = Vector2(0.141806, 0.17556)
 sprite_frames = SubResource("SpriteFrames_g5aft")
 autoplay = "default"
+
+[node name="Mouse1" type="Sprite2D" parent="Path L>R"]
+position = Vector2(359.866, 273.619)
+scale = Vector2(0.0608696, 0.0569779)
+texture = ExtResource("9_ijw6o")
+
+[node name="Mouse2" type="Sprite2D" parent="Path L>R"]
+position = Vector2(31.9398, 272.993)
+scale = Vector2(0.061204, 0.0563518)
+texture = ExtResource("10_245kn")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_f35um")

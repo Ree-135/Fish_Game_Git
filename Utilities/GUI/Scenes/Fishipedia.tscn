@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cryipmxchfafh"]
+[gd_scene load_steps=9 format=3 uid="uid://cryipmxchfafh"]
 
 [ext_resource type="Texture2D" uid="uid://nx4d583ft2c3" path="res://Fish/Atlantic Sturgeon.png" id="1_706j5"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/fishipedia.gd" id="1_vb0px"]
@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="3_j41ii"]
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/label.gd" id="4_sowsi"]
 [ext_resource type="Texture2D" uid="uid://o455ujq242r4" path="res://MiniGames/BarMiniGame/Assets/endangered.png" id="6_woaqv"]
+[ext_resource type="Texture2D" uid="uid://c8f5hh4kq0n5v" path="res://Common/Assets/Sprites/Mouse2.png" id="7_li6kk"]
+[ext_resource type="Texture2D" uid="uid://bl6s3w5dljrs2" path="res://Common/Assets/Sprites/Mouse1.png" id="8_5vbrv"]
 
 [node name="Fishipedia" type="Control"]
 layout_mode = 3
@@ -177,3 +179,13 @@ visible = false
 position = Vector2(285, 382)
 scale = Vector2(0.348109, 0.349582)
 texture = ExtResource("6_woaqv")
+
+[node name="Mouse2" type="Sprite2D" parent="."]
+position = Vector2(-3.43043, 649.502)
+scale = Vector2(0.111218, 0.10654)
+texture = ExtResource("7_li6kk")
+
+[node name="Mouse1" type="Sprite2D" parent="."]
+position = Vector2(1151.48, 649.502)
+scale = Vector2(0.123074, 0.11317)
+texture = ExtResource("8_5vbrv")

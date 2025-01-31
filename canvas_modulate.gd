@@ -15,7 +15,7 @@ var past_minute:float = -1.0
 
 var end_screen_load = preload("res://Utilities/GUI/End screen.tscn")
 @onready var end_screen: Control = $"../Gui/End screen"
-
+@onready var caught_: Label = $"../Gui/CAUGHT!"
 @onready var quota_label: Label = $"../Gui/Quota Label"
 var quota:int = 0
 
@@ -38,6 +38,8 @@ func _process(delta: float) -> void:
 	self.color = gradient.gradient.sample(value)
 	
 	_recalculate_time()
+	
+	
 	
 			
 	if day == next_day:

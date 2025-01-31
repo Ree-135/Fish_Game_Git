@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ciad5wn6uhmus"]
+[gd_scene load_steps=12 format=3 uid="uid://ciad5wn6uhmus"]
 
 [ext_resource type="PackedScene" uid="uid://dcewy4ye6gagn" path="res://MiniGames/BarMiniGame/Dependencies/bobber holder.tscn" id="1_mctcb"]
 [ext_resource type="PackedScene" uid="uid://b8ri2awwfpx8v" path="res://MiniGames/BarMiniGame/Dependencies/Bobber.tscn" id="2_yhbl8"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bi7fatllpk4fp" path="res://Common/Assets/Sprites/fsh.png" id="4_7n7t0"]
 [ext_resource type="AudioStream" uid="uid://th6k88cbv01o" path="res://Common/Assets/Sound/SFX/SpinningReel[NeedsChoping].wav" id="5_55jlf"]
 [ext_resource type="AudioStream" uid="uid://700i3frbpxl5" path="res://Common/Assets/Sound/SFX/FishtailFlapping.wav" id="6_7rqxp"]
+[ext_resource type="Texture2D" uid="uid://c8f5hh4kq0n5v" path="res://Common/Assets/Sprites/Mouse2.png" id="7_p1ep0"]
+[ext_resource type="Texture2D" uid="uid://bl6s3w5dljrs2" path="res://Common/Assets/Sprites/Mouse1.png" id="8_7wxpv"]
 
 [sub_resource type="Curve2D" id="Curve2D_v4yi8"]
 _data = {
@@ -108,6 +110,16 @@ volume_db = -3.748
 [node name="Fish_win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7rqxp")
 volume_db = -4.685
+
+[node name="Mouse2" type="Sprite2D" parent="."]
+position = Vector2(733.128, 323.597)
+scale = Vector2(0.0942707, 0.0899599)
+texture = ExtResource("7_p1ep0")
+
+[node name="Mouse1" type="Sprite2D" parent="."]
+position = Vector2(733.922, 397.676)
+scale = Vector2(0.0918604, 0.0905132)
+texture = ExtResource("8_7wxpv")
 
 [connection signal="pressed" from="Button" to="Path2D/PathFollow2D" method="_on_button_pressed"]
 [connection signal="finished" from="Fish_win" to="Path2D/PathFollow2D" method="_on_fish_win_finished"]

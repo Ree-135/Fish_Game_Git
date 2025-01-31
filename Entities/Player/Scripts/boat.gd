@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 				motor.play()
 				sfx_playing = true
 				motor_start.play()
-				print("starting motor")
+				#print("starting motor")
 		else:
 			# Stop the sound effect if the player is not moving
 			if sfx_playing == true:
@@ -40,6 +40,6 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print("stoping audio")
+	#print("stoping audio")
 	
 	sfx_playing = false

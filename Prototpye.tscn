@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cnyxmfwsmvm8p"]
+[gd_scene load_steps=25 format=3 uid="uid://cnyxmfwsmvm8p"]
 
 [ext_resource type="Script" path="res://canvas_modulate.gd" id="1_7um78"]
 [ext_resource type="Script" path="res://prototpye.gd" id="1_k3w0p"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Utilities/GUI/Scenes/gui.gd" id="4_2hsho"]
 [ext_resource type="FontFile" uid="uid://25rcphv2ivdw" path="res://Common/Assets/Font/Ronysiswadi14-z82L3.ttf" id="6_oqtiw"]
 [ext_resource type="PackedScene" uid="uid://cj7g0r3u0hf7r" path="res://Utilities/GUI/End screen.tscn" id="8_fd63j"]
+[ext_resource type="Texture2D" uid="uid://cj6qf535i8di6" path="res://Common/Assets/Sprites/Untitled6_20250130202318.png" id="8_r25rf"]
 [ext_resource type="Script" path="res://Native label.gd" id="9_0h1aw"]
 [ext_resource type="PackedScene" uid="uid://vp0affi01d3t" path="res://Utilities/GUI/Assets/DayNight/daynightcycle_ui.tscn" id="9_16jiu"]
 [ext_resource type="Texture2D" uid="uid://dxsn82d4q18yo" path="res://Common/Assets/Sprites/Book.png" id="11_enipg"]
@@ -86,20 +87,44 @@ position = Vector2(2.11768, -1.9697)
 [node name="Gui" parent="." instance=ExtResource("3_1fffa")]
 script = ExtResource("4_2hsho")
 
+[node name="TextureRect" type="TextureRect" parent="Gui"]
+offset_left = -188.0
+offset_top = -68.0
+offset_right = 812.0
+offset_bottom = 932.0
+scale = Vector2(0.634027, 0.352629)
+texture = ExtResource("8_r25rf")
+
+[node name="TextureRect2" type="TextureRect" parent="Gui"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -564.0
+offset_top = -254.0
+offset_right = 436.0
+offset_bottom = 746.0
+grow_horizontal = 0
+scale = Vector2(0.757515, 0.43025)
+texture = ExtResource("8_r25rf")
+
 [node name="Quota Label" type="Label" parent="Gui"]
-offset_left = 16.0
-offset_top = 120.0
-offset_right = 4402.0
-offset_bottom = 770.0
-scale = Vector2(0.057487, 0.057487)
+offset_left = 18.0
+offset_top = 156.0
+offset_right = 4404.0
+offset_bottom = 806.0
+scale = Vector2(0.050316, 0.0817362)
 theme_override_font_sizes/font_size = 500
 text = "Day Quota: 999 Jams"
 
 [node name="Jam label" type="Label" parent="Gui"]
-offset_left = -40.0
-offset_top = 159.0
-offset_right = 4209.0
-offset_bottom = 1462.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -377.0
+offset_top = 27.0
+offset_right = 3872.0
+offset_bottom = 1330.0
+grow_horizontal = 0
 scale = Vector2(0.0685421, 0.0695337)
 theme_override_fonts/font = ExtResource("6_oqtiw")
 theme_override_font_sizes/font_size = 500
@@ -145,6 +170,21 @@ script = ExtResource("13_c7hmq")
 
 [node name="End screen" parent="Gui" instance=ExtResource("8_fd63j")]
 visible = false
+
+[node name="CAUGHT!" type="Label" parent="Gui"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.531
+anchor_top = 0.394
+anchor_right = 0.63
+anchor_bottom = 0.426
+offset_left = 0.287964
+offset_top = -0.312012
+offset_right = 0.239929
+offset_bottom = -0.0480042
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU CAUGHT IT!"
 
 [node name="Timer" type="Timer" parent="."]
 
